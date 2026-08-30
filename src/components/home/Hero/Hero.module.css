@@ -35,9 +35,9 @@
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 26, 51, 0.8) 0%,
-    rgba(0, 51, 102, 0.6) 50%,
-    rgba(0, 26, 51, 0.95) 100%
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.95) 100%
   );
   z-index: 2;
 }
@@ -142,7 +142,7 @@
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(199, 44, 65, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .secondaryCta {
