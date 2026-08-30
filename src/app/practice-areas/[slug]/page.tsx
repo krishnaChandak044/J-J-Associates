@@ -9,9 +9,9 @@ import styles from "./page.module.css";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs/WhyChooseUs";
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for SSG
@@ -22,8 +22,9 @@ export function generateStaticParams() {
 }
 
 // Generate SEO Metadata
-export function generateMetadata({ params }: Props) {
-  const area = practiceAreas.find((a) => a.slug === params.slug);
+export async function generateMetadata({ params }: Props) {
+  const resolvedParams = await params;
+  const area = practiceAreas.find((a) => a.slug === resolvedParams.slug);
   
   if (!area) {
     return { title: "Not Found" };
@@ -36,8 +37,9 @@ export function generateMetadata({ params }: Props) {
   });
 }
 
-export default function PracticeAreaPage({ params }: Props) {
-  const area = practiceAreas.find((a) => a.slug === params.slug);
+export default async function PracticeAreaPage({ params }: Props) {
+  const resolvedParams = await params;
+  const area = practiceAreas.find((a) => a.slug === resolvedParams.slug);
 
   if (!area) {
     notFound();
