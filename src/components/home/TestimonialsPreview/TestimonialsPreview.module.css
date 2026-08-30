@@ -34,43 +34,38 @@
   color: var(--color-primary-dark);
 }
 
-/* ── Masonry Grid ── */
+/* ── Grid Layout ── */
 .masonry {
-  columns: 1;
-  column-gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
 @media (min-width: 640px) {
   .masonry {
-    columns: 2;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
   .masonry {
-    columns: 3;
-    column-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
   }
 }
 
 .card {
-  break-inside: avoid;
-  display: inline-block;
-  width: 100%;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   padding: 2rem;
-  margin-bottom: 1.5rem;
   box-shadow: var(--shadow-sm);
   transition: transform var(--t-base), box-shadow var(--t-base);
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 1024px) {
-  .card {
-    margin-bottom: 2rem;
-  }
-}
+
 
 .card:hover {
   transform: translateY(-4px);
@@ -92,6 +87,7 @@
   margin-bottom: 1.5rem;
   font-style: italic;
   position: relative;
+  flex-grow: 1; /* Pushes the footer to the bottom so cards match heights perfectly */
 }
 
 .quote::before {
