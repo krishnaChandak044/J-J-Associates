@@ -20,16 +20,16 @@ export async function TeamGrid() {
   const displayTeam = team.length > 0 ? team : [
     {
       _id: "1",
-      name: "Adv. Rajesh Jaju",
-      slug: { current: "rajesh-jaju" },
+      name: "Adv. Gaurav Jaju",
+      slug: { current: "gaurav-jaju" },
       designation: "Founder & Managing Partner",
       quote: "Justice is not merely a verdict; it is the restoration of order and fairness in society.",
       fallbackImg: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
     },
     {
       _id: "2",
-      name: "Adv. Smita Jaju",
-      slug: { current: "smita-jaju" },
+      name: "Adv. Ankita Jaju",
+      slug: { current: "ankita-jaju" },
       designation: "Senior Partner - Family Law",
       quote: "Navigating family disputes requires both a sharp legal mind and a deeply empathetic heart.",
       fallbackImg: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"

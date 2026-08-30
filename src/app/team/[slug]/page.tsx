@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   
   // Provide fallback slugs for local development if CMS is empty
   if (!slugs || slugs.length === 0) {
-    slugs = ["rajesh-jaju", "smita-jaju", "vikram-deshmukh"];
+    slugs = ["gaurav-jaju", "ankita-jaju", "vikram-deshmukh"];
   }
 
   return slugs.map((slug) => ({
@@ -45,9 +45,9 @@ export async function generateMetadata({ params }: Props) {
 
   if (!member) {
     // Check fallback
-    if (resolvedParams.slug === "rajesh-jaju") {
+    if (resolvedParams.slug === "gaurav-jaju") {
       return generatePageMetadata({
-        title: "Adv. Rajesh Jaju - Managing Partner | Jaju & Jaju Associates",
+        title: "Adv. Gaurav Jaju - Managing Partner | Jaju & Jaju Associates",
         description: "Founder and Managing Partner at Jaju & Jaju Associates, Pune.",
         path: `/team/${resolvedParams.slug}`,
       });
@@ -74,15 +74,15 @@ export default async function TeamMemberPage({ params }: Props) {
 
   // Fallback mock data if CMS is empty
   if (!member) {
-    if (resolvedParams.slug === "rajesh-jaju") {
+    if (resolvedParams.slug === "gaurav-jaju") {
       member = {
         _id: "1",
-        name: "Adv. Rajesh Jaju",
+        name: "Adv. Gaurav Jaju",
         designation: "Founder & Managing Partner",
         yearsExp: 25,
-        email: "rajesh@jajuassociates.com",
+        email: "gaurav@jajuassociates.com",
         specialties: ["Corporate Litigation", "Real Estate Disputes", "Arbitration"],
-        bio: "Adv. Rajesh Jaju is the visionary founder of Jaju & Jaju Associates. With over two decades of rigorous litigation experience across the District Courts of Pune and the Bombay High Court, he has built a reputation for relentless advocacy and strategic brilliance.\n\nHe regularly advises multinational corporations, high-net-worth families, and leading real estate developers on highly complex, multi-crore disputes. His philosophy is simple: preparation is the ultimate weapon in the courtroom.",
+        bio: "Adv. Gaurav Jaju is the visionary founder of Jaju & Jaju Associates. With over two decades of rigorous litigation experience across the District Courts of Pune and the Bombay High Court, he has built a reputation for relentless advocacy and strategic brilliance.\n\nHe regularly advises multinational corporations, high-net-worth families, and leading real estate developers on highly complex, multi-crore disputes. His philosophy is simple: preparation is the ultimate weapon in the courtroom.",
         education: ["LL.B. - ILS Law College, Pune", "B.Com - Savitribai Phule Pune University"],
         barAdmissions: ["Bar Council of Maharashtra & Goa", "Supreme Court Bar Association"],
         notableMatters: [
