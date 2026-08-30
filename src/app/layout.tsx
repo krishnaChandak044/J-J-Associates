@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header/Header";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingCTA } from "@/components/layout/FloatingCTA/FloatingCTA";
+import { SearchModal } from "@/components/ui/SearchModal/SearchModal";
 
 // ─── Font Loading ──────────────────────────────────────────────────────────
 
@@ -55,6 +56,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${lora.variable}`}
     >
       <body>
+        <SearchModal />
         <Header />
         <main>{children}</main>
         <Footer />

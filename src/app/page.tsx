@@ -5,6 +5,7 @@ import { WhyChooseUs } from "@/components/home/WhyChooseUs/WhyChooseUs";
 import { CaseResultsPreview } from "@/components/home/CaseResultsPreview/CaseResultsPreview";
 import { TestimonialsPreview } from "@/components/home/TestimonialsPreview/TestimonialsPreview";
 import { InsightsPreview } from "@/components/home/InsightsPreview/InsightsPreview";
+import { FadeIn } from "@/components/ui/FadeIn/FadeIn";
 
 export const metadata = generatePageMetadata({
   title: "Jaju & Jaju Associates | Advocates & Legal Consultants Pune",
@@ -14,13 +15,23 @@ export const metadata = generatePageMetadata({
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Hero />
-      <PracticeAreasPreview />
-      <WhyChooseUs />
-      <CaseResultsPreview />
-      <TestimonialsPreview />
-      <InsightsPreview />
-    </>
+      <FadeIn delay={100}>
+        <PracticeAreasPreview />
+      </FadeIn>
+      <FadeIn delay={200}>
+        <WhyChooseUs />
+      </FadeIn>
+      <FadeIn delay={300}>
+        <CaseResultsPreview />
+      </FadeIn>
+      <FadeIn delay={100}>
+        <TestimonialsPreview />
+      </FadeIn>
+      <FadeIn delay={200}>
+        <InsightsPreview />
+      </FadeIn>
+    </div>
   );
 }
