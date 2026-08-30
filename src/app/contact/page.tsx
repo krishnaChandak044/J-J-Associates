@@ -37,8 +37,8 @@ export default function ContactPage() {
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>Headquarters</h3>
                 <p className={styles.cardText}>
-                  {siteConfig.contact.address.street}<br />
-                  {siteConfig.contact.address.city}, {siteConfig.contact.address.state} {siteConfig.contact.address.zip}
+                  {siteConfig.address.street}<br />
+                  {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.pin}
                 </p>
               </div>
             </div>
@@ -50,8 +50,8 @@ export default function ContactPage() {
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>Phone</h3>
                 <p className={styles.cardText}>
-                  <a href={`tel:${siteConfig.contact.phone.replace(/\s+/g, '')}`} className={styles.cardLink}>
-                    {siteConfig.contact.phone}
+                  <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} className={styles.cardLink}>
+                    {siteConfig.phone}
                   </a>
                 </p>
               </div>
@@ -64,8 +64,8 @@ export default function ContactPage() {
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>Email</h3>
                 <p className={styles.cardText}>
-                  <a href={`mailto:${siteConfig.contact.email}`} className={styles.cardLink}>
-                    {siteConfig.contact.email}
+                  <a href={`mailto:${siteConfig.email}`} className={styles.cardLink}>
+                    {siteConfig.email}
                   </a>
                 </p>
               </div>
