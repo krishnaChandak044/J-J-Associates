@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import styles from "./WhyChooseUs.module.css";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 
 const pillars = [
   {
@@ -45,6 +46,7 @@ export function WhyChooseUs() {
 
   return (
     <section className={styles.section}>
+      <WaveDivider position="top" fillColor="var(--color-bg)" flip={true} />
       <div className={styles.pattern} />
       
       <div className={styles.container}>
@@ -95,6 +97,7 @@ export function WhyChooseUs() {
           </motion.div>
         </div>
       </div>
+      <WaveDivider position="bottom" fillColor="var(--color-surface-alt)" />
     </section>
   );
 }

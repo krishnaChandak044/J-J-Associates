@@ -7,6 +7,7 @@ import { siteConfig } from "@/data/siteConfig";
 import { generatePageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs/WhyChooseUs";
+import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 
 interface Props {
   params: Promise<{
@@ -59,6 +60,7 @@ export default async function PracticeAreaPage({ params }: Props) {
           <h1 className={styles.title}>{area.name}</h1>
           <p className={styles.tagline}>{area.tagline}</p>
         </div>
+        <WaveDivider position="bottom" fillColor="var(--color-surface)" />
       </section>
 
       {/* ── Main Content & Sidebar ── */}

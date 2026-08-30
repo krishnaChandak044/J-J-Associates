@@ -6,22 +6,17 @@
 :root {
   /* ── Colors: "Professional Integrity" Palette ── */
   /* Primary: Trust, Security, Reliability */
-  --color-primary: #000000;
-  /* Pure Black */
-  --color-primary-dark: #000000;
-  /* Pure Black */
-  --color-primary-light: #E5E5E5;
-  /* Light Gray */
+  --color-primary: #1E3146; /* Deep Slate Blue */
+  --color-primary-dark: #121F2D; /* Darker Slate Blue */
+  --color-primary-light: #2A435E; /* Lighter Slate Blue */
 
   /* Secondary: Neutral, Stable, Balanced */
   --color-secondary: #666666;
   /* Medium Gray */
 
   /* Accent: Passion, Action, Highlights (Use Sparingly) */
-  --color-accent: #000000;
-  /* Pure Black */
-  --color-accent-hover: #333333;
-  /* Dark Gray for active states */
+  --color-accent: #1E3146; /* Slate Blue */
+  --color-accent-hover: #2A435E; /* Lighter Slate Blue */
 
   /* Backgrounds: Clean, Readable */
   --color-bg: #FFFFFF;
@@ -32,12 +27,9 @@
   /* Very Light Gray for section rhythm */
 
   /* Typography Colors */
-  --color-text-heading: #000000;
-  /* Pure Black for high contrast headings */
-  --color-text-body: #111111;
-  /* Almost Black for body legibility */
-  --color-text-muted: #737373;
-  /* Neutral Gray for meta, labels */
+  --color-text-heading: #121F2D; /* Dark Slate Blue for high contrast headings */
+  --color-text-body: #334155; /* Slate 700 for body legibility */
+  --color-text-muted: #64748B; /* Slate 500 for meta, labels */
   --color-text-inverse: #ffffff;
   /* White text on dark backgrounds */
 

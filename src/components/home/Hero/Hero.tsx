@@ -5,6 +5,7 @@ import { Scale, ArrowRight, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 import styles from "./Hero.module.css";
 import { siteConfig } from "@/data/siteConfig";
+import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 
 export function Hero() {
   return (
@@ -50,6 +51,8 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
+
+      <WaveDivider position="bottom" fillColor="var(--color-bg)" />
     </section>
   );
 }

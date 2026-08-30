@@ -1,6 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 import { TeamGrid } from "@/components/about/TeamGrid/TeamGrid";
+import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 
 export const metadata = generatePageMetadata({
   title: "About The Firm | Jaju & Jaju Associates Pune",
@@ -21,6 +22,7 @@ export default function AboutPage() {
             championing the rights of our clients through unwavering ethical standards and relentless advocacy.
           </p>
         </div>
+        <WaveDivider position="bottom" fillColor="var(--color-surface)" />
       </section>
 
       {/* ── History & Philosophy ── */}

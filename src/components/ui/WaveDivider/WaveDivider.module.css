@@ -1,0 +1,46 @@
+.waveWrapper {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.waveTop {
+  top: 0;
+  transform: rotate(180deg);
+}
+
+.waveBottom {
+  bottom: 0;
+}
+
+/* If flipped, mirror horizontally */
+.waveFlip {
+  transform: scaleX(-1);
+}
+
+.waveTop.waveFlip {
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.waveSvg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+@media (min-width: 768px) {
+  .waveSvg {
+    height: 90px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .waveSvg {
+    height: 120px;
+  }
+}

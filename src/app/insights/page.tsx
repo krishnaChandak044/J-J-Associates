@@ -7,6 +7,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { generatePageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 import type { Insight } from "@/sanity/types";
+import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 
 export const metadata = generatePageMetadata({
   title: "Insights & Legal Updates | Jaju & Jaju Associates Pune",
@@ -79,6 +80,7 @@ export default async function InsightsPage() {
             by the advocates of Jaju & Jaju Associates.
           </p>
         </div>
+        <WaveDivider position="bottom" fillColor="var(--color-bg)" />
       </section>
 
       <section className={styles.mainSection}>

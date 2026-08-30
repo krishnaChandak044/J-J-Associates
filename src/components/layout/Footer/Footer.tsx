@@ -3,12 +3,14 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import styles from "./Footer.module.css";
 import { siteConfig } from "@/data/siteConfig";
 import { practiceAreas } from "@/data/practiceAreas";
+import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className={styles.footer}>
+      <WaveDivider position="top" fillColor="var(--color-surface)" flip={false} />
       <div className={styles.container}>
         <div className={styles.grid}>
           {/* Column 1: Brand */}

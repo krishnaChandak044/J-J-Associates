@@ -2,6 +2,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { generatePageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/siteConfig";
 import { ContactForm } from "@/components/contact/ContactForm/ContactForm";
+import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 import styles from "./page.module.css";
 
 export const metadata = generatePageMetadata({
@@ -22,6 +23,7 @@ export default function ContactPage() {
             Reach out to our offices in Pune to schedule a consultation with our partners.
           </p>
         </div>
+        <WaveDivider position="bottom" fillColor="var(--color-bg)" />
       </section>
 
       <section className={styles.mainSection}>
