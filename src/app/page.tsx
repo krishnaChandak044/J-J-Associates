@@ -1,4 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo";
+import { Hero } from "@/components/home/Hero/Hero";
+import { PracticeAreasPreview } from "@/components/home/PracticeAreasPreview/PracticeAreasPreview";
+import { WhyChooseUs } from "@/components/home/WhyChooseUs/WhyChooseUs";
 
 export const metadata = generatePageMetadata({
   title: "Jaju & Jaju Associates | Advocates & Legal Consultants Pune",
@@ -8,9 +11,17 @@ export const metadata = generatePageMetadata({
 
 export default function Home() {
   return (
-    <div style={{ padding: "var(--space-section)" }}>
-      <h1>Jaju & Jaju Associates</h1>
-      <p>Home Page Shell (Design System Loaded)</p>
-    </div>
+    <>
+      <Hero />
+      <PracticeAreasPreview />
+      <WhyChooseUs />
+      
+      {/* 
+        Phase 6 will add:
+        <CaseResultsPreview />
+        <TestimonialsPreview />
+        <InsightsPreview />
+      */}
+    </>
   );
 }
