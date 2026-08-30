@@ -22,7 +22,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.25; /* Dark overlay for text legibility */
+  opacity: 0.15; /* Even darker overlay for absolute text legibility */
   transform: scale(1.05);
   animation: slowZoom 20s ease-in-out infinite alternate;
 }

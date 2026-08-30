@@ -12,7 +12,7 @@ export function Hero() {
       {/* Background Image & Overlay */}
       <div className={styles.background}>
         <img 
-          src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1505664177275-b1664cb87c26?q=80&w=2000&auto=format&fit=crop" 
           alt="Law Library" 
           className={styles.bgImage}
         />
