@@ -15,6 +15,28 @@
   padding: 1rem 0;
 }
 
+/* ── Inverted State (Transparent over dark backgrounds) ── */
+.headerInverted .logoTitle,
+.headerInverted .logoAmpersand,
+.headerInverted .logoSubtitle,
+.headerInverted .navLink,
+.headerInverted .mobileToggle {
+  color: var(--color-surface) !important;
+}
+
+.headerInverted .navLink::after {
+  background-color: var(--color-surface) !important;
+}
+
+.headerInverted .ctaButton {
+  background-color: var(--color-surface) !important;
+  color: var(--color-primary-dark) !important;
+}
+
+.headerInverted .ctaButton:hover {
+  background-color: var(--color-surface-alt) !important;
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;

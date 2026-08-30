@@ -23,6 +23,8 @@ export function Header() {
   let headerClass = styles.header;
   if (isScrolled || mobileMenuOpen) {
     headerClass += ` ${styles.headerScrolled}`;
+  } else {
+    headerClass += ` ${styles.headerInverted}`;
   }
 
   return (
