@@ -2,6 +2,9 @@ import { generatePageMetadata } from "@/lib/seo";
 import { Hero } from "@/components/home/Hero/Hero";
 import { PracticeAreasPreview } from "@/components/home/PracticeAreasPreview/PracticeAreasPreview";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs/WhyChooseUs";
+import { CaseResultsPreview } from "@/components/home/CaseResultsPreview/CaseResultsPreview";
+import { TestimonialsPreview } from "@/components/home/TestimonialsPreview/TestimonialsPreview";
+import { InsightsPreview } from "@/components/home/InsightsPreview/InsightsPreview";
 
 export const metadata = generatePageMetadata({
   title: "Jaju & Jaju Associates | Advocates & Legal Consultants Pune",
@@ -15,13 +18,9 @@ export default function Home() {
       <Hero />
       <PracticeAreasPreview />
       <WhyChooseUs />
-      
-      {/* 
-        Phase 6 will add:
-        <CaseResultsPreview />
-        <TestimonialsPreview />
-        <InsightsPreview />
-      */}
+      <CaseResultsPreview />
+      <TestimonialsPreview />
+      <InsightsPreview />
     </>
   );
 }
