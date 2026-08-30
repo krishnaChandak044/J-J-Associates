@@ -8,11 +8,16 @@ import styles from "./InsightsPreview.module.css";
 import type { Insight } from "@/sanity/types";
 
 export async function InsightsPreview() {
-  const insights = await client.fetch<Insight[]>(INSIGHTS_QUERY, {}, {
-    next: { revalidate: 3600, tags: ["insight"] }
-  });
+  let insights: Insight[] = [];
+  try {
+    insights = await client.fetch<Insight[]>(INSIGHTS_QUERY, {}, {
+      next: { revalidate: 3600, tags: ["insight"] }
+    });
+  } catch (error) {
+    console.warn("Sanity fetch failed. Falling back to mock data.");
+  }
 
-  // Fallback data if CMS is empty
+  // Fallback data if CMS is empty or unconfigured
   const displayInsights = insights.length > 0 ? insights.slice(0, 3) : [
     {
       _id: "1",

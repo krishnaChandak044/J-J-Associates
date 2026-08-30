@@ -5,11 +5,16 @@ import styles from "./TestimonialsPreview.module.css";
 import type { Testimonial } from "@/sanity/types";
 
 export async function TestimonialsPreview() {
-  const testimonials = await client.fetch<Testimonial[]>(TESTIMONIALS_QUERY, {}, {
-    next: { revalidate: 3600, tags: ["testimonial"] }
-  });
+  let testimonials: Testimonial[] = [];
+  try {
+    testimonials = await client.fetch<Testimonial[]>(TESTIMONIALS_QUERY, {}, {
+      next: { revalidate: 3600, tags: ["testimonial"] }
+    });
+  } catch (error) {
+    console.warn("Sanity fetch failed. Falling back to mock data.");
+  }
 
-  // Fallback data if CMS is empty
+  // Fallback data if CMS is empty or unconfigured
   const displayTestimonials = testimonials.length > 0 ? testimonials.slice(0, 6) : [
     {
       _id: "1",

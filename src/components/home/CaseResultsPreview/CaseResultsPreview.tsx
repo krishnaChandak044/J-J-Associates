@@ -6,11 +6,16 @@ import styles from "./CaseResultsPreview.module.css";
 import type { CaseResult } from "@/sanity/types";
 
 export async function CaseResultsPreview() {
-  const results = await client.fetch<CaseResult[]>(CASE_RESULTS_QUERY, {}, {
-    next: { revalidate: 3600, tags: ["caseResult"] }
-  });
+  let results: CaseResult[] = [];
+  try {
+    results = await client.fetch<CaseResult[]>(CASE_RESULTS_QUERY, {}, {
+      next: { revalidate: 3600, tags: ["caseResult"] }
+    });
+  } catch (error) {
+    console.warn("Sanity fetch failed. Falling back to mock data.");
+  }
 
-  // Fallback data if CMS is empty
+  // Fallback data if CMS is empty or unconfigured
   const displayResults = results.length > 0 ? results.slice(0, 3) : [
     {
       _id: "1",
