@@ -6,49 +6,77 @@
 :root {
   /* ── Colors: "Professional Integrity" Palette ── */
   /* Primary: Trust, Security, Reliability */
-  --color-primary: #3D405B; /* Deep Slate (Modern, cool navy) */
-  --color-primary-dark: #2B2D42; /* Darker Slate */
-  --color-primary-light: #81B29A; /* Pastel Sage Green */
+  --color-primary: #000000;
+  /* Pure Black */
+  --color-primary-dark: #000000;
+  /* Pure Black */
+  --color-primary-light: #E5E5E5;
+  /* Light Gray */
 
   /* Secondary: Neutral, Stable, Balanced */
-  --color-secondary: #F2CC8F; /* Pastel Yellow/Peach */
-  
-  /* Accent: Passion, Action, Highlights */
-  --color-accent: #E07A5F; /* Soft Terracotta / Coral */
-  --color-accent-hover: #D26447; /* Darker Terracotta */
+  --color-secondary: #666666;
+  /* Medium Gray */
+
+  /* Accent: Passion, Action, Highlights (Use Sparingly) */
+  --color-accent: #000000;
+  /* Pure Black */
+  --color-accent-hover: #333333;
+  /* Dark Gray for active states */
 
   /* Backgrounds: Clean, Readable */
-  --color-bg: #F4F1DE; /* Pastel Cream / Sand */
-  --color-surface: #FFFFFF; /* Pure White */
-  --color-surface-alt: #EBE7D3; /* Slightly darker sand for sections */
+  --color-bg: #FFFFFF;
+  /* Pure White */
+  --color-surface: #FFFFFF;
+  /* Pure White */
+  --color-surface-alt: #F5F5F5;
+  /* Very Light Gray for section rhythm */
 
   /* Typography Colors */
-  --color-text-heading: #2B2D42; /* Deep Slate */
-  --color-text-body: #4A4E69; /* Soft Slate */
-  --color-text-muted: #9A8C98; /* Dusty Mauve/Gray */
-  --color-text-inverse: #ffffff; /* White text on dark backgrounds */
+  --color-text-heading: #000000;
+  /* Pure Black for high contrast headings */
+  --color-text-body: #111111;
+  /* Almost Black for body legibility */
+  --color-text-muted: #737373;
+  /* Neutral Gray for meta, labels */
+  --color-text-inverse: #ffffff;
+  /* White text on dark backgrounds */
 
   /* Structural Colors */
-  --color-border: #d1d5db; /* Soft gray borders */
-  --color-border-light: #e5e7eb; /* Very soft borders */
+  --color-border: #d1d5db;
+  /* Soft gray borders */
+  --color-border-light: #e5e7eb;
+  /* Very soft borders */
 
   /* ── Typography (Variables injected via next/font in layout.tsx) ── */
-  --font-display: var(--font-playfair), Georgia, serif; /* H1, Hero */
-  --font-heading: var(--font-cormorant), Georgia, serif; /* H2, H3 */
-  --font-body: var(--font-lora), Georgia, serif; /* Paragraphs */
-  --font-ui: var(--font-dm-sans), system-ui, sans-serif; /* Nav, Buttons, Labels */
+  --font-display: var(--font-playfair), Georgia, serif;
+  /* H1, Hero */
+  --font-heading: var(--font-cormorant), Georgia, serif;
+  /* H2, H3 */
+  --font-body: var(--font-lora), Georgia, serif;
+  /* Paragraphs */
+  --font-ui: var(--font-dm-sans), system-ui, sans-serif;
+  /* Nav, Buttons, Labels */
 
   /* ── Fluid Type Scale (clamp for perfect responsive typography) ── */
-  --text-hero: clamp(3rem, 7vw, 5.5rem); /* 48px to 88px */
-  --text-h1: clamp(2.5rem, 5vw, 4rem); /* 40px to 64px */
-  --text-h2: clamp(2rem, 4vw, 3.25rem); /* 32px to 52px */
-  --text-h3: clamp(1.25rem, 2.5vw, 1.625rem); /* 20px to 26px */
-  --text-h4: clamp(1.125rem, 1.5vw, 1.25rem); /* 18px to 20px */
-  
-  --text-body-lg: 1.125rem; /* 18px */
-  --text-body: 1.0625rem; /* 17px */
-  --text-small: 0.875rem; /* 14px */
-  --text-label: 0.75rem; /* 12px */
+  --text-hero: clamp(3rem, 7vw, 5.5rem);
+  /* 48px to 88px */
+  --text-h1: clamp(2.5rem, 5vw, 4rem);
+  /* 40px to 64px */
+  --text-h2: clamp(2rem, 4vw, 3.25rem);
+  /* 32px to 52px */
+  --text-h3: clamp(1.25rem, 2.5vw, 1.625rem);
+  /* 20px to 26px */
+  --text-h4: clamp(1.125rem, 1.5vw, 1.25rem);
+  /* 18px to 20px */
+
+  --text-body-lg: 1.125rem;
+  /* 18px */
+  --text-body: 1.0625rem;
+  /* 17px */
+  --text-small: 0.875rem;
+  /* 14px */
+  --text-label: 0.75rem;
+  /* 12px */
 
   /* ── Line Heights ── */
   --lh-tight: 1.1;
@@ -56,18 +84,24 @@
   --lh-body: 1.8;
 
   /* ── Fluid Spacing ── */
-  --space-section: clamp(5rem, 10vw, 8.75rem); /* 80px to 140px */
+  --space-section: clamp(5rem, 10vw, 8.75rem);
+  /* 80px to 140px */
   --space-xl: clamp(4rem, 8vw, 6rem);
-  --space-lg: clamp(3rem, 6vw, 5rem); /* 48px to 80px */
-  --space-md: clamp(1.5rem, 3vw, 2.5rem); /* 24px to 40px */
-  --space-sm: 1rem; /* 16px */
-  --space-xs: 0.5rem; /* 8px */
+  --space-lg: clamp(3rem, 6vw, 5rem);
+  /* 48px to 80px */
+  --space-md: clamp(1.5rem, 3vw, 2.5rem);
+  /* 24px to 40px */
+  --space-sm: 1rem;
+  /* 16px */
+  --space-xs: 0.5rem;
+  /* 8px */
 
   /* ── Layout & Grid ── */
   --max-width: 1280px;
   --max-width-narrow: 800px;
-  --gutter: clamp(1rem, 4vw, 2rem); /* 16px to 32px */
-  
+  --gutter: clamp(1rem, 4vw, 2rem);
+  /* 16px to 32px */
+
   /* ── Border Radii ── */
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -75,10 +109,10 @@
   --radius-pill: 9999px;
 
   /* ── Elevation / Shadows ── */
-  --shadow-sm: 0 1px 3px rgba(43, 45, 66, 0.05);
-  --shadow-card: 0 4px 16px rgba(43, 45, 66, 0.06);
-  --shadow-hover: 0 12px 32px rgba(43, 45, 66, 0.12);
-  --shadow-nav: 0 4px 24px rgba(43, 45, 66, 0.08);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-nav: 0 4px 24px rgba(0, 0, 0, 0.08);
 
   /* ── Transitions ── */
   --t-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
