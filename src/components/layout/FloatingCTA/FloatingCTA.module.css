@@ -1,0 +1,31 @@
+.floatingCTA {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366; /* WhatsApp Green */
+  color: white;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  transition: transform var(--t-fast);
+  animation: pulse 8s infinite;
+}
+
+.floatingCTA:hover {
+  transform: scale(1.1);
+  animation: none;
+}
+
+@media (max-width: 768px) {
+  .floatingCTA {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 54px;
+    height: 54px;
+  }
+}

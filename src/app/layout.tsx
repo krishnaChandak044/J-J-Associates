@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, DM_Sans, Lora } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/layout/Header/Header";
+import { Footer } from "@/components/layout/Footer/Footer";
+import { FloatingCTA } from "@/components/layout/FloatingCTA/FloatingCTA";
 
 // ─── Font Loading ──────────────────────────────────────────────────────────
 
@@ -52,9 +55,10 @@ export default function RootLayout({
       className={`${playfair.variable} ${cormorant.variable} ${dmSans.variable} ${lora.variable}`}
     >
       <body>
-        {/* <Header /> will be added in Phase 4 */}
+        <Header />
         <main>{children}</main>
-        {/* <Footer /> and <FloatingCTA /> will be added in Phase 4 */}
+        <Footer />
+        <FloatingCTA />
       </body>
     </html>
   );
