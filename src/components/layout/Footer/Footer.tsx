@@ -1,60 +1,50 @@
 import Link from "next/link";
+import Image from "next/image";
+import logoImg from "../../../../public/logo/j&j_logo.png";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import styles from "./Footer.module.css";
 import { siteConfig } from "@/data/siteConfig";
 import { practiceAreas } from "@/data/practiceAreas";
-import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const firmLinks = [
+    { label: "About the Firm", href: "/about" },
+    { label: "Our Advocates", href: "/team" },
+    { label: "Our Approach", href: "/our-approach" },
+    { label: "On the Record", href: "/case-results" },
+    { label: "Insights", href: "/insights" },
+    { label: "Contact", href: "/contact" },
+  ];
+
   return (
     <footer className={styles.footer}>
-      <WaveDivider position="top" fillColor="var(--color-surface)" flip={false} />
       <div className={styles.container}>
         <div className={styles.grid}>
           {/* Column 1: Brand */}
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              <div className={styles.logoTitle}>
-                Jaju <span className={styles.logoAmpersand}>&</span> Jaju
-              </div>
-              <div className={styles.logoSubtitle}>Associates · Advocates</div>
+              <Image 
+                src={logoImg} 
+                alt="Jaju & Jaju Associates Logo" 
+                width={200}
+                height={60}
+                className={styles.logoImage}
+              />
             </Link>
-            <p className={styles.description}>
-              {siteConfig.tagline} Providing strategic, principled, and relentless legal representation across Pune's courts for over two decades.
+            <p className={styles.philosophy}>
+              &ldquo;{siteConfig.philosophy}&rdquo;
             </p>
-            <div className={styles.socials}>
-              {siteConfig.socialLinks.linkedin && (
-                <a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                </a>
-              )}
-              {/* Add more social icons here if needed */}
+            <div className={styles.barCouncil}>
+              Enrolled: {siteConfig.barCouncil}
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className={styles.colTitle}>The Firm</h4>
-            <div className={styles.linkList}>
-              <Link href="/about" className={styles.link}>About Us</Link>
-              <Link href="/team" className={styles.link}>Our Lawyers</Link>
-              <Link href="/case-results" className={styles.link}>Track Record</Link>
-              <Link href="/insights" className={styles.link}>Insights & Updates</Link>
-              <Link href="/careers" className={styles.link}>Careers</Link>
-              <Link href="/contact" className={styles.link}>Contact</Link>
-            </div>
-          </div>
-
-          {/* Column 3: Practice Areas */}
+          {/* Column 2: Practice Areas */}
           <div>
             <h4 className={styles.colTitle}>Practice Areas</h4>
-            <div className={styles.practiceGrid}>
+            <div className={styles.linkList}>
               {practiceAreas.map((area) => (
                 <Link key={area.slug} href={`/practice-areas/${area.slug}`} className={styles.link}>
                   {area.name}
@@ -63,41 +53,80 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Column 3: The Firm */}
+          <div>
+            <h4 className={styles.colTitle}>The Firm</h4>
+            <div className={styles.linkList}>
+              {firmLinks.map((link) => (
+                <Link key={link.href} href={link.href} className={styles.link}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Courts */}
+            {siteConfig.shortCourts && (
+              <div className={styles.courtsBlock}>
+                <h5 className={styles.courtsTitle}>Courts We Appear In</h5>
+                <ul className={styles.courtsList}>
+                  {siteConfig.shortCourts.map((court) => (
+                    <li key={court} className={styles.courtItem}>{court}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
           {/* Column 4: Contact Info */}
           <div>
             <h4 className={styles.colTitle}>Contact Us</h4>
-            
-            <div className={styles.contactItem}>
-              <MapPin size={20} className={styles.contactIcon} />
-              <div className={styles.contactText}>
-                {siteConfig.address.full}
+
+            {siteConfig.addresses?.map((address, index) => (
+              <div key={index} className={styles.contactItem} style={index > 0 ? { marginTop: '1rem' } : {}}>
+                <MapPin size={18} className={styles.contactIcon} />
+                <div className={styles.contactText}>
+                  {address.line1}<br />
+                  {address.line2}<br />
+                  {address.city}, {address.state} - {address.pin}
+                </div>
               </div>
-            </div>
-            
+            ))}
+
             <div className={styles.contactItem}>
-              <Phone size={20} className={styles.contactIcon} />
+              <Phone size={18} className={styles.contactIcon} />
               <div className={styles.contactText}>
-                <a href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, '')}`} className={styles.contactLink}>
+                <a href={`tel:${siteConfig.phoneRaw}`} className={styles.contactLink}>
                   {siteConfig.phone}
                 </a>
               </div>
             </div>
-            
+
             <div className={styles.contactItem}>
-              <Mail size={20} className={styles.contactIcon} />
+              <Mail size={18} className={styles.contactIcon} />
               <div className={styles.contactText}>
                 <a href={`mailto:${siteConfig.email}`} className={styles.contactLink}>
                   {siteConfig.email}
                 </a>
               </div>
             </div>
-            
+
             <div className={styles.contactItem}>
-              <Clock size={20} className={styles.contactIcon} />
+              <Clock size={18} className={styles.contactIcon} />
               <div className={styles.contactText}>
-                {siteConfig.officeHours}
+                {siteConfig.hours?.days}<br />
+                {siteConfig.hours?.time}
               </div>
             </div>
+
+            {/* WhatsApp CTA */}
+            <a
+              href={siteConfig.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.whatsappBtn}
+            >
+              WhatsApp Us →
+            </a>
           </div>
         </div>
 
@@ -108,14 +137,13 @@ export function Footer() {
           </div>
           <div className={styles.legalLinks}>
             <Link href="/disclaimer" className={styles.legalLink}>Disclaimer</Link>
-            <Link href="/privacy" className={styles.legalLink}>Privacy Policy</Link>
-            <Link href="/terms" className={styles.legalLink}>Terms of Use</Link>
           </div>
         </div>
 
         {/* BCI Disclaimer */}
         <div className={styles.disclaimer}>
-          This website is not an advertisement or solicitation. The Bar Council of India Rules prohibit law firms from soliciting work or advertising. The information herein is for general informational purposes only, is provided upon the user's explicit request, and does not constitute legal advice or create a lawyer-client relationship.
+          The information on this website does not constitute legal advice and does not create an attorney-client relationship.
+          Please consult an advocate before acting on any information. Enrolled with the {siteConfig.barCouncil}. Regulated by the Bar Council of India.
         </div>
       </div>
     </footer>

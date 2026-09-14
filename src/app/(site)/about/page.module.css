@@ -1,0 +1,108 @@
+.hero {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-heading);
+  padding: calc(var(--header-height, 80px) + 2rem) var(--gutter) 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBackground {
+  display: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 4rem);
+  line-height: var(--lh-tight);
+  margin-bottom: 1.5rem;
+  color: var(--color-text-heading);
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-h4);
+  color: var(--color-text-body);
+  max-width: 800px;
+}
+
+.historySection {
+  padding: var(--space-xl) var(--gutter);
+  background-color: var(--color-surface);
+}
+
+.historyContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  color: var(--color-text-body);
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+.historyTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  color: var(--color-text-heading);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dropcap {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 0.8;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+  color: var(--color-accent);
+}
+
+.historyParagraph {
+  margin-bottom: 1.5rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}

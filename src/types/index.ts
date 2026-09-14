@@ -51,6 +51,7 @@ export interface PracticeArea {
   name: string;
   tagline: string;
   icon: string;
+  image?: string;
   heroTrustPills: string[];
   overview: PracticeAreaOverview;
   process: ProcessStep[];
@@ -64,9 +65,12 @@ export interface PracticeArea {
 // ─── Common Types ──────────────────────────────────────────────────────────
 
 export interface Stat {
-  value: number;
-  suffix: string;
+  value?: number;
+  suffix?: string;
   label: string;
+  // new shape from j&j
+  raw?: number;
+  numericValue?: number;
 }
 
 export interface NavLink {
@@ -76,19 +80,41 @@ export interface NavLink {
 
 export interface SiteConfig {
   firmName: string;
+  name?: string;
   tagline: string;
-  address: {
-    street: string;
+  subTagline?: string;
+  slogan?: string;
+  philosophy?: string;
+  addresses: {
+    street?: string;
+    line1?: string;
+    line2?: string;
     city: string;
     state: string;
-    pin: string;
+    pin?: string;
+    postalCode?: string;
     full: string;
-  };
+    countryCode?: string;
+    mapUrl?: string;
+    mapEmbed?: string;
+    name?: string;
+  }[];
   phone: string;
+  phoneRaw?: string;
   email: string;
+  emailAlt?: string;
   whatsapp: string;
   officeHours: string;
+  hours?: {
+    days: string;
+    time: string;
+    note: string;
+  };
   established: string;
+  foundingYear?: string;
+  barCouncil?: string;
+  courts?: readonly string[];
+  shortCourts?: readonly string[];
   stats: Stat[];
   navLinks: NavLink[];
   socialLinks: {
@@ -96,4 +122,54 @@ export interface SiteConfig {
     whatsapp?: string;
     googleMaps?: string;
   };
+  social?: {
+    google: string;
+    facebook: string;
+    linkedin: string;
+    instagram: string;
+    justdial: string;
+  };
+  advocates?: readonly {
+    name: string;
+    slug: string;
+    image?: string;
+    role: string;
+    enrolledYear: string;
+    enrollmentNo: string;
+    barCouncil: string;
+    lawSchool: string;
+    specialisations: readonly string[];
+    languages: readonly string[];
+    quote: string;
+    bio: string;
+    courts?: string[];
+  }[];
+  outcomes?: readonly {
+    court: string;
+    situation: string;
+    action: string;
+    result: string;
+    category: string;
+  }[];
+  approach?: {
+    principles: readonly {
+      number: string;
+      title: string;
+      description: string;
+    }[];
+    whatWeAvoid: readonly {
+      title: string;
+      description: string;
+    }[];
+  };
+  keywords?: readonly string[];
+  insightCategories?: readonly string[];
+  areasServed?: {
+    central: readonly string[];
+    east: readonly string[];
+    west: readonly string[];
+    north: readonly string[];
+    south: readonly string[];
+  };
+  practiceAreaSlugs?: readonly string[];
 }

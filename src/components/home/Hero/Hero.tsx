@@ -1,58 +1,80 @@
 "use client";
 
 import Link from "next/link";
-import { Scale, ArrowRight, ArrowDown } from "lucide-react";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { Star, CalendarCheck, Scale, ShieldCheck, Clock } from "lucide-react";
 import styles from "./Hero.module.css";
-import { siteConfig } from "@/data/siteConfig";
-import { WaveDivider } from "@/components/ui/WaveDivider/WaveDivider";
 
 export function Hero() {
   return (
     <section className={styles.hero}>
-      {/* Background Image & Overlay */}
-      <div className={styles.background}>
-        <img 
-          src="https://images.unsplash.com/photo-1505664177275-b1664cb87c26?q=80&w=2000&auto=format&fit=crop" 
-          alt="Law Library" 
-          className={styles.bgImage}
-        />
-        <div className={styles.overlay} />
-      </div>
-
-      <div className={styles.content}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <div className={styles.badge}>
-            <Scale size={16} className={styles.badgeIcon} />
-            Over 20 Years of Legal Excellence
+      <div className="hero-bg-circle" />
+      <div className={styles.container}>
+        {/* Left Content Area */}
+        <div className={styles.textContent}>
+          <div className={styles.pill}>
+            <span className={styles.pillStars}>
+              <Star size={12} fill="currentColor" />
+            </span>
+            <span className={styles.pillText}>
+              <strong>5.0</strong> on Google · <strong>150+</strong> reviews
+            </span>
           </div>
-          
+
           <h1 className={styles.title}>
-            Justice, Handled With <span className={styles.highlight}>Precision.</span>
+            Strategic legal counsel, <span style={{ color: '#B89C72', fontStyle: 'italic', whiteSpace: 'nowrap' }}>uncompromising results.</span>
           </h1>
-          
-          <p className={styles.description}>
-            Pune's premier law firm dedicated to protecting your rights. 
-            We provide strategic, principled, and relentless representation in 
-            Divorce, Civil Litigation, Property, and Corporate Law.
+
+          <p className={styles.subtitle}>
+            Adv. Gaurav Jaju, Adv. Ankita Jaju and a dedicated team for Family, Corporate, Civil and Criminal matters — before every major court in Pune.
           </p>
-          
-          <div className={styles.ctas}>
-            <Link href="/contact" className={styles.primaryCta}>
-              Schedule a Consultation <ArrowRight size={18} />
+
+          <div className={styles.actions}>
+            <Link href="/contact" className="btn btn-primary">
+              <CalendarCheck size={18} />
+              Book a Consultation
             </Link>
-            <Link href="#practice-areas" className={styles.secondaryCta}>
-              Explore Practice Areas <ArrowDown size={18} />
+            <Link href="#practice" className="btn btn-soft">
+              <Scale size={18} />
+              Explore Practice Areas
             </Link>
           </div>
-        </motion.div>
-      </div>
 
-      <WaveDivider position="bottom" fillColor="var(--color-bg)" />
+          <div className={styles.quickStats}>
+            <div className={styles.quickStat}>
+              <ShieldCheck size={20} className={styles.quickIcon} />
+              <span><strong>Confidential</strong> first assessment</span>
+            </div>
+            <div className={styles.quickStat}>
+              <Clock size={20} className={styles.quickIcon} />
+              <span>Replies within <strong>2 hours</strong></span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Image Area */}
+        <div className={styles.imageContent}>
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/founder/IMG_2913.PNG"
+              alt="Adv. Gaurav Jaju and Adv. Ankita Jaju"
+              fill
+              priority
+              className={styles.heroImage}
+            />
+          </div>
+
+          <div className={styles.trustBadgeBottom}>
+            <div className={styles.trustBadgeIcon}>
+              <Scale size={20} />
+            </div>
+            <div className={styles.trustBadgeText}>
+              <strong>15+ Years</strong>
+              <span>of practice in Pune</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,20 +1,22 @@
-.section {
-  padding: var(--space-xl) var(--gutter);
-  background-color: var(--color-bg);
-  position: relative;
-  overflow: hidden;
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.section {
+  padding: var(--space-xl) 0;
+  background-color: var(--color-bg);
 }
 
 .header {
   text-align: center;
-  margin-bottom: var(--space-xl);
+  margin-bottom: 3rem;
+  padding: 0 var(--gutter);
 }
 
 .subtitle {
@@ -24,7 +26,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-accent);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   display: block;
 }
 
@@ -34,72 +36,74 @@
   color: var(--color-primary-dark);
 }
 
-/* ── Grid Layout ── */
-.masonry {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+/* ── Each row wrapper ── */
+.track {
+  /* clip-path avoids the scroll container issue that overflow:hidden causes */
+  overflow: clip;
+  margin-bottom: 1.25rem;
 }
 
-@media (min-width: 640px) {
-  .masonry {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
+.track:hover .marqueeRow {
+  animation-play-state: paused;
 }
 
-@media (min-width: 1024px) {
-  .masonry {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-  }
+/* ── The scrolling row itself ── */
+.marqueeRow {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  /* This MUST be on the row, not the track */
+  will-change: transform;
 }
 
+.scrollLeft {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.scrollRight {
+  animation: scrollRight 32s linear infinite;
+}
+
+/* ── Card ── */
 .card {
+  flex: 0 0 300px;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--t-base), box-shadow var(--t-base);
   display: flex;
   flex-direction: column;
+  user-select: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
-
-
 
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
 }
 
+@media (min-width: 768px) {
+  .card {
+    flex: 0 0 360px;
+  }
+}
+
 .stars {
   display: flex;
-  gap: 0.25rem;
-  color: #f59e0b; /* Golden yellow */
-  margin-bottom: 1rem;
+  gap: 0.2rem;
+  color: #f59e0b;
+  margin-bottom: 0.875rem;
 }
 
 .quote {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: var(--color-text-body);
   line-height: 1.7;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   font-style: italic;
-  position: relative;
-  flex-grow: 1; /* Pushes the footer to the bottom so cards match heights perfectly */
-}
-
-.quote::before {
-  content: '"';
-  font-family: var(--font-display);
-  font-size: 3rem;
-  color: var(--color-primary-light);
-  position: absolute;
-  top: -1.5rem;
-  left: -1rem;
-  z-index: -1;
-  opacity: 0.5;
+  flex-grow: 1;
 }
 
 .footer {
@@ -107,12 +111,13 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--color-border-light);
-  padding-top: 1rem;
+  padding-top: 0.75rem;
+  gap: 0.5rem;
 }
 
 .clientInfo {
   font-family: var(--font-ui);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--color-primary-dark);
 }
@@ -121,4 +126,12 @@
   font-family: var(--font-ui);
   font-size: 0.75rem;
   color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollLeft,
+  .scrollRight {
+    animation: none;
+  }
 }

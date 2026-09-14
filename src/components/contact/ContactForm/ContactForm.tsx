@@ -47,18 +47,18 @@ export function ContactForm() {
       <div className={styles.fieldGroup}>
         <div className={styles.field}>
           <label htmlFor="firstName" className={styles.label}>First Name *</label>
-          <input type="text" id="firstName" name="firstName" required className={styles.input} placeholder="John" />
+          <input type="text" id="firstName" name="firstName" required className={styles.input} placeholder="Rahul" />
         </div>
         <div className={styles.field}>
           <label htmlFor="lastName" className={styles.label}>Last Name *</label>
-          <input type="text" id="lastName" name="lastName" required className={styles.input} placeholder="Doe" />
+          <input type="text" id="lastName" name="lastName" required className={styles.input} placeholder="Sharma" />
         </div>
       </div>
 
       <div className={styles.fieldGroup}>
         <div className={styles.field}>
           <label htmlFor="email" className={styles.label}>Email Address *</label>
-          <input type="email" id="email" name="email" required className={styles.input} placeholder="john@example.com" />
+          <input type="email" id="email" name="email" required className={styles.input} placeholder="rahul@example.com" />
         </div>
         <div className={styles.field}>
           <label htmlFor="phone" className={styles.label}>Phone Number *</label>

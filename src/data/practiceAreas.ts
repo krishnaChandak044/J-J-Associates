@@ -6,6 +6,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Divorce",
     tagline: "Moving forward with clarity and dignity.",
     icon: "Scale",
+    image: "/practice-areas/divorse.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "25+ Years in Pune Family Courts",
@@ -83,6 +84,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Family Law",
     tagline: "Protecting what matters most to you.",
     icon: "Users",
+    image: "/practice-areas/family-law.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "Family Court, Pune — 25+ Years",
@@ -144,6 +146,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Criminal Defense",
     tagline: "Your rights and freedom, defended fiercely.",
     icon: "Shield",
+    image: "/practice-areas/criminal-law.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "Pune Sessions Court & Bombay High Court",
@@ -207,6 +210,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Civil Litigation",
     tagline: "We fight for your rightful claims.",
     icon: "Gavel",
+    image: "/practice-areas/civil-ligitation.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "Pune City Civil Court & Bombay High Court",
@@ -266,6 +270,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Property",
     tagline: "Securing your investments and heritage.",
     icon: "Home",
+    image: "/practice-areas/property.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "Pune Property Market — 25+ Years",
@@ -326,6 +331,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Corporate",
     tagline: "Legal foundation for your business growth.",
     icon: "Briefcase",
+    image: "/practice-areas/corporate.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "MCA · NCLT · RBI Compliance",
@@ -383,6 +389,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Consumer Matters",
     tagline: "Holding businesses accountable to you.",
     icon: "ShoppingBag",
+    image: "/practice-areas/consumer.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "District Forum Pune · State Commission",
@@ -442,6 +449,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Cheque Bounce",
     tagline: "Swift action for your financial recovery.",
     icon: "IndianRupee",
+    image: "/practice-areas/cheque_bounse.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "Section 138 NI Act — Pune Courts",
@@ -502,6 +510,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Documentation",
     tagline: "Iron-clad agreements for peace of mind.",
     icon: "FileText",
+    image: "/practice-areas/documentation.png",
     heroTrustPills: [
       "Adv. Jaju — Leads this practice",
       "Drafting · Vetting · Registration",
@@ -564,6 +573,7 @@ export const practiceAreas: PracticeArea[] = [
     name: "Consultations",
     tagline: "Every great outcome begins with a conversation.",
     icon: "Phone",
+    image: "/practice-areas/consulation.png",
     heroTrustPills: [
       "Adv. Jaju — Available for Consultation",
       "Confidential · No Obligation",

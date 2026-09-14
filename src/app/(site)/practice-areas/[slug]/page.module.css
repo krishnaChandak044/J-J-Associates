@@ -1,0 +1,534 @@
+.hero {
+  position: relative;
+  background-color: var(--color-primary-dark);
+  padding: calc(var(--header-height, 80px) + 2rem) 0 4rem;
+  overflow: hidden;
+}
+
+.heroImageBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.bgOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 25, 36, 0.75) 0%,
+    rgba(14, 25, 36, 0.9) 100%
+  );
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.heroContent {
+  max-width: 800px;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  color: #fff;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  line-height: var(--lh-tight);
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-h3);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+}
+
+.trustPills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .trustPills {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: fit-content;
+}
+
+.pillIcon {
+  color: var(--color-accent);
+}
+
+/* ── Main Content ── */
+.pageContent {
+  padding: 3rem var(--gutter) 5rem;
+  background-color: var(--color-bg);
+}
+
+.mainColumn {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem; /* Reduced from 6rem */
+}
+
+/* ── Common Section Styles ── */
+.contentSection {
+  scroll-margin-top: calc(var(--header-height, 80px) + 60px);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #E2E8F0; /* soft gray */
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  color: var(--color-primary-dark);
+  letter-spacing: -0.02em;
+}
+
+/* ── Overview Section ── */
+.tldrBox {
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  position: relative;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--color-accent);
+}
+
+.tldrBadge {
+  position: absolute;
+  top: -0.75rem;
+  left: 2rem;
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+}
+
+.tldrBox p {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-primary-dark);
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.paragraphs {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-body);
+  line-height: var(--lh-body);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.subServicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .subServicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.subServiceCard {
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: transform var(--t-fast);
+}
+
+.subServiceHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.subServiceIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: var(--color-accent);
+}
+
+.subServiceName {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+}
+
+.subServiceDesc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Process Section ── */
+.sectionIntro {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-body);
+  margin-bottom: 2.5rem;
+}
+
+.processWrapper {
+  /* Let the existing ProcessFlow component handle it, or we could override styles here if needed */
+}
+
+/* ── Documents Section ── */
+.documentsCard {
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.docCardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 1rem;
+}
+
+.documentsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .documentsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.docCategoryName {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.docList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.docItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-body);
+  line-height: 1.4;
+}
+
+.docIcon {
+  color: var(--color-primary-dark);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* ── Timelines Section ── */
+.timelinesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.timelineCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.timelineHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.timelinePhase {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.timelineDurationBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary-dark);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.timelineNote {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-body);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Mistakes Section ── */
+.mistakesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mistakeCard {
+  background-color: var(--color-surface);
+  border: 1px solid #FEE2E2; /* Soft red border */
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.mistakeIconWrap {
+  background-color: #FEF2F2;
+  color: #DC2626; /* Red */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mistakeTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.mistakeHarm, .mistakePrev {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.mistakePrev {
+  margin-bottom: 0;
+  color: var(--color-primary-dark);
+}
+
+/* ── Fees Section ── */
+.feesCard {
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+.feesDesc {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.feesNoteBox {
+  display: flex;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  align-items: flex-start;
+}
+
+.feesIcon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.feesNoteBox p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-primary-dark);
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── FAQs Section ── */
+.faqsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.faqQuestion {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+}
+
+.faqAnswer {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Floating CTA ── */
+.floatingCta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow-card);
+  z-index: 50;
+  text-decoration: none;
+  transition: transform var(--t-fast), background-color var(--t-fast);
+  border: 1px solid var(--color-border);
+}
+
+.floatingCta:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .floatingCta {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    font-size: 0.875rem;
+    padding: 0.875rem 1.25rem;
+    justify-content: center;
+  }
+  .pill {
+    font-size: 0.8125rem;
+    padding: 0.5rem 1rem;
+  }
+  .documentsCard, .feesCard {
+    padding: 1.5rem;
+  }
+}
