@@ -60,7 +60,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             <a href={`tel:${siteConfig.phoneRaw}`} className={styles.callBtn}>
               <span className={styles.callIcon}>📞</span> Call Now
             </a>
-            <a href={siteConfig.mapLink} target="_blank" rel="noopener noreferrer" className={styles.dirBtn}>
+            <a href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(loc.name + ', Pune')}&destination=${encodeURIComponent(siteConfig.addresses[0].full)}`} target="_blank" rel="noopener noreferrer" className={styles.dirBtn}>
               <Navigation size={18} /> Get Directions
             </a>
           </div>
