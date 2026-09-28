@@ -14,8 +14,11 @@ export function AdvocatesStrip() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>The Advocates</span>
-          <h2 className={styles.title}>Who You&apos;ll Be Working With</h2>
+          <span className={styles.secIndex}>04</span>
+          <div className={styles.headerContent}>
+            <span className={styles.label}>The Advocates</span>
+            <h2 className={styles.title}>Who You&apos;ll Be Working With</h2>
+          </div>
         </div>
 
         <div className={styles.grid}>
