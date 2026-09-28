@@ -60,15 +60,19 @@ export function Header() {
       >
         <div className={styles.inner}>
           {/* Logo */}
-          <Link href="/" className={styles.logo} aria-label="Jaju & Jaju Associates — Go to homepage">
+          <Link href="/" className={styles.logo} aria-label="Jaju & Jaju Associates, Go to homepage">
             <Image 
               src={logoImg} 
               alt="Jaju & Jaju Associates Logo" 
-              width={200}
-              height={60}
+              width={65}
+              height={65}
               className={styles.logoImage}
               priority
             />
+            <div className={styles.logoTextWrapper}>
+              <span className={styles.logoTitle}>J&J Associates</span>
+              <span className={styles.logoSubtitle}>Advocates • Pune</span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -133,9 +137,9 @@ export function Header() {
 
           {/* Right actions */}
           <div className={styles.actions}>
-            {/* Book CTA — desktop */}
+            {/* Book CTA, desktop */}
 
-            {/* Book CTA — desktop */}
+            {/* Book CTA, desktop */}
             <Link href="/contact" className={styles.cta}>
               Book Consultation
             </Link>

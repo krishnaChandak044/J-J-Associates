@@ -11,16 +11,19 @@ export function CaseResultsPreview() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.titleBlock}>
-            <span className={styles.subtitle}>On the Record</span>
-            <h2 className={styles.title}>How Matters Have Resolved</h2>
-            <p className={styles.description}>
-              Real outcomes across our practice areas. Not promises — a factual record of how we have handled matters in Pune&apos;s courts.
-            </p>
+          <span className={styles.secIndex}>03</span>
+          <div className={styles.headerContent}>
+            <div className={styles.titleBlock}>
+              <span className={styles.subtitle}>On the Record</span>
+              <h2 className={styles.title}>How Matters Have Resolved</h2>
+              <p className={styles.description}>
+                Real outcomes across our practice areas. Not promises, a factual record of how we have handled matters in Pune&apos;s courts.
+              </p>
+            </div>
+            <Link href="/case-results" className={styles.viewAll}>
+              View All Outcomes <ArrowRight size={16} />
+            </Link>
           </div>
-          <Link href="/case-results" className={styles.viewAll}>
-            View All Outcomes <ArrowRight size={16} />
-          </Link>
         </div>
 
         <div className={styles.grid}>

@@ -100,7 +100,7 @@
 .areaList {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--color-border-light);
+  gap: 1.5rem;
 }
 
 /* ── Each area row ── */
@@ -109,16 +109,22 @@
   grid-template-columns: 1fr auto;
   gap: 2rem;
   align-items: center;
-  padding: 3rem 1.5rem;
-  border-bottom: 1px solid var(--color-border-light);
+  padding: 3rem 2rem;
   text-decoration: none;
-  transition: background-color var(--t-base);
-  margin-inline: -1.5rem;
-  border-radius: var(--radius-md);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+  border-radius: var(--radius-lg);
 }
 
+.areaRow:nth-child(6n + 1) { background-color: var(--pastel-1); }
+.areaRow:nth-child(6n + 2) { background-color: var(--pastel-2); }
+.areaRow:nth-child(6n + 3) { background-color: var(--pastel-3); }
+.areaRow:nth-child(6n + 4) { background-color: var(--pastel-4); }
+.areaRow:nth-child(6n + 5) { background-color: var(--pastel-5); }
+.areaRow:nth-child(6n + 0) { background-color: var(--pastel-6); }
+
 .areaRow:hover {
-  background-color: var(--color-surface-alt);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
 }
 
 .areaRow:hover .areaTitle {

@@ -79,7 +79,7 @@ export default async function InsightPage({ params }: Props) {
           <div className={styles.ctaBlock}>
             <h2 className={styles.ctaTitle}>Have a question about this area of law?</h2>
             <p className={styles.ctaSub}>
-              Speak to one of our advocates — we respond to every enquiry within 24 hours.
+              Speak to one of our advocates, we respond to every enquiry within 24 hours.
             </p>
             <div className={styles.ctaButtons}>
               <Link href="/contact" className={styles.btnPrimary}>Book a Consultation</Link>

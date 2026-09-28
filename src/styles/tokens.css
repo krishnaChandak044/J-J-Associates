@@ -24,6 +24,16 @@
   
   --color-gold: #B89C72; /* Match gold to champagne */
 
+  /* ── Pastel Palette ── */
+  --pastel-1: #F0F4F8; /* Soft Blue */
+  --pastel-2: #F8F0F0; /* Soft Peach */
+  --pastel-3: #F0F8F4; /* Soft Mint */
+  --pastel-4: #F6F0F8; /* Soft Lavender */
+  --pastel-5: #FFF8E7; /* Soft Yellow/Tan */
+  --pastel-6: #F0F5F9; /* Soft Grey-Blue */
+  --pastel-7: #F9F0F4; /* Soft Rose */
+  --pastel-8: #E7F6F2; /* Soft Teal */
+
   /* ── Typography Colors ── */
   --color-text-heading: #2B211E; /* Espresso */
   --color-text-body: #4A3C38; /* Lighter Espresso */

@@ -28,7 +28,7 @@ const caseResult = {
       name: "matterType",
       title: "Matter Type (short description)",
       type: "string",
-      description: 'E.g. "Contested Divorce — Ancestral Property Dispute"',
+      description: 'E.g. "Contested Divorce, Ancestral Property Dispute"',
       validation: (Rule: { required: () => unknown }) => Rule.required(),
     },
     {

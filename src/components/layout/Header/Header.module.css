@@ -42,6 +42,7 @@
 .logo {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
   flex-shrink: 0;
   height: 100%;
@@ -50,9 +51,41 @@
 .logoImage {
   transition: filter 350ms var(--t-fast);
   display: block;
-  height: 64px;
+  height: 65px;
   width: auto;
   object-fit: contain;
+}
+
+.logoTextWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logoTitle {
+  font-family: var(--font-ui);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--color-text-heading);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.logoSubtitle {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.headerDark .logoTitle {
+  color: var(--color-surface);
+}
+
+.headerDark .logoSubtitle {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 

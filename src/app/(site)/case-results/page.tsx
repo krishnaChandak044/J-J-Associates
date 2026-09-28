@@ -4,8 +4,8 @@ import styles from "./page.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Case Results — On the Record | Jaju & Jaju Associates",
-  description: "A factual record of how matters have resolved at Jaju & Jaju Associates — real outcomes across family law, criminal defence, property, and civil matters.",
+  title: "Case Results, On the Record | Jaju & Jaju Associates",
+  description: "A factual record of how matters have resolved at Jaju & Jaju Associates, real outcomes across family law, criminal defence, property, and civil matters.",
 };
 
 // All unique categories
@@ -22,7 +22,7 @@ export default function CaseResultsPage() {
           <span className={styles.label}>On the Record</span>
           <h1 className={styles.heroTitle}>How Matters Have Resolved</h1>
           <p className={styles.heroSub}>
-            These are real outcomes — anonymised and described without identifying the client.
+            These are real outcomes, anonymised and described without identifying the client.
             They are not promises. Every matter turns on its own facts.
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function CaseResultsPage() {
         <div className={styles.container}>
           <p>
             <strong>Note:</strong> Case descriptions have been anonymised. Outcomes reflect
-            what the court ordered or what was achieved — they are not a guarantee of similar
+            what the court ordered or what was achieved, they are not a guarantee of similar
             results in your matter. The Bar Council of India prohibits law firms from advertising
             results as a solicitation of clients.
           </p>
@@ -74,7 +74,7 @@ export default function CaseResultsPage() {
       {/* CTA */}
       <section className={styles.ctaSection}>
         <div className={styles.container}>
-          <h2 className={styles.ctaTitle}>Your matter is different — and so is our approach to it</h2>
+          <h2 className={styles.ctaTitle}>Your matter is different, and so is our approach to it</h2>
           <p className={styles.ctaSub}>
             A first consultation gives you an honest assessment of what you&apos;re dealing with,
             and what realistically lies ahead.

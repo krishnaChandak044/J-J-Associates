@@ -6,11 +6,11 @@ import styles from "./WhyChooseUs.module.css";
 const steps = [
   {
     title: "Consult",
-    desc: "A confidential discussion — facts, documents, and an honest read of where you stand.",
+    desc: "A confidential discussion, facts, documents, and an honest read of where you stand.",
   },
   {
     title: "Plan",
-    desc: "Forum, filings, realistic timelines — and a fee structure agreed before work begins.",
+    desc: "Forum, filings, realistic timelines, and a fee structure agreed before work begins.",
   },
   {
     title: "Represent",
@@ -18,7 +18,7 @@ const steps = [
   },
   {
     title: "Resolve",
-    desc: "Judgment, settlement or decree — with paperwork completed so it's truly closed.",
+    desc: "Judgment, settlement or decree, with paperwork completed so it's truly closed.",
   },
 ];
 

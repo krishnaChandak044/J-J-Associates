@@ -15,7 +15,7 @@ export function InsightsPreview() {
             <span className={styles.subtitle}>Insights &amp; Updates</span>
             <h2 className={styles.title}>Legal Knowledge Hub</h2>
             <p className={styles.description}>
-              Plain-language articles on the areas of law we practise — written for clients, not lawyers.
+              Plain-language articles on the areas of law we practise, written for clients, not lawyers.
             </p>
           </div>
           <Link href="/insights" className={styles.viewAll}>

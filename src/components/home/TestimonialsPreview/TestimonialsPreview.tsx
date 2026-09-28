@@ -38,14 +38,14 @@ export function TestimonialsPreview() {
         <h2 className={styles.title}>What Our Clients Say</h2>
       </div>
 
-      {/* Row 1 — scrolls left */}
+      {/* Row 1, scrolls left */}
       <div className={styles.track}>
         <div className={`${styles.marqueeRow} ${styles.scrollLeft}`}>
           {ROW1.map((t, i) => <Card key={`r1-${i}`} {...t} />)}
         </div>
       </div>
 
-      {/* Row 2 — scrolls right (offset) */}
+      {/* Row 2, scrolls right (offset) */}
       <div className={styles.track}>
         <div className={`${styles.marqueeRow} ${styles.scrollRight}`}>
           {ROW2.map((t, i) => <Card key={`r2-${i}`} {...t} />)}

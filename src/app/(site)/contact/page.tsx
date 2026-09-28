@@ -57,7 +57,7 @@ const faqSchema = {
       name: 'Is the first consultation free?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The first consultation involves a nominal fee — which covers the time spent reviewing your matter honestly and giving you a clear picture of your legal position.',
+        text: 'The first consultation involves a nominal fee, which covers the time spent reviewing your matter honestly and giving you a clear picture of your legal position.',
       },
     },
   ],
@@ -82,7 +82,7 @@ export default function ContactPage() {
           <span className={styles.label}>Get in Touch</span>
           <h1 className={styles.heading}>Contact <span className="text-highlight">Us.</span></h1>
           <p className={styles.sub}>
-            Call, WhatsApp, or use the form below. We respond to every enquiry within 24 hours — usually the same day.
+            Call, WhatsApp, or use the form below. We respond to every enquiry within 24 hours, usually the same day.
           </p>
         </div>
       </section>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                     <br />
                     {address.line2}
                     <br />
-                    {address.city}, {address.state} — {address.pin}
+                    {address.city}, {address.state}, {address.pin}
                   </address>
                   <a
                     href={address.mapUrl}

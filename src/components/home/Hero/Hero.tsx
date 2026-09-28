@@ -22,11 +22,11 @@ export function Hero() {
           </div>
 
           <h1 className={styles.title}>
-            Strategic legal counsel, <span style={{ color: '#B89C72', fontStyle: 'italic', whiteSpace: 'nowrap' }}>uncompromising results.</span>
+            Strategic legal counsel, <span className={styles.highlightText}>uncompromising results.</span>
           </h1>
 
           <p className={styles.subtitle}>
-            Adv. Gaurav Jaju, Adv. Ankita Jaju and a dedicated team for Family, Corporate, Civil and Criminal matters — before every major court in Pune.
+            Adv. Gaurav Jaju, Adv. Ankita Jaju and a dedicated team for Family, Corporate, Civil and Criminal matters, before every major court in Pune.
           </p>
 
           <div className={styles.actions}>

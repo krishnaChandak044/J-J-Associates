@@ -13,7 +13,7 @@ export function CallToActionBar() {
               Not sure which applies? <span className={styles.highlight}>Just call.</span>
             </h2>
             <p className={styles.description}>
-              Describe the situation in plain words — routing it to the right practice is our job, not yours.
+              Describe the situation in plain words, routing it to the right practice is our job, not yours.
             </p>
           </div>
           

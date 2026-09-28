@@ -58,7 +58,7 @@ export default function PracticeAreasIndexPage() {
                       ))}
                       {area.overview.subServices.length > 4 && (
                         <li className={styles.coverMore}>
-                          +{area.overview.subServices.length - 4} more
+                          +{area.overview.subServices.length, 4} more
                         </li>
                       )}
                     </ul>
@@ -77,15 +77,15 @@ export default function PracticeAreasIndexPage() {
           <div className={styles.noteContent}>
             <span className={styles.noteLabel} role="presentation">A Note on Timelines</span>
             <p className={styles.noteText}>
-              Every matter at Jaju & Jaju Associates is assessed honestly — including realistic
+              Every matter at Jaju & Jaju Associates is assessed honestly, including realistic
               timelines. Courts in Pune are busy. Matters take longer than clients
               initially expect, and there are delays that neither party nor lawyer can
               control. We tell you what a realistic timeline looks like for your type
-              of matter at the first consultation — not after the fees are agreed.
+              of matter at the first consultation, not after the fees are agreed.
             </p>
             <p className={styles.noteText}>
               If speed is a priority, we tell you whether the matter is amenable to
-              interim relief, settlement, or mediation — and whether those routes are
+              interim relief, settlement, or mediation, and whether those routes are
               genuinely open in your case.
             </p>
             <Link href="/about" className={styles.noteLink}>

@@ -1,4 +1,4 @@
-// Schema index — register all schemas here
+// Schema index, register all schemas here
 import insight from "./insight";
 import teamMember from "./teamMember";
 import caseResult from "./caseResult";

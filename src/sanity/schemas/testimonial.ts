@@ -15,7 +15,7 @@ const testimonial = {
       name: "clientType",
       title: "Client Type (e.g. Divorce Matter)",
       type: "string",
-      description: "Anonymised description — do not use client names.",
+      description: "Anonymised description, do not use client names.",
     },
     {
       name: "stars",

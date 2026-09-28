@@ -85,16 +85,20 @@
 }
 
 .card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  border-top: 3px solid var(--color-primary);
   transition: transform var(--t-base), box-shadow var(--t-base);
 }
+
+.card:nth-child(6n + 1) { background-color: var(--pastel-1); }
+.card:nth-child(6n + 2) { background-color: var(--pastel-2); }
+.card:nth-child(6n + 3) { background-color: var(--pastel-3); }
+.card:nth-child(6n + 4) { background-color: var(--pastel-4); }
+.card:nth-child(6n + 5) { background-color: var(--pastel-5); }
+.card:nth-child(6n + 0) { background-color: var(--pastel-6); }
 
 .card:hover {
   transform: translateY(-3px);
@@ -162,7 +166,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-surface-alt);
+  background-color: var(--color-surface);
   border-radius: var(--radius-sm);
   padding: 1rem 1.25rem;
 }

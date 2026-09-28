@@ -5,7 +5,7 @@ import { insights, formatInsightDate } from "@/data/insights";
 
 export const metadata: Metadata = {
   title: "Legal Insights | Jaju & Jaju Associates Pune",
-  description: "Plain-language articles on family law, criminal law, property, and consumer matters — written by advocates at Jaju & Jaju Associates, Pune.",
+  description: "Plain-language articles on family law, criminal law, property, and consumer matters, written by advocates at Jaju & Jaju Associates, Pune.",
 };
 
 export default function InsightsPage() {
@@ -17,7 +17,7 @@ export default function InsightsPage() {
           <span className={styles.label}>Insights &amp; Updates</span>
           <h1 className={styles.heroTitle}>Legal Knowledge Hub</h1>
           <p className={styles.heroSub}>
-            Plain-language articles on the areas of law we practise — written for clients, not lawyers.
+            Plain-language articles on the areas of law we practise, written for clients, not lawyers.
             The goal is clarity: understanding your situation before you step into a lawyer&apos;s office.
           </p>
         </div>

@@ -67,8 +67,15 @@
   word-break: break-word;
 }
 
-.highlight {
-  color: var(--color-accent);
+.highlightText {
+  background-color: #f1e9d9;
+  color: inherit;
+  padding: 0 0.3em;
+  border-radius: 8px;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 1.2;
+  font-style: italic;
 }
 
 .subtitle {

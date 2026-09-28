@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
   title: "Our Advocates | Jaju & Jaju Associates",
-  description: "Gaurav Jaju and Ankita Kabra (Jaju) — advocates and legal consultants in Pune specialising in family, criminal, civil, and property matters.",
+  description: "Gaurav Jaju and Ankita Kabra (Jaju), advocates and legal consultants in Pune specialising in family, criminal, civil, and property matters.",
 };
 
 export default function TeamPage() {
@@ -20,7 +20,7 @@ export default function TeamPage() {
           <span className={styles.label}>The People</span>
           <h1 className={styles.heroTitle}>Our <span className="text-highlight">Advocates</span></h1>
           <p className={styles.heroSub}>
-            J&amp;J Associates is led by two advocates — Gaurav Jaju and Ankita Kabra (Jaju) —
+            J&amp;J Associates is led by two advocates, Gaurav Jaju and Ankita Kabra (Jaju) —
             both enrolled with the Bar Council of Maharashtra &amp; Goa and practising in Pune.
           </p>
         </div>

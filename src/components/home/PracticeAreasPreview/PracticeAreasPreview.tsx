@@ -20,7 +20,7 @@ export function PracticeAreasPreview() {
               What do you need <span className={styles.accentI}>help</span> with?
             </h2>
             <p className={styles.sub}>
-              Focused practice areas, one measured approach — pick yours to see process, documents and timelines.
+              Focused practice areas, one measured approach, pick yours to see process, documents and timelines.
             </p>
           </div>
           <Link href="/practice-areas" className={styles.link}>

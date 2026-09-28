@@ -105,10 +105,7 @@
 .principlesGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  gap: 1.5rem;
 }
 
 @media (min-width: 640px) {
@@ -119,12 +116,20 @@
 
 .principleCard {
   padding: 2.5rem;
-  border: 1px solid var(--color-border-light);
-  transition: background-color var(--t-base);
+  border-radius: var(--radius-lg);
+  transition: transform var(--t-base), box-shadow var(--t-base);
 }
 
+.principleCard:nth-child(6n + 1) { background-color: var(--pastel-1); }
+.principleCard:nth-child(6n + 2) { background-color: var(--pastel-2); }
+.principleCard:nth-child(6n + 3) { background-color: var(--pastel-3); }
+.principleCard:nth-child(6n + 4) { background-color: var(--pastel-4); }
+.principleCard:nth-child(6n + 5) { background-color: var(--pastel-5); }
+.principleCard:nth-child(6n + 0) { background-color: var(--pastel-6); }
+
 .principleCard:hover {
-  background-color: var(--color-surface-alt);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
 }
 
 .principleNum {
@@ -156,7 +161,7 @@
 /* ── What We Avoid ── */
 .avoidSection {
   padding: var(--space-xl) var(--gutter);
-  background-color: var(--color-surface-alt);
+  background-color: var(--color-surface);
 }
 
 .avoidGrid {
@@ -173,9 +178,20 @@
 
 .avoidCard {
   padding: 2rem;
-  background-color: var(--color-surface);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.avoidCard:nth-child(6n + 1) { background-color: var(--pastel-4); }
+.avoidCard:nth-child(6n + 2) { background-color: var(--pastel-5); }
+.avoidCard:nth-child(6n + 3) { background-color: var(--pastel-6); }
+.avoidCard:nth-child(6n + 4) { background-color: var(--pastel-1); }
+.avoidCard:nth-child(6n + 5) { background-color: var(--pastel-2); }
+.avoidCard:nth-child(6n + 0) { background-color: var(--pastel-3); }
+
+.avoidCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
 }
 
 .avoidLine {
@@ -213,6 +229,7 @@
   font-family: var(--font-display);
   font-size: var(--text-h2);
   font-weight: 700;
+  color: var(--color-surface);
   margin-bottom: 1rem;
 }
 

@@ -25,13 +25,16 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              <Image 
-                src={logoImg} 
-                alt="Jaju & Jaju Associates Logo" 
-                width={200}
-                height={60}
-                className={styles.logoImage}
-              />
+              <div className={styles.logoWrapper}>
+                <Image 
+                  src={logoImg} 
+                  alt="Jaju & Jaju Associates Logo" 
+                  width={100}
+                  height={100}
+                  className={styles.logoImage}
+                />
+                <span className={styles.logoTitle}>J&J Associates</span>
+              </div>
             </Link>
             <p className={styles.philosophy}>
               &ldquo;{siteConfig.philosophy}&rdquo;

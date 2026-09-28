@@ -1,4 +1,4 @@
-// Jaju & Jaju Associates — Single Source of Truth
+// Jaju & Jaju Associates, Single Source of Truth
 // ─────────────────────────────────────────────────
 // Update PLACEHOLDER values with real client data before going live.
 
@@ -6,18 +6,18 @@ export const siteConfig = {
   // ── Firm Identity ──────────────────────────────────────────────────────────
   firmName: "Jaju & Jaju Associates",
   name: "Jaju & Jaju Associates",
-  fullName: "Jaju & Jaju Associates — Advocates & Legal Consultants",
+  fullName: "Jaju & Jaju Associates, Advocates & Legal Consultants",
   tagline: "Justice. Diligence. Results.",
   subTagline:
-    "Gaurav Jaju & Ankita Kabra (Jaju) lead a dedicated legal practice for Family, Criminal, Civil and Property matters — before every major court in Pune.",
+    "Gaurav Jaju & Ankita Kabra (Jaju) lead a dedicated legal practice for Family, Criminal, Civil and Property matters, before every major court in Pune.",
   slogan: "Legal help that's precise, honest & on your side.",
   philosophy:
-    "A client does not need a lawyer who promises. They need one who prepares — and tells them the truth about their case before the other side does.",
+    "A client does not need a lawyer who promises. They need one who prepares, and tells them the truth about their case before the other side does.",
 
   // ── Contact Details ─────────────────────────────────────────────────────────
-  phone: "+91 98765 43210",         // PLACEHOLDER
-  phoneRaw: "+919876543210",         // PLACEHOLDER — for tel: links
-  whatsapp: "https://wa.me/919876543210", // PLACEHOLDER
+  phone: "+91 814 990 1255",         // ACTUAL NUMBER
+  phoneRaw: "+918149901255",         // ACTUAL NUMBER, for tel: links
+  whatsapp: "https://wa.me/918149901255", // ACTUAL NUMBER
   email: "info@jajuassociates.in",   // PLACEHOLDER
   emailAlt: "gauravjaju@jajuassociates.in", // PLACEHOLDER
 
@@ -32,7 +32,7 @@ export const siteConfig = {
       postalCode: "411011",
       country: "India",
       countryCode: "IN",
-      full: "Office no. 12, Ground floor, B wing, Alok Nagri Society, Near pawle chowk, Kasba peth, Pune - 411011",
+      full: "Office no. 12, Ground floor, B wing, Alok Nagri Society, Near pawle chowk, Kasba peth, Pune, 411011",
       street: "Kasba Peth",
       pin: "411011",
       mapUrl: "https://maps.google.com/?q=Alok+Nagri+Society,+Near+pawle+chowk,+Kasba+peth,+Pune+411011",
@@ -57,11 +57,11 @@ export const siteConfig = {
 
   // ── Business Hours ──────────────────────────────────────────────────────────
   hours: {
-    days: "Monday – Saturday",
-    time: "10:00 AM – 7:00 PM",
+    days: "Monday, Saturday",
+    time: "10:00 AM, 7:00 PM",
     note: "Replies within 24 hours",
   },
-  officeHours: "Monday – Saturday, 10:00 AM – 7:00 PM",
+  officeHours: "Monday, Saturday, 10:00 AM, 7:00 PM",
 
   // ── Site / SEO ──────────────────────────────────────────────────────────────
   url: "https://www.jajuassociates.in", // PLACEHOLDER
@@ -175,8 +175,8 @@ export const siteConfig = {
       languages: ["English", "Hindi", "Marathi", "Marwari"],
       courts: ["Pune", "Nashik", "Mumbai", "All over Maharashtra"],
       quote:
-        "A client does not need a lawyer who promises. They need one who prepares — and tells them the truth about their case before the other side does.",
-      bio: "Gaurav Jaju has spent over a decade in the courts of Pune, handling family disputes, criminal matters, and civil litigation with precision and candour. His approach is diagnostic first — clients hear the weaknesses of their case before anyone discusses strategy.",
+        "A client does not need a lawyer who promises. They need one who prepares, and tells them the truth about their case before the other side does.",
+      bio: "Gaurav Jaju has spent over a decade in the courts of Pune, handling family disputes, criminal matters, and civil litigation with precision and candour. His approach is diagnostic first, clients hear the weaknesses of their case before anyone discusses strategy.",
     },
     {
       name: "Ankita Kabra (Jaju)",
@@ -196,7 +196,7 @@ export const siteConfig = {
     },
   ],
 
-  // ── Practice Areas (summary for nav/footer — full data in practiceAreas.ts) ─
+  // ── Practice Areas (summary for nav/footer, full data in practiceAreas.ts) ─
   practiceAreaSlugs: [
     "family-law",
     "criminal-law",
@@ -273,43 +273,43 @@ export const siteConfig = {
         number: "01",
         title: "Diagnosis before prescription.",
         description:
-          "The first meeting at Jaju & Jaju Associates is not a sales conversation. It is a focused examination of your facts, your documents, and the other side's likely position. You leave the first meeting knowing what your matter involves — regardless of whether you engage us or not.",
+          "The first meeting at Jaju & Jaju Associates is not a sales conversation. It is a focused examination of your facts, your documents, and the other side's likely position. You leave the first meeting knowing what your matter involves, regardless of whether you engage us or not.",
       },
       {
         number: "02",
-        title: "The weaknesses of your case — before the strengths.",
+        title: "The weaknesses of your case, before the strengths.",
         description:
-          "We believe an advocate's first honest duty to a client is to tell them what the other side's lawyer will argue. If we identify weaknesses in your case — and there are always weaknesses — you hear them from us first. An advocate who only tells you what you want to hear is not doing their job.",
+          "We believe an advocate's first honest duty to a client is to tell them what the other side's lawyer will argue. If we identify weaknesses in your case, and there are always weaknesses, you hear them from us first. An advocate who only tells you what you want to hear is not doing their job.",
       },
       {
         number: "03",
         title: "Preparation is the work.",
         description:
-          "A court hearing is only as good as the preparation behind it. We spend more time at our desks than in courts — reviewing documents, drafting arguments, preparing witnesses, and anticipating the other side's moves. Hearing day is the result of that work, not the work itself.",
+          "A court hearing is only as good as the preparation behind it. We spend more time at our desks than in courts, reviewing documents, drafting arguments, preparing witnesses, and anticipating the other side's moves. Hearing day is the result of that work, not the work itself.",
       },
       {
         number: "04",
         title: "You will always know what is happening.",
         description:
-          "You receive a post-hearing summary within 24 hours of every court date — what was argued, what the court said, what the next date is, and what it means. You will never have to chase us for information about your own matter.",
+          "You receive a post-hearing summary within 24 hours of every court date, what was argued, what the court said, what the next date is, and what it means. You will never have to chase us for information about your own matter.",
       },
     ],
     whatWeAvoid: [
       {
         title: "We do not promise outcomes.",
-        description: "No advocate can guarantee what a court will decide. We tell you what is likely, what is possible, and what is unlikely — in plain language, without the optimism that benefits the lawyer more than the client.",
+        description: "No advocate can guarantee what a court will decide. We tell you what is likely, what is possible, and what is unlikely, in plain language, without the optimism that benefits the lawyer more than the client.",
       },
       {
         title: "We do not take matters we cannot handle.",
-        description: "Jaju & Jaju Associates is a focused firm. If a matter is outside our practice areas or requires a specialisation we do not have, we say so — and where possible, refer you to someone who does.",
+        description: "Jaju & Jaju Associates is a focused firm. If a matter is outside our practice areas or requires a specialisation we do not have, we say so, and where possible, refer you to someone who does.",
       },
       {
         title: "We do not bill for calls that don't happen.",
-        description: "Updates are part of the service, not extras. Post-hearing summaries and responses to client queries are included in how we work — not billed separately as 'consultation time'.",
+        description: "Updates are part of the service, not extras. Post-hearing summaries and responses to client queries are included in how we work, not billed separately as 'consultation time'.",
       },
       {
         title: "We do not keep matters alive longer than they need to be.",
-        description: "Settlement is always on the table when the terms are fair. Litigation that can be resolved should be resolved — courts are for cases that genuinely cannot be settled.",
+        description: "Settlement is always on the table when the terms are fair. Litigation that can be resolved should be resolved, courts are for cases that genuinely cannot be settled.",
       },
     ],
   },

@@ -1,4 +1,4 @@
-// SEO utility — generates consistent Next.js Metadata per page
+// SEO utility, generates consistent Next.js Metadata per page
 import type { Metadata } from "next";
 
 const BASE_URL = "https://jajuassociates.com"; // Update when domain is confirmed
@@ -59,7 +59,7 @@ export function generatePageMetadata({
   };
 }
 
-// Organization JSON-LD schema — used on every page
+// Organization JSON-LD schema, used on every page
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",

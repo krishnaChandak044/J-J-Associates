@@ -40,7 +40,7 @@ const insight = {
     },
     {
       name: "excerpt",
-      title: "Excerpt (shown on cards — max 150 chars)",
+      title: "Excerpt (shown on cards, max 150 chars)",
       type: "text",
       rows: 3,
       validation: (Rule: { required: () => { max: (arg0: number) => unknown } }) =>

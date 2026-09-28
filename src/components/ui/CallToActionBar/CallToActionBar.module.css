@@ -1,5 +1,5 @@
 .section {
-  padding: 0 var(--gutter) 4rem;
+  padding: 4rem var(--gutter);
   background-color: var(--color-surface-alt);
 }
 

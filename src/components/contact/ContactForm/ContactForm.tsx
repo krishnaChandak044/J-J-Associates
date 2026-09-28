@@ -11,16 +11,36 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("loading");
 
-    // Simulate API call for the dummy form
-    setTimeout(() => {
-      setStatus("success");
-      (e.target as HTMLFormElement).reset();
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setStatus("idle");
-      }, 5000);
-    }, 1500);
+    const formData = new FormData(e.currentTarget);
+    
+    // Web3Forms Access Key
+    formData.append("access_key", "2e26fc9e-6932-4d99-8f51-629fcf702424");
+    formData.append("subject", "New Consultation Request from J&J Associates Website");
+    formData.append("from_name", "J&J Associates Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        (e.target as HTMLFormElement).reset();
+        
+        setTimeout(() => {
+          setStatus("idle");
+        }, 5000);
+      } else {
+        console.error("Form submission error:", data);
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission exception:", error);
+      setStatus("error");
+    }
   };
 
   return (
@@ -71,10 +91,15 @@ export function ContactForm() {
           <label htmlFor="practiceArea" className={styles.label}>Area of Interest</label>
           <select id="practiceArea" name="practiceArea" className={styles.input}>
             <option value="">Select a practice area</option>
-            <option value="corporate">Corporate Litigation</option>
-            <option value="family">Family Law & Divorce</option>
-            <option value="real-estate">Real Estate & Property</option>
-            <option value="criminal">Criminal Defense</option>
+            <option value="divorce">Divorce</option>
+            <option value="family-law">Family Law</option>
+            <option value="criminal-defense">Criminal Defense</option>
+            <option value="civil-litigation">Civil Litigation</option>
+            <option value="property">Property</option>
+            <option value="corporate">Corporate</option>
+            <option value="consumer-matters">Consumer Matters</option>
+            <option value="cheque-bounce">Cheque Bounce</option>
+            <option value="documentation">Documentation</option>
             <option value="other">Other / General Consultation</option>
           </select>
         </div>

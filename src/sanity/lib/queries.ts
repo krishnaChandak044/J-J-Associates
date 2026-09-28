@@ -1,4 +1,4 @@
-// All GROQ queries in one place — easy to maintain and type-check
+// All GROQ queries in one place, easy to maintain and type-check
 
 import { groq } from "next-sanity";
 

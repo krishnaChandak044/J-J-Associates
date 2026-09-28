@@ -17,6 +17,7 @@
   grid-template-columns: 1fr;
   gap: 3rem;
   margin-bottom: var(--space-xl);
+  align-items: flex-start;
 }
 
 @media (min-width: 768px) {
@@ -65,11 +66,29 @@
   margin-bottom: 0.5rem;
 }
 
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .logoImage {
   height: 96px;
-  width: auto;
+  width: 96px;
   object-fit: contain;
   display: block;
+  border-radius: 50%;
+  background-color: #ffffff;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.logoTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-surface);
+  white-space: nowrap;
 }
 
 .socials {
@@ -98,11 +117,12 @@
 /* ── Columns ── */
 .colTitle {
   font-family: var(--font-ui);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.45);
+  color: var(--color-accent);
+  margin-top: 0;
   margin-bottom: 1.25rem;
 }
 
