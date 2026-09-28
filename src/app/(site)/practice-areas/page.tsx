@@ -58,7 +58,7 @@ export default function PracticeAreasIndexPage() {
                       ))}
                       {area.overview.subServices.length > 4 && (
                         <li className={styles.coverMore}>
-                          +{area.overview.subServices.length, 4} more
+                          +{area.overview.subServices.length - 4} more
                         </li>
                       )}
                     </ul>
