@@ -30,6 +30,13 @@ export const metadata: Metadata = {
   description: "Justice, Handled With Precision. Pune's premier law firm specializing in Divorce, Civil Litigation, Property, and Corporate Law.",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 // ─── Root Layout ──────────────────────────────────────────────────────────
 
 export default function RootLayout({

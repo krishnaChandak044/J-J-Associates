@@ -45,10 +45,6 @@ export function ContactForm() {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <h2 className={styles.title}>Request a Consultation</h2>
-      <p className={styles.description}>
-        Fill out the form below and our administrative team will contact you within 24 hours to schedule a confidential consultation.
-      </p>
 
       {status === "success" && (
         <div className={styles.successMessage}>

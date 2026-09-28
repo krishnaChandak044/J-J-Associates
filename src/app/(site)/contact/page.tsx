@@ -79,10 +79,15 @@ export default function ContactPage() {
       <section className={styles.hero}>
         <div className="hero-bg-circle" />
         <div className={styles.heroInner}>
-          <span className={styles.label}>Get in Touch</span>
-          <h1 className={styles.heading}>Contact <span className="text-highlight">Us.</span></h1>
+          <div className={styles.replyPill}>
+            <span className={styles.star}>★</span> Replies within 24-48 hours • Mon-Sat
+          </div>
+          <h1 className={styles.heading}>
+            Let's discuss your <br/>
+            matter <span className="text-highlight">in confidence.</span>
+          </h1>
           <p className={styles.sub}>
-            Call, WhatsApp, or use the form below. We respond to every enquiry within 24 hours, usually the same day.
+            Call, WhatsApp, or send the form — every enquiry reaches an advocate, not a call centre, and stays privileged.
           </p>
         </div>
       </section>
@@ -93,16 +98,33 @@ export default function ContactPage() {
           
           {/* ── Left: form ── */}
           <div className={styles.formCol}>
-            <span className={styles.colLabel}>Send a Message</span>
-            <h2 className={styles.colTitle}>Describe your matter</h2>
+            <h2 className={styles.colTitle}>Book a Consultation</h2>
             <p className={styles.colSub}>
-              Tell us what your matter involves in plain language. We will read it before we call, so the conversation is useful from the start.
+              Three fields and a sentence — that's all we need to call you back prepared.
             </p>
             <ContactForm />
+            
+            {/* ── FAQ moved to left column to fill void space ── */}
+            <div className={styles.faqInner} style={{ marginTop: '4rem' }}>
+              <div className={styles.faqHeader}>
+                <span className={styles.faqLabel}>Before You Call</span>
+                <h2 className={styles.faqTitle}>Common Questions</h2>
+              </div>
+              <div className={styles.faqList}>
+                {faqSchema.mainEntity.map((item, i) => (
+                  <div key={i} className={styles.faqItem}>
+                    <h3 className={styles.faqQuestion}>{item.name}</h3>
+                    <p className={styles.faqAnswer}>{item.acceptedAnswer.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* ── Right: direct contact + info ── */}
           <div className={styles.infoCol}>
+            <h3 className={styles.infoColHeading}>Reach us directly</h3>
+            
             {/* Direct call */}
             <div className={styles.infoBlock}>
               <span className={styles.infoBlockLabel}>Call or WhatsApp</span>
@@ -179,24 +201,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section className={styles.faqSection} aria-label="Frequently asked questions">
-        <div className={styles.faqInner}>
-          <div className={styles.faqHeader}>
-            <span className={styles.faqLabel}>Before You Call</span>
-            <h2 className={styles.faqTitle}>Common Questions</h2>
-          </div>
-
-          <div className={styles.faqList}>
-            {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className={styles.faqItem}>
-                <h3 className={styles.faqQuestion}>{item.name}</h3>
-                <p className={styles.faqAnswer}>{item.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── Map embeds ── */}
       {siteConfig.addresses && <MapTabs addresses={siteConfig.addresses as any} />}

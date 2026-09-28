@@ -41,21 +41,12 @@ export function Header() {
     };
   }, [navOpen]);
 
-  // Pages that have a dark hero section at the top
-  const hasDarkHero = 
-    pathname.startsWith('/insights') || 
-    pathname.startsWith('/about') || 
-    pathname.startsWith('/case-results') || 
-    pathname.startsWith('/our-approach') ||
-    (pathname.startsWith('/practice-areas/') && pathname !== '/practice-areas');
-
-  // Header is "dark" when scrolled, when nav is open, or if the page has a dark hero (so white text is used)
-  const isDark = scrolled || navOpen || hasDarkHero;
+  
 
   return (
     <>
       <header
-        className={`${styles.header} ${isDark ? styles.headerDark : ""} ${navOpen ? styles.headerNavOpen : ""} ${hasDarkHero && !scrolled && !navOpen ? styles.headerDarkTransparent : ""}`}
+        className={`${styles.header} ${scrolled ? styles.headerScrolled : ""} ${navOpen ? styles.headerNavOpen : ""}`}
         role="banner"
       >
         <div className={styles.inner}>

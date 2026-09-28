@@ -5,6 +5,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import styles from "./Footer.module.css";
 import { siteConfig } from "@/data/siteConfig";
 import { practiceAreas } from "@/data/practiceAreas";
+import { locations } from "@/data/locations";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -130,6 +131,21 @@ export function Footer() {
             >
               WhatsApp Us →
             </a>
+          </div>
+        </div>
+
+        {/* Areas We Serve */}
+        <div className={styles.areasWeServe}>
+          <div className={styles.areasHeader}>
+            <h4 className={styles.colTitle}>Areas We Serve</h4>
+            <span className={styles.areasAllText}>All areas</span>
+          </div>
+          <div className={styles.areasGrid}>
+            {locations.map((loc) => (
+              <Link key={loc.slug} href={`/locations/${loc.slug}`} className={styles.areaPill}>
+                <span className={styles.areaDot}>•</span> {loc.name}
+              </Link>
+            ))}
           </div>
         </div>
 

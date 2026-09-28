@@ -1,8 +1,9 @@
 /* ── Hero ── */
 .hero {
-  background-color: var(--color-primary-dark);
-  color: var(--color-surface);
-  padding: calc(var(--header-height, 80px) + 5rem) var(--gutter) 6rem;
+  background-color: var(--color-surface);
+  color: var(--color-primary-dark);
+  padding: calc(var(--header-height, 80px) + 5rem) var(--gutter) 4rem;
+  text-align: center;
 }
 
 .container {
@@ -11,15 +12,17 @@
   padding: 0 var(--gutter);
 }
 
-.label {
+.replyPill {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-ui);
   font-size: 0.8125rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-accent);
-  display: block;
-  margin-bottom: 1.25rem;
+  background-color: #eef4f9;
+  color: var(--color-primary-dark);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 2rem;
 }
 
 .heroTitle {
@@ -29,15 +32,42 @@
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
-  color: var(--color-surface);
+  color: var(--color-primary-dark);
 }
 
 .heroSub {
   font-family: var(--font-body);
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.65);
-  max-width: 640px;
+  color: var(--color-text-body);
+  max-width: 800px;
   line-height: 1.65;
+  margin: 0 auto;
+}
+
+.filterPills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 3rem;
+}
+
+.filterPill {
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background-color: #fff;
+  border: 1px solid var(--color-border-light);
+  color: var(--color-primary-dark);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  transition: all var(--t-fast);
+  cursor: pointer;
+}
+
+.filterPill:hover {
+  background-color: var(--color-bg);
 }
 
 /* ── Grid Section ── */
@@ -69,17 +99,34 @@
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   transition: transform var(--t-base), box-shadow var(--t-base);
   text-decoration: none;
+  border: 1px solid var(--color-border-light);
 }
 
-.card:nth-child(6n + 1) { background-color: var(--pastel-1); }
-.card:nth-child(6n + 2) { background-color: var(--pastel-2); }
-.card:nth-child(6n + 3) { background-color: var(--pastel-3); }
-.card:nth-child(6n + 4) { background-color: var(--pastel-4); }
-.card:nth-child(6n + 5) { background-color: var(--pastel-5); }
-.card:nth-child(6n + 0) { background-color: var(--pastel-6); }
+.cardImagePlaceholder {
+  height: 240px;
+  background-color: var(--color-bg);
+  background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.card:nth-child(2) .cardImagePlaceholder { background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=800&auto=format&fit=crop'); }
+.card:nth-child(3) .cardImagePlaceholder { background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800&auto=format&fit=crop'); }
+.card:nth-child(4) .cardImagePlaceholder { background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop'); }
+.card:nth-child(5) .cardImagePlaceholder { background-image: url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?q=80&w=800&auto=format&fit=crop'); }
+.card:nth-child(6) .cardImagePlaceholder { background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop'); }
+
+.cardContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
 .card:hover {
   transform: translateY(-4px);
@@ -87,28 +134,26 @@
 }
 
 .cardMeta {
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
-  margin-bottom: 1.25rem;
-}
-
-.category {
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-primary);
-  background-color: rgba(30, 49, 70, 0.08);
+  gap: 0.5rem;
+  background-color: #fbf7f4;
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-pill);
+  margin-bottom: 1.25rem;
+  width: fit-content;
 }
 
-.readTime {
+.categoryDot {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+}
+
+.category, .readTime {
   font-family: var(--font-ui);
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  font-weight: 600;
+  color: var(--color-primary-dark);
 }
 
 .cardTitle {

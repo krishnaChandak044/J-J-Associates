@@ -14,12 +14,17 @@ export default function InsightsPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.container}>
-          <span className={styles.label}>Insights &amp; Updates</span>
-          <h1 className={styles.heroTitle}>Legal Knowledge Hub</h1>
+          <div className={styles.replyPill}>Insights</div>
+          <h1 className={styles.heroTitle}>Plain answers to <span className="text-highlight">hard questions</span></h1>
           <p className={styles.heroSub}>
-            Plain-language articles on the areas of law we practise, written for clients, not lawyers.
-            The goal is clarity: understanding your situation before you step into a lawyer&apos;s office.
+            Written from the firm's files and reviewed by Adv. Gaurav Jaju — with the specifics most legal pages leave out: courts, sections, documents and realistic timelines.
           </p>
+          
+          <div className={styles.filterPills}>
+            {['Criminal', 'Divorce', 'Choosing a Lawyer', 'Employment', 'Property', 'Family', 'Civil', 'Recovery', 'Consumer', 'Documentation', 'Corporate'].map(cat => (
+              <span key={cat} className={styles.filterPill}>{cat}</span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -29,15 +34,20 @@ export default function InsightsPage() {
           <div className={styles.grid}>
             {insights.map((insight) => (
               <Link key={insight.slug} href={`/insights/${insight.slug}`} className={styles.card}>
-                <div className={styles.cardMeta}>
-                  <span className={styles.category}>{insight.category}</span>
-                  <span className={styles.readTime}>{insight.readTime}</span>
-                </div>
-                <h2 className={styles.cardTitle}>{insight.title}</h2>
-                <p className={styles.excerpt}>{insight.excerpt}</p>
+                <div className={styles.cardImagePlaceholder} />
+                <div className={styles.cardContent}>
+                  <div className={styles.cardMeta}>
+                    <span className={styles.categoryDot}>•</span>
+                    <span className={styles.category}>{insight.category}</span>
+                    <span className={styles.categoryDot}>•</span>
+                    <span className={styles.readTime}>{insight.readTime}</span>
+                  </div>
+                  <h2 className={styles.cardTitle}>{insight.title}</h2>
+                  <p className={styles.excerpt}>{insight.excerpt}</p>
                 <div className={styles.cardFooter}>
                   <span className={styles.date}>{formatInsightDate(insight.date)}</span>
                   <span className={styles.readMore}>Read article →</span>
+                </div>
                 </div>
               </Link>
             ))}

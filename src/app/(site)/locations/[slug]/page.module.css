@@ -1,0 +1,190 @@
+/* ── Hero ── */
+.hero {
+  background-color: var(--color-surface);
+  color: var(--color-primary-dark);
+  padding: calc(var(--header-height, 80px) + 3rem) var(--gutter) 4rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+}
+
+.breadcrumbs a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.separator {
+  color: var(--color-border);
+}
+
+.active {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.replyPill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background-color: #eaf3ed;
+  color: var(--color-primary-dark);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary-dark);
+}
+
+.heroSub {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-body);
+  max-width: 700px;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.callBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-surface);
+  background-color: var(--color-primary-dark);
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: opacity var(--t-fast);
+}
+
+.callBtn:hover {
+  opacity: 0.9;
+}
+
+.dirBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  background-color: #eaf3ed;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  transition: background-color var(--t-fast);
+}
+
+.dirBtn:hover {
+  background-color: #dfece3;
+}
+
+/* ── Cards Grid ── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: #fbf7f4;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardIconWrap {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.cardIcon {
+  color: var(--color-accent);
+}
+
+.cardTitle {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.cardText {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-text-body);
+  line-height: 1.5;
+}
+
+/* ── Content Section ── */
+.contentSection {
+  background-color: var(--color-surface);
+  padding: 2rem var(--gutter) 6rem;
+}
+
+.quoteBlock {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.quoteBlock p {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+}
+
+.mapContainer {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
