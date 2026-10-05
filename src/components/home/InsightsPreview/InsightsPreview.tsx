@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "./InsightsPreview.module.css";
-import { insights, formatInsightDate } from "@/data/insights";
+import { insights, formatInsightDate, getInsightImage } from "@/data/insights";
 
 export function InsightsPreview() {
   // Show first 3 real articles
@@ -26,6 +27,8 @@ export function InsightsPreview() {
         <div className={styles.grid}>
           {displayInsights.map((insight) => (
             <Link key={insight.slug} href={`/insights/${insight.slug}`} className={styles.card}>
+              <div className={styles.articleImage}><Image src={getInsightImage(insight.category)} alt={`${insight.category} illustration`} fill sizes="(max-width: 767px) 100vw, 33vw" /></div>
+              <div className={styles.cardBody}>
               <div className={styles.cardMeta}>
                 <span className={styles.category}>{insight.category}</span>
                 <span className={styles.readTime}>{insight.readTime}</span>
@@ -35,6 +38,7 @@ export function InsightsPreview() {
               <div className={styles.cardFooter}>
                 <span className={styles.date}>{formatInsightDate(insight.date)}</span>
                 <span className={styles.readMore}>Read article →</span>
+              </div>
               </div>
             </Link>
           ))}

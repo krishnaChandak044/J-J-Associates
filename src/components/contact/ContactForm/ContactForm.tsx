@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import styles from "./ContactForm.module.css";
 
-export function ContactForm() {
+export function ContactForm({ compact = false, defaultPracticeArea = "" }: { compact?: boolean; defaultPracticeArea?: string }) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,14 +47,14 @@ export function ContactForm() {
     <form className={styles.form} onSubmit={handleSubmit}>
 
       {status === "success" && (
-        <div className={styles.successMessage}>
+        <div className={styles.successMessage} role="status">
           <CheckCircle2 size={20} />
           Your request has been successfully submitted. We will be in touch shortly.
         </div>
       )}
 
       {status === "error" && (
-        <div className={styles.errorMessage}>
+        <div className={styles.errorMessage} role="alert">
           <AlertCircle size={20} />
           An error occurred while submitting the form. Please try again or call us directly.
         </div>
@@ -62,30 +62,30 @@ export function ContactForm() {
 
       <div className={styles.fieldGroup}>
         <div className={styles.field}>
-          <label htmlFor="firstName" className={styles.label}>First Name *</label>
-          <input type="text" id="firstName" name="firstName" required className={styles.input} placeholder="Rahul" />
+          <label htmlFor="firstName" className={styles.label}>{compact ? "Your name" : "First Name *"}</label>
+          <input type="text" id="firstName" name="firstName" required className={styles.input} autoComplete="given-name" placeholder={compact ? "Full name" : "First name"} />
         </div>
         <div className={styles.field}>
-          <label htmlFor="lastName" className={styles.label}>Last Name *</label>
-          <input type="text" id="lastName" name="lastName" required className={styles.input} placeholder="Sharma" />
+          <label htmlFor="lastName" className={styles.label}>{compact ? "Phone" : "Last Name *"}</label>
+          <input type={compact ? "tel" : "text"} id="lastName" name={compact ? "phone" : "lastName"} autoComplete={compact ? "tel" : "family-name"} required className={styles.input} placeholder={compact ? "+91" : "Last name"} />
         </div>
       </div>
 
       <div className={styles.fieldGroup}>
-        <div className={styles.field}>
-          <label htmlFor="email" className={styles.label}>Email Address *</label>
-          <input type="email" id="email" name="email" required className={styles.input} placeholder="rahul@example.com" />
+        <div className={`${styles.field} ${compact ? styles.fieldFull : ""}`}>
+          <label htmlFor="email" className={styles.label}>{compact ? "Email (optional)" : "Email Address *"}</label>
+          <input type="email" id="email" name="email" autoComplete="email" required={!compact} className={styles.input} placeholder={compact ? "you@example.com" : "rahul@example.com"} />
         </div>
-        <div className={styles.field}>
+        {!compact && <div className={styles.field}>
           <label htmlFor="phone" className={styles.label}>Phone Number *</label>
-          <input type="tel" id="phone" name="phone" required className={styles.input} placeholder="+91 98765 43210" />
-        </div>
+          <input type="tel" id="phone" name="phone" required className={styles.input} placeholder="+91 98765 43210" autoComplete="tel" />
+        </div>}
       </div>
 
       <div className={styles.fieldGroup}>
         <div className={`${styles.field} ${styles.fieldFull}`}>
-          <label htmlFor="practiceArea" className={styles.label}>Area of Interest</label>
-          <select id="practiceArea" name="practiceArea" className={styles.input}>
+          <label htmlFor="practiceArea" className={styles.label}>{compact ? "Matter" : "Area of Interest"}</label>
+          <select id="practiceArea" name="practiceArea" defaultValue={defaultPracticeArea} className={styles.input}>
             <option value="">Select a practice area</option>
             <option value="divorce">Divorce</option>
             <option value="family-law">Family Law</option>
@@ -101,7 +101,7 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className={styles.fieldGroup}>
+      {!compact && <div className={styles.fieldGroup}>
         <div className={`${styles.field} ${styles.fieldFull}`}>
           <label htmlFor="message" className={styles.label}>Brief Description of Your Legal Issue *</label>
           <textarea 
@@ -112,7 +112,7 @@ export function ContactForm() {
             placeholder="Please provide a brief overview of your situation. Do not include highly sensitive or confidential information in this form."
           ></textarea>
         </div>
-      </div>
+      </div>}
 
       <button type="submit" className={styles.submitBtn} disabled={status === "loading" || status === "success"}>
         {status === "loading" ? (
@@ -121,7 +121,7 @@ export function ContactForm() {
           </>
         ) : (
           <>
-            <Send size={18} /> Submit Request
+            <Send size={18} /> {compact ? "Request Call Back" : "Submit Request"}
           </>
         )}
       </button>

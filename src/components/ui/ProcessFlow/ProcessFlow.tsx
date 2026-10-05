@@ -35,7 +35,7 @@ export function ProcessFlow({ process }: Props) {
 
   return (
     <div className={styles.wrapper}>
-      <h2 className={styles.title}>The Process</h2>
+
       <motion.div
         className={styles.timeline}
         variants={containerVariants}

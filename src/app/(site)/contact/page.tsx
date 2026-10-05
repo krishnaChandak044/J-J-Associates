@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/data/siteConfig";
 import { ContactForm } from "@/components/contact/ContactForm/ContactForm";
 import { MapTabs } from "@/components/contact/MapTabs/MapTabs";
+import { Accordion } from "@/components/ui/Accordion/Accordion";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -102,7 +103,7 @@ export default function ContactPage() {
             <p className={styles.colSub}>
               Three fields and a sentence — that's all we need to call you back prepared.
             </p>
-            <ContactForm />
+            <div id="enquiry" style={{ scrollMarginTop: "100px" }}><ContactForm /></div>
             
             {/* ── FAQ moved to left column to fill void space ── */}
             <div className={styles.faqInner} style={{ marginTop: '4rem' }}>
@@ -110,14 +111,13 @@ export default function ContactPage() {
                 <span className={styles.faqLabel}>Before You Call</span>
                 <h2 className={styles.faqTitle}>Common Questions</h2>
               </div>
-              <div className={styles.faqList}>
-                {faqSchema.mainEntity.map((item, i) => (
-                  <div key={i} className={styles.faqItem}>
-                    <h3 className={styles.faqQuestion}>{item.name}</h3>
-                    <p className={styles.faqAnswer}>{item.acceptedAnswer.text}</p>
-                  </div>
-                ))}
-              </div>
+              <Accordion 
+                items={faqSchema.mainEntity.map(item => ({
+                  question: item.name,
+                  answer: item.acceptedAnswer.text
+                }))}
+                defaultOpenIndex={0}
+              />
             </div>
           </div>
 

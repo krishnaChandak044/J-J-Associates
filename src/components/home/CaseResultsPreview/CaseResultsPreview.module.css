@@ -208,3 +208,15 @@
   font-weight: 600;
   color: var(--color-primary);
 }
+
+/* Consistent section hierarchy */
+.title { font-family: var(--font-heading); font-weight: 800; }
+.secEyebrow { background: var(--pastel-1); color: var(--color-primary); border-radius: 999px; padding: .55rem 1rem; font-weight: 700; }
+.secIndex { display: none; }
+
+
+
+.category { font-weight: 800; font-size: .875rem; }
+.cardTop { flex-wrap: wrap; }
+@media(min-width: 768px) and (max-width: 1023px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+

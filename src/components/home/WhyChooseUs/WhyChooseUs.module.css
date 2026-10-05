@@ -171,3 +171,19 @@
   color: var(--color-text-body);
   line-height: 1.6;
 }
+
+/* Consistent section hierarchy */
+.title { font-family: var(--font-heading); font-weight: 800; }
+.secEyebrow { background: var(--pastel-1); color: var(--color-primary); border-radius: 999px; padding: .55rem 1rem; font-weight: 700; }
+.secIndex { display: none; }
+
+
+
+.accentI { font-style: normal; background: #e6edf5; }
+.flowc:nth-child(4n+1) { background: #e7eef6; }
+.flowc:nth-child(4n+2) { background: #f7ecd8; }
+.flowc:nth-child(4n+3) { background: #ebe8f3; }
+.flowc:nth-child(4n) { background: #f5e7df; }
+.iconCircle { background: var(--color-primary); color: white; font-weight: 800; }
+.flowc:nth-child(even) .iconCircle { background: var(--color-accent); color: var(--color-primary-dark); }
+

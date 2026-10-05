@@ -1,31 +1,8 @@
-.floatingCTA {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background-color: #25D366; /* WhatsApp Green */
-  color: white;
-  border-radius: var(--radius-full);
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
-  transition: transform var(--t-fast);
-  animation: pulse 8s infinite;
-}
 
-.floatingCTA:hover {
-  transform: scale(1.1);
-  animation: none;
-}
-
-@media (max-width: 768px) {
-  .floatingCTA {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 54px;
-    height: 54px;
-  }
-}
+.floatingCTA { position: fixed; bottom: calc(6.5rem + env(safe-area-inset-bottom)); right: max(1rem, calc((100vw - 1200px) / 2)); z-index: 45; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: var(--color-primary); color: white; box-shadow: 0 6px 24px #00214726; }
+.contactDock { position: fixed; bottom: calc(1rem + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); width: min(calc(100% - 2rem), 760px); display: grid; grid-template-columns: 1fr 1fr 1.2fr; padding: 6px; border: 1px solid #0021470d; border-radius: 999px; background: #fffffff5; backdrop-filter: blur(12px); box-shadow: 0 8px 32px #00122626; z-index: 45; }
+.contactDock a { display: flex; align-items: center; justify-content: center; gap: .6rem; min-height: 52px; color: var(--color-primary); font-size: .9375rem; font-weight: 700; border-radius: 999px; }
+.contactDock a:hover { background: var(--pastel-1); }
+.contactDock .book { color: white; background: var(--color-primary); }
+.contactDock .book:hover { background: var(--color-primary-dark); }
+@media(max-width: 380px) { .contactDock { width: calc(100% - 1rem); } .contactDock a { font-size: .8rem; gap: .35rem; } }

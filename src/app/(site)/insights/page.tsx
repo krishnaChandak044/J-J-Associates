@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import styles from "./page.module.css";
-import { insights, formatInsightDate } from "@/data/insights";
+import { insights, formatInsightDate, getInsightImage } from "@/data/insights";
 
 export const metadata: Metadata = {
   title: "Legal Insights | Jaju & Jaju Associates Pune",
@@ -34,7 +35,7 @@ export default function InsightsPage() {
           <div className={styles.grid}>
             {insights.map((insight) => (
               <Link key={insight.slug} href={`/insights/${insight.slug}`} className={styles.card}>
-                <div className={styles.cardImagePlaceholder} />
+                <div className={styles.articleImage}><Image src={getInsightImage(insight.category)} alt={`${insight.category} illustration`} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /></div>
                 <div className={styles.cardContent}>
                   <div className={styles.cardMeta}>
                     <span className={styles.categoryDot}>•</span>

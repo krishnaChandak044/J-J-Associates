@@ -37,7 +37,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-heading);
   line-height: var(--lh-heading);
-  font-weight: normal; /* Override default bold, we set weights explicitly */
+  font-weight: 700;
 }
 
 h1 {
@@ -49,13 +49,13 @@ h1 {
 h2 {
   font-family: var(--font-heading);
   font-size: var(--text-h2);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 h3 {
   font-family: var(--font-heading);
   font-size: var(--text-h3);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 a {
@@ -115,3 +115,29 @@ img, video, svg {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
 }
+
+
+main { min-width: 0; }
+:where(p, h1, h2, h3, h4, a) { overflow-wrap: break-word; }
+:where(input, select, textarea) { min-width: 0; max-width: 100%; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--color-accent); outline-offset: 4px;
+}
+.text-highlight { background: var(--pastel-5); color: var(--color-primary); border-radius: 8px; padding-inline: .12em; }
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  :root { --text-h1: clamp(1.9rem, 7vw, 2.75rem); --text-h2: clamp(1.6rem, 6vw, 2.25rem); }
+  input, select, textarea { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+
+/* Shared buttons used by the homepage and informational pages. */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; padding: 1rem 1.5rem; min-height: 48px; border-radius: 999px; font-weight: 700; text-align: center; line-height: 1.4; }
+.btn-primary { background: var(--color-primary); color: white; }
+.btn-soft { background: #e7eef6; color: var(--color-primary); }
+.btn:hover { box-shadow: var(--shadow-card); }
+.btn svg { flex-shrink: 0; }

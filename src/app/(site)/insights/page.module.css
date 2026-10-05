@@ -233,3 +233,9 @@
 .ctaLink:hover {
   color: var(--color-accent);
 }
+
+.articleImage { position: relative; aspect-ratio: 16 / 10; }
+.articleImage img { object-fit: cover; }
+.card { border-radius: 24px; }
+.cardTitle { font-weight: 800; }
+.cardFooter, .cardMeta { flex-wrap: wrap; gap: .5rem; }

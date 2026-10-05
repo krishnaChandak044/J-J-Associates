@@ -9,6 +9,8 @@ import { InsightsPreview } from "@/components/home/InsightsPreview/InsightsPrevi
 import { CourtsStrip } from "@/components/home/CourtsStrip/CourtsStrip";
 import { AdvocatesStrip } from "@/components/home/AdvocatesStrip/AdvocatesStrip";
 
+import { CallToActionBar } from "@/components/ui/CallToActionBar/CallToActionBar";
+
 export const metadata: Metadata = {
   title: "Jaju & Jaju Associates | Advocates & Legal Consultants Pune",
   description: "Justice, Handled With Precision. Gaurav Jaju & Ankita Kabra (Jaju), dedicated advocates in Pune for Family, Criminal, Civil & Property matters.",
@@ -26,6 +28,7 @@ export default function Home() {
       <CourtsStrip />
       <TestimonialsPreview />
       <InsightsPreview />
+      <CallToActionBar />
     </div>
   );
 }

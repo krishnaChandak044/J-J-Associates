@@ -138,3 +138,15 @@ export function formatInsightDate(iso: string): string {
     year: 'numeric',
   });
 }
+
+
+export function getInsightImage(category: string): string {
+  const images: Record<string, string> = {
+    'Family Law': 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1000&q=85',
+    'Criminal Law': 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1000&q=85',
+    'Property Law': 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85',
+    'Consumer Law': 'https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1000&q=85',
+  };
+  return images[category] || 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85';
+}
+

@@ -109,3 +109,12 @@
     padding-bottom: 2rem;
   }
 }
+
+
+.wrapper { margin-top: 0; padding-top: 0; border: 0; }
+.stepNum { background: var(--color-primary); color: white; border: 0; border-radius: 14px; flex-shrink: 0; }
+.step:nth-child(even) .stepNum { background: var(--color-accent); color: var(--color-primary-dark); }
+.stepTitle { font-weight: 800; }
+.stepContent { min-width: 0; }
+.stepDuration { background: #f7ecd8; color: #6e542d; }
+

@@ -179,3 +179,15 @@
 .card:hover .readMore {
   color: var(--color-accent);
 }
+
+
+.card { padding: 0; overflow: hidden; border-radius: 24px; border: 1px solid var(--color-border-light); }
+.card:nth-child(n) { background: white; }
+.articleImage { position: relative; aspect-ratio: 16 / 10; }
+.articleImage img { object-fit: cover; }
+.cardBody { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.cardTitle, .title { font-weight: 800; }
+.cardMeta, .cardFooter { flex-wrap: wrap; gap: .5rem; }
+.subtitle { display: inline-flex; border-radius: 999px; padding: .55rem 1rem; background: var(--pastel-1); color: var(--color-primary); font-weight: 700; }
+@media(min-width: 768px) and (max-width: 1023px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+

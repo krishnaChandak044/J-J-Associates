@@ -208,3 +208,6 @@
   font-size: 0.75rem;
   color: var(--color-text-muted);
 }
+
+.title { font-weight: 700; }
+@media(max-width: 640px) { .actions a { width: 100%; } }

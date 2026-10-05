@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 import styles from "./WhyChooseUs.module.css";
 
 const steps = [
@@ -45,25 +45,7 @@ export function WhyChooseUs() {
           {steps.map((step, i) => (
             <div key={i} className={styles.flowc}>
               <div className={styles.iconCircle}>
-                <svg 
-                  width="20" 
-                  height="20" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="3" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  className={styles.checkIcon}
-                >
-                  <motion.path
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 1.0, ease: "easeInOut", delay: 0.2 + (i * 1.0) }}
-                    d="M20 6L9 17l-5-5"
-                  />
-                </svg>
+                {String(i + 1).padStart(2, "0")}
               </div>
               <h3>{step.title}</h3>
               <p>{step.desc}</p>

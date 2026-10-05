@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header/Header";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingCTA } from "@/components/layout/FloatingCTA/FloatingCTA";
 import { SearchModal } from "@/components/ui/SearchModal/SearchModal";
-import { DisclaimerModal } from "@/components/ui/DisclaimerModal/DisclaimerModal";
+
 
 // ─── Font Loading ──────────────────────────────────────────────────────────
 
@@ -33,8 +33,7 @@ export const metadata: Metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+
 };
 
 // ─── Root Layout ──────────────────────────────────────────────────────────
@@ -50,11 +49,12 @@ export default function RootLayout({
       className={`${jakarta.variable} ${cormorant.variable}`}
     >
       <body>
-        <DisclaimerModal />
+
         <SearchModal />
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingCTA />
 
       </body>
     </html>

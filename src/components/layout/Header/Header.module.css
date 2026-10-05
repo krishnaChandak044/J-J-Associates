@@ -319,3 +319,12 @@
 @media (max-width: 860px) {
   .desktopNav { display: none; }
 }
+
+
+.hamburger { background: #f5f3ee; border-radius: 14px; margin-right: 0; }
+.cta { background: var(--color-primary); color: white; border-color: var(--color-primary); letter-spacing: 0; text-transform: none; padding: .85rem 1.25rem; }
+@media(max-width: 1199px) { .desktopNav { display: none; } }
+@media(min-width: 640px) { .cta { display: inline-flex; } }
+@media(min-width: 1200px) { .desktopNav { gap: .25rem; } .navLink { padding-inline: .7rem; letter-spacing: .03em; } .phone { display: none; } .inner { gap: 1rem; } }
+@media(max-width: 639px) { .inner { gap: .5rem; } .logo { gap: .5rem; min-width: 0; flex-shrink: 1; } .logoImage { height: 52px; } .logoTitle { font-size: 1rem; } .actions { gap: .5rem; } }
+

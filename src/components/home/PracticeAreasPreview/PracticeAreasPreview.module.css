@@ -83,8 +83,13 @@
 }
 
 .accentI {
-  color: var(--color-accent);
-  font-style: italic;
+  background: #e6edf5;
+  color: var(--color-primary);
+  font-style: normal;
+  border-radius: 8px;
+  padding: 0 0.16em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .sub {
@@ -149,15 +154,6 @@
   height: 100%;
 }
 
-.pcardx:nth-child(1) { background-color: #f1f6ed; } /* Soft Green */
-.pcardx:nth-child(2) { background-color: #fdf6e7; } /* Soft Yellow */
-.pcardx:nth-child(3) { background-color: #eef4f9; } /* Soft Blue */
-.pcardx:nth-child(4) { background-color: #fdf1ea; } /* Soft Peach */
-.pcardx:nth-child(5) { background-color: #f3eff9; } /* Soft Lavender */
-.pcardx:nth-child(6) { background-color: #ebf6f1; } /* Soft Mint */
-.pcardx:nth-child(7) { background-color: #eff7f0; } /* Soft Teal-Green */
-.pcardx:nth-child(8) { background-color: #f9f3e4; } /* Soft Tan */
-
 .pcardx:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   transform: translateY(-4px);
@@ -203,3 +199,25 @@
   color: var(--color-accent);
   transform: translateX(4px);
 }
+
+/* Consistent section hierarchy */
+.title { font-family: var(--font-heading); font-weight: 800; }
+.secEyebrow { background: var(--pastel-1); color: var(--color-primary); border-radius: 999px; padding: .55rem 1rem; font-weight: 700; }
+.secIndex { display: none; }
+
+
+
+.section { background: #f8f7f4; }
+/* Row 1 Pastels */
+.pcardx:nth-child(8n+1) { background-color: #e7eef6; } /* Soft Sky Blue */
+.pcardx:nth-child(8n+2) { background-color: #f7ecd8; } /* Warm Butter Cream */
+.pcardx:nth-child(8n+3) { background-color: #ebe8f3; } /* Soft Lilac */
+.pcardx:nth-child(8n+4) { background-color: #f5e7df; } /* Soft Peach */
+
+/* Row 2 Pastels (Fresh, distinct pastel hues) */
+.pcardx:nth-child(8n+5) { background-color: #dff0e6; } /* Soft Sage Green */
+.pcardx:nth-child(8n+6) { background-color: #e4ebf7; } /* Soft Periwinkle Ice */
+.pcardx:nth-child(8n+7) { background-color: #fdf0dd; } /* Soft Warm Vanilla Sand */
+.pcardx:nth-child(8n+8) { background-color: #ddf1ee; } /* Soft Pale Seafoam Aqua */
+.pcardx h3 { font-weight: 800; }
+

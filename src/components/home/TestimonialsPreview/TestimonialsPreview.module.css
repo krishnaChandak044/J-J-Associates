@@ -136,3 +136,46 @@
     animation: none;
   }
 }
+
+
+.title { font-weight: 800; }
+
+.track:active .marqueeRow {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .track {
+    overflow: clip;
+    margin-bottom: 1rem;
+  }
+
+  .marqueeRow {
+    gap: 1rem;
+  }
+
+  .card {
+    flex: 0 0 280px;
+    padding: 1.25rem;
+  }
+
+  .quote {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .scrollLeft {
+    animation: scrollLeft 30s linear infinite;
+  }
+
+  .scrollRight {
+    animation: scrollRight 26s linear infinite;
+  }
+}
+

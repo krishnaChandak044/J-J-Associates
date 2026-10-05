@@ -1,7 +1,7 @@
+import { ContactForm } from "@/components/contact/ContactForm/ContactForm";
+import { Phone, CircleHelp, UserCheck, Award, Briefcase, ArrowRight, CheckCircle2, AlertCircle, Clock, IndianRupee } from "lucide-react";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MessageSquare, AlertCircle, Clock, FileText, IndianRupee } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 import { practiceAreas } from "@/data/practiceAreas";
 import { siteConfig } from "@/data/siteConfig";
@@ -9,7 +9,7 @@ import { generatePageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 import { ProcessFlow } from "@/components/ui/ProcessFlow/ProcessFlow";
 import { PracticeAreaNav } from "@/components/practice-areas/PracticeAreaNav/PracticeAreaNav";
-
+import { Accordion } from "@/components/ui/Accordion/Accordion";
 import { CallToActionBar } from "@/components/ui/CallToActionBar/CallToActionBar";
 
 interface Props {
@@ -41,6 +41,78 @@ export async function generateMetadata({ params }: Props) {
   });
 }
 
+const practiceBadges: Record<string, string> = {
+  "divorce": "Hindu Marriage Act · Family Court",
+  "family-law": "Family Courts · Succession Act",
+  "criminal-defense": "BNS · CrPC · Bombay High Court",
+  "civil-litigation": "CPC · Commercial Courts · Pune",
+  "property": "Transfer of Property · MahaRERA",
+  "corporate": "Companies Act · NCLT Pune",
+  "consumer-matters": "Consumer Protection Act 2019",
+  "cheque-bounce": "Section 138 · NI Act",
+  "documentation": "Registration & Stamp Act · Pune",
+};
+
+function getPracticeHeadline(slug: string, name: string) {
+  const map: Record<string, string> = {
+    "cheque-bounce": "Cheque Bounce Lawyer",
+    "divorce": "Divorce Lawyer",
+    "family-law": "Family Law Advocates",
+    "criminal-defense": "Criminal Defense Lawyers",
+    "civil-litigation": "Civil Litigation Lawyers",
+    "property": "Property Lawyers",
+    "corporate": "Corporate Lawyers",
+    "consumer-matters": "Consumer Court Lawyers",
+    "documentation": "Legal Documentation Experts",
+  };
+  return map[slug] || `${name} Lawyers`;
+}
+
+function getTrustCards(area: any) {
+  const pills = area.heroTrustPills || [];
+  
+  // Card 1: Advocate
+  let p1Title = "Adv. Jaju";
+  let p1Sub = "Leads this practice";
+  if (pills[0]) {
+    const parts = pills[0].split(",");
+    p1Title = parts[0]?.trim() || "Adv. Jaju";
+    p1Sub = parts[1]?.trim() || "Leads this practice";
+  }
+
+  // Card 2: Experience / Courts
+  let p2Title = "25+ Years";
+  let p2Sub = "In Pune's courts";
+  if (pills[1]) {
+    if (pills[1].toLowerCase().includes("in")) {
+      const parts = pills[1].split(/\bin\b/i);
+      p2Title = parts[0]?.trim() || "25+ Years";
+      p2Sub = `In ${parts[1]?.trim() || "Pune's courts"}`;
+    } else if (pills[1].includes(",")) {
+      const parts = pills[1].split(",");
+      p2Title = parts[0]?.trim() || "25+ Years";
+      p2Sub = parts[1]?.trim() || "Pune Courts";
+    } else {
+      p2Title = pills[1];
+      p2Sub = "Pune District Courts";
+    }
+  }
+
+  // Card 3: Key areas / matters
+  let p3Title = "Notice · Trial · Settlement";
+  let p3Sub = "Matters handled";
+  if (pills[2]) {
+    p3Title = pills[2].replace(/handled/i, "").trim();
+    p3Sub = "Matters handled";
+  }
+
+  return [
+    { icon: UserCheck, title: p1Title, subtitle: p1Sub },
+    { icon: Award, title: p2Title, subtitle: p2Sub },
+    { icon: Briefcase, title: p3Title, subtitle: p3Sub },
+  ];
+}
+
 export default async function PracticeAreaPage({ params }: Props) {
   const resolvedParams = await params;
   const area = practiceAreas.find((a) => a.slug === resolvedParams.slug);
@@ -50,42 +122,88 @@ export default async function PracticeAreaPage({ params }: Props) {
   }
 
   const IconComponent = (LucideIcons as any)[area.icon] || LucideIcons.Scale;
+  const badgeText = practiceBadges[area.slug] || "Senior Advocates · Pune Courts";
+  const headline = getPracticeHeadline(area.slug, area.name);
+  const trustCards = getTrustCards(area);
 
   return (
     <>
       {/* ── Header ── */}
       <section className={styles.hero}>
-        {/* area.image && (
-          <div className={styles.heroImageBg}>
-            <Image
-              src={area.image}
-              alt={area.name}
-              fill
-              className={styles.bgImage}
-              priority
-            />
-            <div className={styles.bgOverlay} />
-          </div>
-        ) */}
-        
+        {/* Soft organic ambient shapes inspired by reference layout */}
+        <div className={styles.heroBlobRight} aria-hidden="true" />
+        <div className={styles.heroBlobLeft} aria-hidden="true" />
+        <div className={styles.patternDecor} aria-hidden="true" />
+
         <div className={styles.heroContainer}>
-          <div className={styles.heroContent}>
-            <div className={styles.iconWrapper}>
-              <IconComponent size={32} strokeWidth={1.5} />
-            </div>
-            <h1 className={styles.title}>{area.name}</h1>
-            <p className={styles.tagline}>{area.tagline}</p>
-            
-            {area.heroTrustPills && area.heroTrustPills.length > 0 && (
-              <div className={styles.trustPills}>
-                {area.heroTrustPills.map((pill, i) => (
-                  <div key={i} className={styles.pill}>
-                    <CheckCircle2 size={16} className={styles.pillIcon} />
-                    <span>{pill}</span>
-                  </div>
-                ))}
+          <div className={styles.heroGrid}>
+            {/* Left Column: Heading, description, actions, trust cards */}
+            <div className={styles.heroContent}>
+              <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
+                <Link href="/" className={styles.breadcrumbLink}>Home</Link>
+                <span className={styles.breadcrumbSep}>›</span>
+                <Link href="/practice-areas" className={styles.breadcrumbLink}>Practice Areas</Link>
+                <span className={styles.breadcrumbSep}>›</span>
+                <span className={styles.breadcrumbCurrent}>{headline}</span>
+              </nav>
+
+              <div className={styles.categoryBadge}>
+                <span className={styles.badgeStar}>★</span>
+                <span>{badgeText}</span>
               </div>
-            )}
+
+              <h1 className={styles.title}>
+                {headline} <span className={styles.titleHighlight}>in Pune</span>
+              </h1>
+              <p className={styles.tagline}>{area.overview.tldr || area.tagline}</p>
+
+              <div className={styles.heroActions}>
+                <a 
+                  href={`tel:${siteConfig.phoneRaw || siteConfig.phone.replace(/\s+/g, '')}`} 
+                  className={styles.callNow}
+                >
+                  <Phone size={18} />
+                  <span>Call Now — Confidential</span>
+                </a>
+                <a href="#faqs" className={styles.faqLink}>
+                  <CircleHelp size={18} />
+                  <span>Read the FAQs</span>
+                </a>
+              </div>
+
+              <div className={styles.trustPills}>
+                {trustCards.map((card, i) => {
+                  const CardIcon = card.icon;
+                  return (
+                    <div key={i} className={styles.pillCard}>
+                      <div className={styles.pillIconBox}>
+                        <CardIcon size={18} strokeWidth={2} />
+                      </div>
+                      <div className={styles.pillTextBox}>
+                        <span className={styles.pillTitle}>{card.title}</span>
+                        <span className={styles.pillSub}>{card.subtitle}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right Column: Embedded Call Back Card */}
+            <div id="enquiry" className={styles.heroEnquiryCol}>
+              <div className={styles.enquiryCard}>
+                <div className={styles.enquiryCardHeader}>
+                  <h2 id="enquiry-title" className={styles.enquiryCardTitle}>Request a Call Back</h2>
+                  <p className={styles.enquiryCardSub}>
+                    We respond within 24 to 48 hours.
+                  </p>
+                </div>
+                <ContactForm compact defaultPracticeArea={area.slug} />
+                <div className={styles.enquiryCardFooter}>
+                  <span>🔒 100% Confidential · Strict Legal Privilege</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -126,6 +244,7 @@ export default async function PracticeAreaPage({ params }: Props) {
                       <h3 className={styles.subServiceName}>{service.name}</h3>
                     </div>
                     <p className={styles.subServiceDesc}>{service.description}</p>
+                    <a href="#process" className={styles.howLink}>How it works <ArrowRight size={18} /></a>
                   </div>
                 ))}
               </div>
@@ -252,14 +371,7 @@ export default async function PracticeAreaPage({ params }: Props) {
                 <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
               </div>
               
-              <div className={styles.faqsList}>
-                {area.faqs.map((faq, idx) => (
-                  <div key={idx} className={styles.faqCard}>
-                    <h3 className={styles.faqQuestion}>{faq.question}</h3>
-                    <p className={styles.faqAnswer}>{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
+              <Accordion items={area.faqs} defaultOpenIndex={0} />
             </section>
           )}
           
@@ -268,11 +380,7 @@ export default async function PracticeAreaPage({ params }: Props) {
 
       <CallToActionBar />
 
-      {/* ── Floating CTA ── */}
-      <Link href="/contact" className={styles.floatingCta}>
-        <MessageSquare size={20} />
-        <span>Not sure where to start?</span>
-      </Link>
+
     </>
   );
 }

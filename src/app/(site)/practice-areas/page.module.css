@@ -302,3 +302,13 @@
     padding: 4rem var(--gutter);
   }
 }
+
+
+.areaTitle { font-family: var(--font-heading); font-weight: 800; }
+.areaRow:nth-child(4n+1) { background: #e7eef6; }
+.areaRow:nth-child(4n+2) { background: #f7ecd8; }
+.areaRow:nth-child(4n+3) { background: #ebe8f3; }
+.areaRow:nth-child(4n) { background: #f5e7df; }
+.areaRow { border-radius: 22px; margin: 0 0 1rem; padding: 2rem; }
+@media(max-width: 640px) { .areaRow { padding: 1.25rem; grid-template-columns: minmax(0, 1fr) auto; } }
+

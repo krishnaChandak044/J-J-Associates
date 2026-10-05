@@ -46,7 +46,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Practice Areas */}
-          <div>
+          <div className={styles.practiceCol}>
             <h4 className={styles.colTitle}>Practice Areas</h4>
             <div className={styles.linkList}>
               {practiceAreas.map((area) => (
@@ -58,7 +58,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: The Firm */}
-          <div>
+          <div className={styles.firmCol}>
             <h4 className={styles.colTitle}>The Firm</h4>
             <div className={styles.linkList}>
               {firmLinks.map((link) => (
@@ -82,55 +82,61 @@ export function Footer() {
           </div>
 
           {/* Column 4: Contact Info */}
-          <div>
+          <div className={styles.contactCol}>
             <h4 className={styles.colTitle}>Contact Us</h4>
 
-            {siteConfig.addresses?.map((address, index) => (
-              <div key={index} className={styles.contactItem} style={index > 0 ? { marginTop: '1rem' } : {}}>
-                <MapPin size={18} className={styles.contactIcon} />
-                <div className={styles.contactText}>
-                  {address.line1}<br />
-                  {address.line2}<br />
-                  {address.city}, {address.state} - {address.pin}
+            <div className={styles.contactDetails}>
+              <div className={styles.addressesGroup}>
+                {siteConfig.addresses?.map((address, index) => (
+                  <div key={index} className={styles.contactItem} style={index > 0 ? { marginTop: '1rem' } : {}}>
+                    <MapPin size={18} className={styles.contactIcon} />
+                    <div className={styles.contactText}>
+                      {address.line1}<br />
+                      {address.line2}<br />
+                      {address.city}, {address.state} - {address.pin}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className={styles.contactMetaGroup}>
+                <div className={styles.contactItem}>
+                  <Phone size={18} className={styles.contactIcon} />
+                  <div className={styles.contactText}>
+                    <a href={`tel:${siteConfig.phoneRaw}`} className={styles.contactLink}>
+                      {siteConfig.phone}
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
 
-            <div className={styles.contactItem}>
-              <Phone size={18} className={styles.contactIcon} />
-              <div className={styles.contactText}>
-                <a href={`tel:${siteConfig.phoneRaw}`} className={styles.contactLink}>
-                  {siteConfig.phone}
+                <div className={styles.contactItem}>
+                  <Mail size={18} className={styles.contactIcon} />
+                  <div className={styles.contactText}>
+                    <a href={`mailto:${siteConfig.email}`} className={styles.contactLink}>
+                      {siteConfig.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className={styles.contactItem}>
+                  <Clock size={18} className={styles.contactIcon} />
+                  <div className={styles.contactText}>
+                    {siteConfig.hours?.days}<br />
+                    {siteConfig.hours?.time}
+                  </div>
+                </div>
+
+                {/* WhatsApp CTA */}
+                <a
+                  href={siteConfig.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.whatsappBtn}
+                >
+                  WhatsApp Us →
                 </a>
               </div>
             </div>
-
-            <div className={styles.contactItem}>
-              <Mail size={18} className={styles.contactIcon} />
-              <div className={styles.contactText}>
-                <a href={`mailto:${siteConfig.email}`} className={styles.contactLink}>
-                  {siteConfig.email}
-                </a>
-              </div>
-            </div>
-
-            <div className={styles.contactItem}>
-              <Clock size={18} className={styles.contactIcon} />
-              <div className={styles.contactText}>
-                {siteConfig.hours?.days}<br />
-                {siteConfig.hours?.time}
-              </div>
-            </div>
-
-            {/* WhatsApp CTA */}
-            <a
-              href={siteConfig.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.whatsappBtn}
-            >
-              WhatsApp Us →
-            </a>
           </div>
         </div>
 
@@ -161,6 +167,7 @@ export function Footer() {
 
         {/* BCI Disclaimer */}
         <div className={styles.disclaimer}>
+          <strong>Disclaimer</strong>
           The information on this website does not constitute legal advice and does not create an attorney-client relationship.
           Please consult an advocate before acting on any information. Enrolled with the {siteConfig.barCouncil}. Regulated by the Bar Council of India.
         </div>
