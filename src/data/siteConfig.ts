@@ -214,6 +214,7 @@ export const siteConfig = {
       action: "Applied for waiver under Section 13B(2) citing settled finances and no minor children.",
       result: "Decree Granted",
       category: "Family Law",
+      image: "/matter_resolved/family_law.jpg",
     },
     {
       court: "Sessions Court · Pune",
@@ -221,6 +222,7 @@ export const siteConfig = {
       action: "Filed anticipatory bail at first listing with specific factual grounds rebutting the FIR allegations.",
       result: "Bail Granted",
       category: "Criminal Defence",
+      image: "/matter_resolved/criminal_defence.jpg",
     },
     {
       court: "District Court · Pune",
@@ -228,6 +230,7 @@ export const siteConfig = {
       action: "Issued legal notice under Section 138 NI Act within time; complaint filed and matter taken to trial.",
       result: "Fully Recovered",
       category: "Consumer & Cheque Bounce",
+      image: "/matter_resolved/cheque_bounce.jpg",
     },
     {
       court: "Family Court · Pune",

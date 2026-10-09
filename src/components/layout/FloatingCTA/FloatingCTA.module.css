@@ -81,3 +81,10 @@
     gap: 0.35rem;
   }
 }
+
+@media (min-width: 1024px) {
+  .contactDock {
+    display: none;
+  }
+}
+

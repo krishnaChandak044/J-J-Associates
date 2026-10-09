@@ -162,15 +162,11 @@ export function Footer() {
           </div>
           <div className={styles.legalLinks}>
             <Link href="/disclaimer" className={styles.legalLink}>Disclaimer</Link>
+            <Link href="/privacy-policy" className={styles.legalLink}>Privacy Policy</Link>
           </div>
         </div>
 
-        {/* BCI Disclaimer */}
-        <div className={styles.disclaimer}>
-          <strong>Disclaimer</strong>
-          The information on this website does not constitute legal advice and does not create an attorney-client relationship.
-          Please consult an advocate before acting on any information. Enrolled with the {siteConfig.barCouncil}. Regulated by the Bar Council of India.
-        </div>
+        {/* Disclaimer text has been moved to the Disclaimer page */}
       </div>
     </footer>
   );

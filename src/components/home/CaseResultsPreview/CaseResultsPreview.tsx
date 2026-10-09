@@ -29,15 +29,24 @@ export function CaseResultsPreview() {
         <div className={styles.grid}>
           {displayResults.map((result, idx) => (
             <div key={idx} className={styles.card}>
-              <div className={styles.cardTop}>
-                <span className={styles.category}>{result.category}</span>
-                <span className={styles.court}>{result.court}</span>
-              </div>
-              <p className={styles.situation}>&ldquo;{result.situation}&rdquo;</p>
-              <div className={styles.divider} />
-              <div className={styles.outcomeRow}>
-                <span className={styles.outcomeLabel}>Outcome</span>
-                <span className={styles.outcomeValue}>{result.result}</span>
+              {/* @ts-ignore - image exists on these 3 items */}
+              {result.image && (
+                <div className={styles.cardImageWrapper}>
+                  {/* @ts-ignore */}
+                  <img src={result.image} alt={result.category} className={styles.cardImage} />
+                </div>
+              )}
+              <div className={styles.cardContent}>
+                <div className={styles.cardTop}>
+                  <span className={styles.category}>{result.category}</span>
+                  <span className={styles.court}>{result.court}</span>
+                </div>
+                <p className={styles.situation}>&ldquo;{result.situation}&rdquo;</p>
+                <div className={styles.divider} />
+                <div className={styles.outcomeRow}>
+                  <span className={styles.outcomeLabel}>Outcome</span>
+                  <span className={styles.outcomeValue}>{result.result}</span>
+                </div>
               </div>
             </div>
           ))}
