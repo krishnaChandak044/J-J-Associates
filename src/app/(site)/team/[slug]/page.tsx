@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return generatePageMetadata({
-    title: `${member.name} - ${member.role} | Jaju & Jaju Associates`,
+    title: `${member.name} - ${member.role} | J&J Associates`,
     description: member.quote || member.bio?.substring(0, 150) || `Profile of ${member.name}`,
     path: `/team/${member.slug}`,
   });
@@ -62,10 +62,12 @@ export default async function TeamMemberPage({ params }: Props) {
           <div className={styles.contactCard}>
             <h3 className={styles.contactTitle}>Contact {member.name.split(' ')[1] || 'Advocate'}</h3>
             <ul className={styles.contactList}>
-              <li className={styles.contactItem}>
-                <Phone size={18} className={styles.contactIcon} />
-                {siteConfig.phone}
-              </li>
+              {siteConfig.phoneNumbers.map((phone) => (
+                <li key={phone.raw} className={styles.contactItem}>
+                  <Phone size={18} className={styles.contactIcon} />
+                  <a href={`tel:${phone.raw}`}>{phone.display}</a>
+                </li>
+              ))}
               <li className={styles.contactItem}>
                 <Mail size={18} className={styles.contactIcon} />
                 <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>

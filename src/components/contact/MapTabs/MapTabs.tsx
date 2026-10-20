@@ -43,7 +43,7 @@ export function MapTabs({ addresses }: MapTabsProps) {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title={`Jaju & Jaju Associates ${addresses[activeIndex].name || 'office'} location on Google Maps`}
+          title={`J&J Associates ${addresses[activeIndex].name || 'office'} location on Google Maps`}
         />
       </div>
     </section>

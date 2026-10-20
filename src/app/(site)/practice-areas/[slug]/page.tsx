@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return generatePageMetadata({
-    title: `${area.name} Lawyers in Pune | Jaju & Jaju Associates`,
+    title: `${area.name} Lawyers in Pune | J&J Associates`,
     description: area.tagline,
     path: `/practice-areas/${area.slug}`,
   });
@@ -122,7 +122,7 @@ export default async function PracticeAreaPage({ params }: Props) {
   }
 
   const IconComponent = (LucideIcons as any)[area.icon] || LucideIcons.Scale;
-  const badgeText = practiceBadges[area.slug] || "Senior Advocates · Pune Courts";
+  const badgeText = practiceBadges[area.slug] || "Advocates · Pune Courts";
   const headline = getPracticeHeadline(area.slug, area.name);
   const trustCards = getTrustCards(area);
 

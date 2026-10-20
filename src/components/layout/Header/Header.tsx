@@ -51,10 +51,10 @@ export function Header() {
       >
         <div className={styles.inner}>
           {/* Logo */}
-          <Link href="/" className={styles.logo} aria-label="Jaju & Jaju Associates, Go to homepage">
+          <Link href="/" className={styles.logo} aria-label="J&J Associates, Go to homepage">
             <Image 
               src={logoImg} 
-              alt="Jaju & Jaju Associates Logo" 
+              alt="J&J Associates Logo" 
               width={65}
               height={65}
               className={styles.logoImage}
@@ -62,7 +62,7 @@ export function Header() {
             />
             <div className={styles.logoTextWrapper}>
               <span className={styles.logoTitle}>J&J Associates</span>
-              <span className={styles.logoSubtitle}>Advocates • Pune</span>
+              <span className={styles.logoSubtitle}>Advocates and legal consultants</span>
             </div>
           </Link>
 

@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import { insights, formatInsightDate, getInsightImage } from "@/data/insights";
 
 export const metadata: Metadata = {
-  title: "Legal Insights | Jaju & Jaju Associates Pune",
-  description: "Plain-language articles on family law, criminal law, property, and consumer matters, written by advocates at Jaju & Jaju Associates, Pune.",
+  title: "Legal Insights | J&J Associates Pune",
+  description: "Plain-language articles on family law, criminal law, property, and consumer matters, written by advocates at J&J Associates, Pune.",
 };
 
 export default function InsightsPage() {

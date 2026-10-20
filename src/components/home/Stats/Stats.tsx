@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./Stats.module.css";
 
 const STATS = [
-  { num: 15, suffix: "+", label: "Years of practice" },
-  { num: 1000, suffix: "+", label: "Matters handled" },
+  { value: "Pune", label: "Local legal counsel" },
+  { num: 4, suffix: "", label: "Core practice areas" },
   { num: 12, suffix: "", label: "Advocates on team" },
   { num: 5, suffix: "+", label: "High courts appeared" },
 ];
@@ -34,12 +34,12 @@ function useCountUp(target: number, duration = 1800, triggered: boolean) {
   return count;
 }
 
-function StatItem({ num, suffix, label, triggered }: { num: number; suffix: string; label: string; triggered: boolean }) {
-  const count = useCountUp(num, 1600, triggered);
+function StatItem({ num, value, suffix = "", label, triggered }: { num?: number; value?: string; suffix?: string; label: string; triggered: boolean }) {
+  const count = useCountUp(num ?? 0, 1600, triggered);
   return (
     <div className={styles.statc}>
       <span className={styles.n}>
-        {count}{suffix}
+        {value ?? `${count}${suffix}`}
       </span>
       <span className={styles.l}>{label}</span>
     </div>

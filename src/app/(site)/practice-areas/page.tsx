@@ -7,8 +7,8 @@ import styles from "./page.module.css";
 import { CallToActionBar } from "@/components/ui/CallToActionBar/CallToActionBar";
 
 export const metadata = generatePageMetadata({
-  title: "Practice Areas | Jaju & Jaju Associates",
-  description: "Jaju & Jaju Associates handles Family Law, Criminal Defense, Civil Litigation, Property Law, and Corporate Law in Pune. Explore our expertise.",
+  title: "Practice Areas | J&J Associates",
+  description: "J&J Associates handles Family Law, Criminal Defense, Civil Litigation, Property Law, and Corporate Law in Pune. Explore our expertise.",
   path: "/practice-areas",
 });
 
@@ -20,7 +20,7 @@ export default function PracticeAreasIndexPage() {
         <div className={styles.heroInner}>
           <span className={styles.label}>Practice Areas</span>
           <h1 className={styles.heading}>
-            What do you need <span className="text-highlight">help</span> with?
+            What <span className="text-highlight">Legal Assistance</span> Do You Need?
           </h1>
           <p className={styles.sub}>
             Five core areas of practice, one measured approach. Every page below covers
@@ -77,7 +77,7 @@ export default function PracticeAreasIndexPage() {
           <div className={styles.noteContent}>
             <span className={styles.noteLabel} role="presentation">A Note on Timelines</span>
             <p className={styles.noteText}>
-              Every matter at Jaju & Jaju Associates is assessed honestly, including realistic
+              Every matter at J&J Associates is assessed honestly, including realistic
               timelines. Courts in Pune are busy. Matters take longer than clients
               initially expect, and there are delays that neither party nor lawyer can
               control. We tell you what a realistic timeline looks like for your type

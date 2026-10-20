@@ -1,12 +1,12 @@
-// Jaju & Jaju Associates, Single Source of Truth
+// J&J Associates, Single Source of Truth
 // ─────────────────────────────────────────────────
 // Update PLACEHOLDER values with real client data before going live.
 
 export const siteConfig = {
   // ── Firm Identity ──────────────────────────────────────────────────────────
-  firmName: "Jaju & Jaju Associates",
-  name: "Jaju & Jaju Associates",
-  fullName: "Jaju & Jaju Associates, Advocates & Legal Consultants",
+  firmName: "J&J Associates",
+  name: "J&J Associates",
+  fullName: "J&J Associates, Advocates & Legal Consultants",
   tagline: "Justice. Diligence. Results.",
   subTagline:
     "Gaurav Jaju & Ankita Kabra (Jaju) lead a dedicated legal practice for Family, Criminal, Civil and Property matters, before every major court in Pune.",
@@ -15,8 +15,12 @@ export const siteConfig = {
     "A client does not need a lawyer who promises. They need one who prepares, and tells them the truth about their case before the other side does.",
 
   // ── Contact Details ─────────────────────────────────────────────────────────
-  phone: "+91 814 990 1255",         // ACTUAL NUMBER
-  phoneRaw: "+918149901255",         // ACTUAL NUMBER, for tel: links
+  phone: "+91 80551 25521",
+  phoneRaw: "+918055125521",
+  phoneNumbers: [
+    { display: "8055125521", raw: "+918055125521" },
+    { display: "8087501307", raw: "+918087501307" },
+  ],
   whatsapp: "https://wa.me/918149901255", // ACTUAL NUMBER
   email: "info@jajuassociates.in",   // PLACEHOLDER
   emailAlt: "gauravjaju@jajuassociates.in", // PLACEHOLDER
@@ -276,7 +280,7 @@ export const siteConfig = {
         number: "01",
         title: "Diagnosis before prescription.",
         description:
-          "The first meeting at Jaju & Jaju Associates is not a sales conversation. It is a focused examination of your facts, your documents, and the other side's likely position. You leave the first meeting knowing what your matter involves, regardless of whether you engage us or not.",
+          "The first meeting at J&J Associates is not a sales conversation. It is a focused examination of your facts, your documents, and the other side's likely position. You leave the first meeting knowing what your matter involves, regardless of whether you engage us or not.",
       },
       {
         number: "02",
@@ -304,7 +308,7 @@ export const siteConfig = {
       },
       {
         title: "We do not take matters we cannot handle.",
-        description: "Jaju & Jaju Associates is a focused firm. If a matter is outside our practice areas or requires a specialisation we do not have, we say so, and where possible, refer you to someone who does.",
+        description: "J&J Associates is a focused firm. If a matter is outside our practice areas or requires a specialisation we do not have, we say so, and where possible, refer you to someone who does.",
       },
       {
         title: "We do not bill for calls that don't happen.",
@@ -340,7 +344,7 @@ export const siteConfig = {
     "criminal lawyer Pune",
     "property lawyer Pune",
     "family court advocate Pune",
-    "Jaju & Jaju Associates",
+    "J&J Associates",
     "Gaurav Jaju advocate",
     "Ankita Kabra advocate",
     "vakil Pune",

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const insight = getInsightBySlug(slug);
   if (!insight) return { title: "Not Found" };
   return {
-    title: `${insight.title} | Jaju & Jaju Associates`,
+    title: `${insight.title} | J&J Associates`,
     description: insight.excerpt,
   };
 }
@@ -64,7 +64,7 @@ export default async function InsightPage({ params }: Props) {
             <div className={styles.attributionInner}>
               <div className={styles.authorMonogram}>GJ</div>
               <div>
-                <p className={styles.authorName}>Jaju &amp; Jaju Associates</p>
+                <p className={styles.authorName}>J&amp;J Associates</p>
                 <p className={styles.authorRole}>Advocates &amp; Legal Consultants · Pune</p>
               </div>
             </div>

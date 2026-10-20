@@ -12,7 +12,7 @@ import { AdvocatesStrip } from "@/components/home/AdvocatesStrip/AdvocatesStrip"
 import { CallToActionBar } from "@/components/ui/CallToActionBar/CallToActionBar";
 
 export const metadata: Metadata = {
-  title: "Jaju & Jaju Associates | Advocates & Legal Consultants Pune",
+  title: "J&J Associates | Advocates & Legal Consultants Pune",
   description: "Justice, Handled With Precision. Gaurav Jaju & Ankita Kabra (Jaju), dedicated advocates in Pune for Family, Criminal, Civil & Property matters.",
 };
 

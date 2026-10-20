@@ -4,8 +4,8 @@ import styles from "./page.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Case Results, On the Record | Jaju & Jaju Associates",
-  description: "A factual record of how matters have resolved at Jaju & Jaju Associates, real outcomes across family law, criminal defence, property, and civil matters.",
+  title: "Case Results, On the Record | J&J Associates",
+  description: "A factual record of how matters have resolved at J&J Associates, real outcomes across family law, criminal defence, property, and civil matters.",
 };
 
 // All unique categories

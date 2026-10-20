@@ -31,7 +31,7 @@ export function Hero() {
           </h1>
 
           <p className={styles.subtitle}>
-            Adv. Gaurav Jaju, Adv. Ankita Jaju and a dedicated team for Family, Corporate, Civil and Criminal matters, before every major court in Pune.
+            Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju) lead a dedicated legal team handling Family, Corporate, Civil and Criminal matters across Pune.
           </p>
 
           <div className={styles.actions}>
@@ -48,11 +48,11 @@ export function Hero() {
           <div className={styles.quickStats}>
             <div className={styles.quickStat}>
               <ShieldCheck size={20} className={styles.quickIcon} />
-              <span><strong>Confidential</strong> first assessment</span>
+              <span><strong>Confidential</strong></span>
             </div>
             <div className={styles.quickStat}>
               <Clock size={20} className={styles.quickIcon} />
-              <span>Replies within <strong>2 hours</strong></span>
+              <span>Replies within <strong>1 hour</strong></span>
             </div>
           </div>
         </div>
@@ -61,9 +61,10 @@ export function Hero() {
         <div className={styles.imageContent}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/founder/IMG_2913.PNG"
-              alt="Adv. Gaurav Jaju and Adv. Ankita Jaju"
+              src="/images/legal-hero.png"
+              alt="Brass scales of justice beside law books in warm natural light"
               fill
+              sizes="(max-width: 991px) 100vw, 50vw"
               priority
               className={styles.heroImage}
             />
@@ -74,8 +75,8 @@ export function Hero() {
               <Scale size={20} />
             </div>
             <div className={styles.trustBadgeText}>
-              <strong>15+ Years</strong>
-              <span>of practice in Pune</span>
+              <strong>Pune Based</strong>
+              <span>Legal counsel across Pune</span>
             </div>
           </div>
         </div>

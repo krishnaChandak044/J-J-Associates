@@ -26,7 +26,7 @@ const cormorant = Cormorant_Garamond({
 // ─── Metadata ─────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "Jaju & Jaju Associates | Advocates & Legal Consultants Pune",
+  title: "J&J Associates | Advocates & Legal Consultants Pune",
   description: "Justice, Handled With Precision. Pune's premier law firm specializing in Divorce, Civil Litigation, Property, and Corporate Law.",
 };
 

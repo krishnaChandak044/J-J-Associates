@@ -1,4 +1,4 @@
-// Jaju & Jaju Associates, Legal Insights
+// J&J Associates, Legal Insights
 // Static seed content. Replace/extend with Sanity CMS when ready.
 
 export interface InsightArticle {

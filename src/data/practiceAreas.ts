@@ -2,6 +2,186 @@ import type { PracticeArea } from "@/types";
 
 export const practiceAreas: PracticeArea[] = [
   {
+    slug: "corporate",
+    name: "Corporate",
+    tagline: "Legal foundation for your business growth.",
+    icon: "Briefcase",
+    image: "/practice-areas/corporate.png",
+    heroTrustPills: [
+      "Adv. Jaju, Leads this practice",
+      "MCA · NCLT · RBI Compliance",
+      "Startups · SMEs · Established Businesses",
+    ],
+    overview: {
+      tldr: "From incorporation and contracts to shareholder disputes and regulatory compliance, J&J Associates provides the complete corporate legal support that Pune's businesses, from startups to established companies, need to operate confidently.",
+      paragraphs: [
+        "Running a business in India means navigating a complex legal landscape, corporate law, contract law, labour law, tax law, and an ever-changing regulatory environment. Most business owners focus on building their business and treat legal as an afterthought, until something goes wrong. At J&J Associates, we work best as a proactive legal partner, not just a crisis responder.",
+        "We advise startups on the right legal structure from day one, help businesses draft contracts that protect them, advise on regulatory compliance, and handle disputes before they become expensive litigation, whether through negotiation, arbitration, or court proceedings.",
+        "Our corporate practice is practical, built for real business decisions, not theoretical legal analysis. We translate law into clear advice you can act on.",
+      ],
+      subServices: [
+        { name: "Business Incorporation", description: "Private Limited, LLP, OPC, and Partnership formation, structure advice + MCA filings." },
+        { name: "Contract Drafting & Review", description: "Vendor agreements, service contracts, NDAs, MoUs, shareholder agreements." },
+        { name: "Regulatory Compliance", description: "Companies Act compliance, GST advisory, RBI/FEMA for foreign investment." },
+        { name: "Shareholder Disputes", description: "Disputes between promoters, minority shareholder oppression, NCLT proceedings." },
+        { name: "Business Restructuring", description: "Mergers, acquisitions, demergers, and restructuring advisory." },
+        { name: "Commercial Dispute Resolution", description: "Arbitration and litigation for commercial contract disputes." },
+      ],
+    },
+    process: [
+      { step: 1, title: "Business Legal Audit", description: "For new clients, we conduct a brief legal audit, understanding your business structure, existing contracts, compliance status, and areas of risk.", duration: "1–2 meetings" },
+      { step: 2, title: "Structure & Setup", description: "If incorporating, we advise on the correct structure (Pvt Ltd vs LLP vs OPC) and handle all MCA filings, DSC registration, and initial compliance.", duration: "2–4 weeks" },
+      { step: 3, title: "Contracts & Agreements", description: "We draft or review all key business agreements, vendor contracts, client agreements, employment contracts, NDAs.", duration: "Ongoing" },
+      { step: 4, title: "Compliance Calendar", description: "We set up and manage your annual compliance calendar, board meetings, annual returns, ROC filings, statutory registers.", duration: "Annual ongoing" },
+      { step: 5, title: "Dispute Resolution", description: "When disputes arise, we first attempt negotiation and mediation. If unsuccessful, we pursue arbitration or litigation.", duration: "As needed" },
+    ],
+    documents: [
+      { category: "Incorporation", items: ["Identity and address proof of directors/partners", "Registered office address proof", "Digital Signature Certificates (DSC)", "Memorandum & Articles of Association (drafted by us)"] },
+      { category: "Ongoing Compliance", items: ["Board meeting minutes", "Annual return (MGT-7)", "Financial statements", "Director KYC (DIR-3 KYC)"] },
+    ],
+    timeline: [
+      { phase: "Company/LLP Incorporation", duration: "2–4 weeks", note: "MCA process, including DIN, DSC, and certificate of incorporation.", length: "short" },
+      { phase: "Commercial Contract Dispute (Arbitration)", duration: "6–18 months", note: "Arbitration is faster than courts for commercial disputes.", length: "medium" },
+      { phase: "NCLT Proceedings (Shareholder Dispute)", duration: "1–3 years", note: "Company law matters before NCLT.", length: "long" },
+    ],
+    commonMistakes: [
+      { title: "Using template agreements from the internet", harm: "Generic templates are not drafted for Indian law or your specific business. A poorly drafted contract has cost more Pune businesses more money than any legal fee ever would.", prevention: "We draft contracts tailored to your business, your risks, and Indian law. It is a one-time investment that saves repeatedly." },
+      { title: "Not having a shareholder agreement from day one", harm: "Disputes between co-founders are one of the most common reasons businesses fail. Without a shareholder agreement, there is no agreed process for resolving them.", prevention: "We draft comprehensive shareholder agreements at the time of incorporation, when everyone is aligned, before disagreements arise." },
+      { title: "Ignoring compliance deadlines", harm: "Late ROC filings attract significant penalties. Repeated non-compliance can result in company strike-off or disqualification of directors.", prevention: "We manage your compliance calendar proactively and send reminders well ahead of deadlines." },
+    ],
+    fees: {
+      description: "Corporate fees are typically structured as: (1) one-time incorporation fees, (2) fixed-fee retainers for ongoing compliance, and (3) matter-specific fees for contracts, disputes, and regulatory work.",
+      note: "Many growing businesses find a monthly retainer arrangement the most cost-effective, you have legal support available whenever you need it, at a predictable monthly cost.",
+    },
+    faqs: [
+      { question: "Should I incorporate as a Private Limited Company or an LLP?", answer: "It depends on your business type, funding plans, and tax position. Pvt Ltd is better for businesses seeking external investment (VCs, angels). LLP is better for professional practices and partnerships where flexibility matters. We advise on the right structure after understanding your specific situation." },
+      { question: "What is the minimum requirement to incorporate a Private Limited Company?", answer: "You need at least 2 directors (one must be an Indian resident), 2 shareholders, a registered office address in India, and Digital Signature Certificates. We handle the entire MCA filing process." },
+      { question: "My business partner and I are in dispute. What are my options?", answer: "First, review your shareholder/partnership agreement, it should contain a dispute resolution mechanism. If not, or if the mechanism fails, you can approach the NCLT for oppression and mismanagement, or civil court for breach of contract. We advise on the fastest path to resolution." },
+    ],
+  },
+  {
+    slug: "consumer-matters",
+    name: "Consumer Matters",
+    tagline: "Holding businesses accountable to you.",
+    icon: "ShoppingBag",
+    image: "/practice-areas/consumer.png",
+    heroTrustPills: [
+      "Adv. Jaju, Leads this practice",
+      "District Forum Pune · State Commission",
+      "Products · Services · Insurance · E-Commerce",
+    ],
+    overview: {
+      tldr: "As a consumer, you have powerful legal rights under the Consumer Protection Act, 2019. J&J Associates helps individuals fight back against defective products, poor services, misleading advertisements, and insurance claim denials, and win.",
+      paragraphs: [
+        "The Consumer Protection Act, 2019 is one of the most powerful tools available to ordinary citizens. It allows you to sue companies, service providers, and even e-commerce platforms in a dedicated consumer forum, faster and cheaper than a civil court, with penalties for deficient service and the ability to claim compensation for physical, mental, and financial harm.",
+        "We handle consumer complaints before the District Consumer Disputes Redressal Commission, Pune (for claims up to ₹50 lakhs), the Maharashtra State Consumer Disputes Redressal Commission (up to ₹2 crores), and the National Consumer Disputes Redressal Commission (above ₹2 crores).",
+        "Common matters we handle include: defective electronic goods or vehicles, builder deficiency in construction quality, insurance claim denials, hospital negligence, telecom service failures, and e-commerce delivery/refund disputes.",
+      ],
+      subServices: [
+        { name: "Defective Products", description: "Complaints against manufacturers for defective goods, electronics, vehicles, appliances." },
+        { name: "Service Deficiency", description: "Against banks, hospitals, builders, telecoms, airlines, for poor or negligent service." },
+        { name: "Insurance Claim Denial", description: "Fighting insurance companies that have wrongfully rejected health, vehicle, or life insurance claims." },
+        { name: "Unfair Trade Practices", description: "Against companies using misleading advertisements or deceptive pricing." },
+        { name: "E-Commerce Disputes", description: "Against online platforms for non-delivery, fake products, or wrongful refusal of returns." },
+        { name: "Medical Negligence", description: "Consumer complaints (and civil suits) against hospitals and doctors for medical negligence." },
+      ],
+    },
+    process: [
+      { step: 1, title: "Documentation & Complaint Prep", description: "We gather all evidence, purchase receipts, service records, photographs, correspondence with the company, and draft a detailed consumer complaint.", duration: "1–2 weeks" },
+      { step: 2, title: "Pre-Filing Notice", description: "In many cases, a strong legal notice to the company resolves the matter without a forum complaint. We send this first.", duration: "1 week" },
+      { step: 3, title: "Filing the Consumer Complaint", description: "We file the complaint before the appropriate consumer forum, District, State, or National, with all supporting evidence.", duration: "1 week" },
+      { step: 4, title: "Hearing & Response", description: "The forum issues notice to the opposite party. We appear at hearings, submit written arguments, and present evidence.", duration: "3–12 months" },
+      { step: 5, title: "Order & Execution", description: "The forum passes an order, for replacement, refund, compensation, or penalty. We ensure the order is executed.", duration: "1–3 months after order" },
+    ],
+    documents: [
+      { category: "Purchase / Service Proof", items: ["Purchase receipt or invoice", "Warranty card (if product)", "Service agreement (if service)", "e-commerce order confirmation and delivery details"] },
+      { category: "Evidence of Deficiency", items: ["Photographs of defective product", "Medical reports (if injury caused)", "Correspondence with the company (emails, chat transcripts)"] },
+      { category: "Insurance (if applicable)", items: ["Insurance policy document", "Claim application submitted", "Rejection letter from insurance company", "Medical bills and reports"] },
+    ],
+    timeline: [
+      { phase: "Pre-Filing Legal Notice Resolution", duration: "2–6 weeks", note: "Many companies resolve the matter on receipt of a lawyer's notice.", length: "short" },
+      { phase: "District Forum Complaint", duration: "3–12 months", note: "Dedicated consumer forums are faster than civil courts.", length: "medium" },
+      { phase: "State / National Commission Appeal", duration: "6 months, 2 years", note: "Appeals against District Forum orders.", length: "long" },
+    ],
+    commonMistakes: [
+      { title: "Not preserving purchase receipts", harm: "Without proof of purchase, your complaint has no foundation. The company will simply deny the transaction.", prevention: "We advise you on what to preserve from day one. Even warranty registration emails and SMS confirmations are admissible." },
+      { title: "Waiting too long to complain", harm: "Consumer complaints must be filed within 2 years of the cause of action. Beyond that, your right is extinguished.", prevention: "Contact us as soon as you face a consumer problem, even if you are still trying to resolve it directly with the company." },
+      { title: "Not claiming full compensation", harm: "Many consumers only claim a refund. But the Consumer Protection Act allows you to claim compensation for mental agony, physical harm, and the legal costs you incurred, claim everything you are entitled to.", prevention: "We always draft complaints claiming the full compensation available under law." },
+    ],
+    fees: {
+      description: "Consumer complaints have a very low court fee (paid to the government, ₹100 to ₹5,000 depending on the claim amount). Our professional fees are structured to be accessible for individual consumers.",
+      note: "We assess the strength of your matter candidly in the first consultation. We do not take up weak matters that will waste your time and money.",
+    },
+    faqs: [
+      { question: "Can I file a consumer complaint myself without a lawyer?", answer: "Yes, but having a lawyer significantly increases your chances of success. Consumer forums are not as informal as they appear, proper evidence, legal arguments, and timely filings all matter. We handle the entire process." },
+      { question: "The insurance company rejected my claim. What can I do?", answer: "File a consumer complaint alleging deficiency in service. Insurance claim rejections are one of the most common, and most successful, consumer complaints. Courts and forums routinely order insurers to honour legitimate claims with interest and compensation." },
+      { question: "The builder delivered my flat 4 years late. Can I claim anything beyond possession?", answer: "Yes. You can claim compensation for mental agony, the rent you paid elsewhere during the delay, and interest on your investment, before the consumer forum. Many homebuyers in Pune have successfully claimed ₹5–20 lakhs in compensation beyond just possession." },
+      { question: "An e-commerce platform is refusing my refund for a defective product. What are my options?", answer: "File a consumer complaint naming both the seller and the e-commerce platform. The Consumer Protection Act, 2019 explicitly makes e-commerce platforms liable for the sellers on their platform. Legal notices to Amazon/Flipkart get very quick responses." },
+    ],
+  },
+  {
+    slug: "family-law",
+    name: "Family Law",
+    tagline: "Protecting what matters most to you.",
+    icon: "Users",
+    image: "/practice-areas/family-law.png",
+    heroTrustPills: [
+      "Adv. Jaju, Leads this practice",
+      "Family Court, Pune, 25+ Years",
+      "Succession · Maintenance · Domestic Violence",
+    ],
+    overview: {
+      tldr: "Family law covers the full spectrum of legal matters that arise within families, from inheritance disputes and maintenance claims to domestic violence protection and guardianship. J&J Associates handles these with the sensitivity and resolve they deserve.",
+      paragraphs: [
+        "Family legal matters are uniquely difficult because they occur between people who once shared their lives. The legal outcomes affect not just finances, but children, homes, and futures. Our approach is to pursue the best possible legal outcome while being mindful of the human reality at the centre of every case.",
+        "We represent clients across all family law matters before the Family Court, Pune, including maintenance and alimony claims, domestic violence protection orders, succession and inheritance disputes, guardianship and adoption proceedings, and matters under the Hindu Succession Act and Indian Succession Act.",
+        "We have particular experience with matters involving senior citizens' rights under the Maintenance and Welfare of Parents and Senior Citizens Act, 2007, a growing area as families face complex questions of care and inheritance.",
+      ],
+      subServices: [
+        { name: "Maintenance & Alimony", description: "Claims for spousal or child maintenance under CrPC, HMA, or PWDVA." },
+        { name: "Domestic Violence Protection", description: "Protection orders, residence orders, and monetary relief under the PWDVA 2005." },
+        { name: "Succession & Inheritance", description: "Disputes over wills, intestate succession, and legal heir certificates." },
+        { name: "Guardianship & Custody", description: "Applications for guardianship of minors or persons of unsound mind." },
+        { name: "Adoption Proceedings", description: "Legal adoption processes under CARA guidelines and the JJ Act." },
+        { name: "Senior Citizens' Rights", description: "Maintenance claims and property protection for parents and senior citizens." },
+      ],
+    },
+    process: [
+      { step: 1, title: "Case Assessment", description: "We understand the full family situation, relationships, assets, existing legal orders, and your objective.", duration: "1–2 meetings" },
+      { step: 2, title: "Legal Notice (where applicable)", description: "In maintenance and domestic violence matters, a formal legal notice is often the first step, putting the other side on record.", duration: "1 week" },
+      { step: 3, title: "Filing the Application/Petition", description: "We prepare and file the appropriate petition before the correct court, Family Court or Magistrate's Court depending on the matter.", duration: "1–2 weeks" },
+      { step: 4, title: "Interim Relief", description: "Where urgent, we apply for interim orders, interim maintenance, protection orders, or residence orders, at the earliest hearing.", duration: "First hearing" },
+      { step: 5, title: "Hearing & Resolution", description: "Full hearing on the merits, evidence recording, and final orders.", duration: "3 months, 2 years" },
+    ],
+    documents: [
+      { category: "Identity", items: ["Aadhar Card", "PAN Card", "Birth certificate"] },
+      { category: "Relationship Proof", items: ["Marriage certificate (if applicable)", "Family tree / genealogy document", "Photographs establishing relationship"] },
+      { category: "Financial", items: ["Bank statements", "Income proof", "Property documents"] },
+      { category: "For Domestic Violence Matters", items: ["Medical reports (if injuries)", "Photographs of damage or injuries", "Witness contact details", "Any prior complaints to police"] },
+    ],
+    timeline: [
+      { phase: "Interim Protection / Maintenance Order", duration: "4–8 weeks", note: "Courts grant interim relief quickly in urgent family matters.", length: "short" },
+      { phase: "Full Family Law Matter", duration: "6 months, 2 years", note: "Depends on complexity, number of parties, and court schedule.", length: "medium" },
+      { phase: "Succession / Inheritance Dispute", duration: "1–5 years", note: "Complex property disputes involving multiple heirs can take longer.", length: "long" },
+    ],
+    commonMistakes: [
+      { title: "Delaying domestic violence complaints", harm: "Delayed complaints weaken the evidentiary record and give the other side time to create counter-narratives.", prevention: "We advise filing for protection orders immediately. Courts can grant ex-parte interim orders the same day in serious matters." },
+      { title: "Not documenting financial contributions", harm: "In maintenance cases, your financial contributions to the household and the other side's income must be proven, verbal claims are insufficient.", prevention: "We guide you on what financial evidence to preserve from the start." },
+      { title: "Accepting verbal assurances instead of court orders", harm: "Verbal promises from family members or the opposing party are legally worthless. People break them.", prevention: "Any agreement must be recorded as a consent order or settlement deed. We ensure everything is legally documented." },
+    ],
+    fees: {
+      description: "Family law fees depend on the nature of the proceeding, maintenance applications, domestic violence matters, and succession disputes each have different scopes of work.",
+      note: "We provide a clear estimate after the initial consultation. Emergency protection order applications are handled on priority with expedited fee arrangements.",
+    },
+    faqs: [
+      { question: "My husband refuses to pay maintenance. What can I do?", answer: "You can file an application under Section 125 CrPC or Section 24 HMA before the Family Court for maintenance. Courts can grant interim maintenance within the first few hearings. Non-payment after a court order can result in imprisonment." },
+      { question: "How do I get a protection order against domestic violence?", answer: "You file an application under the Protection of Women from Domestic Violence Act, 2005 before the Magistrate. Courts can grant an ex-parte protection order the same day in urgent matters, without the other side being present." },
+      { question: "Who inherits property if someone dies without a will?", answer: "Intestate succession is governed by personal law, Hindu Succession Act for Hindus, Indian Succession Act for others. The distribution among Class I and Class II heirs follows a specific statutory order." },
+      { question: "Can a father get custody of his children in India?", answer: "Yes. Courts decide custody based on the best interests of the child, not the gender of the parent. Fathers regularly secure custody or joint custody, particularly when the mother is found unfit or the child's welfare is better served." },
+      { question: "My parents are being evicted from their own home by my siblings. What can be done?", answer: "Under the Maintenance and Welfare of Parents and Senior Citizens Act, 2007, a Maintenance Tribunal can order protection, maintenance, and even reclaim property transferred by senior citizens under coercion." },
+    ],
+  },
+  {
     slug: "divorce",
     name: "Divorce",
     tagline: "Moving forward with clarity and dignity.",
@@ -13,9 +193,9 @@ export const practiceAreas: PracticeArea[] = [
       "Mutual · Contested · NRI Divorces Handled",
     ],
     overview: {
-      tldr: "Whether you are seeking a mutual consent divorce or navigating a contested separation, Jaju & Jaju Associates provides clear, compassionate, and strategic legal guidance throughout the process in Pune's Family Courts.",
+      tldr: "Whether you are seeking a mutual consent divorce or navigating a contested separation, J&J Associates provides clear, compassionate, and strategic legal guidance throughout the process in Pune's Family Courts.",
       paragraphs: [
-        "Divorce is one of the most difficult legal processes a person can go through, not just legally, but emotionally. At Jaju & Jaju Associates, we understand that behind every case file is a real person facing real uncertainty. Our role is not just to file documents, but to stand beside you with honesty and clarity from your very first call to the final decree.",
+        "Divorce is one of the most difficult legal processes a person can go through, not just legally, but emotionally. At J&J Associates, we understand that behind every case file is a real person facing real uncertainty. Our role is not just to file documents, but to stand beside you with honesty and clarity from your very first call to the final decree.",
         "We handle all types of matrimonial matters before the Family Court, Pune, from mutual consent divorces (the simplest path, when both parties agree) to contested divorces involving property disputes, child custody battles, and allegations of cruelty or desertion. We also regularly represent NRI clients in cross-jurisdiction divorce matters.",
         "Our approach is to first understand your full situation before advising a legal path. Rushing into litigation is often not the best outcome for you or your children. We will tell you plainly what the law can and cannot deliver, so your expectations are grounded in reality, not false promises.",
       ],
@@ -80,68 +260,6 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
-    slug: "family-law",
-    name: "Family Law",
-    tagline: "Protecting what matters most to you.",
-    icon: "Users",
-    image: "/practice-areas/family-law.png",
-    heroTrustPills: [
-      "Adv. Jaju, Leads this practice",
-      "Family Court, Pune, 25+ Years",
-      "Succession · Maintenance · Domestic Violence",
-    ],
-    overview: {
-      tldr: "Family law covers the full spectrum of legal matters that arise within families, from inheritance disputes and maintenance claims to domestic violence protection and guardianship. Jaju & Jaju Associates handles these with the sensitivity and resolve they deserve.",
-      paragraphs: [
-        "Family legal matters are uniquely difficult because they occur between people who once shared their lives. The legal outcomes affect not just finances, but children, homes, and futures. Our approach is to pursue the best possible legal outcome while being mindful of the human reality at the centre of every case.",
-        "We represent clients across all family law matters before the Family Court, Pune, including maintenance and alimony claims, domestic violence protection orders, succession and inheritance disputes, guardianship and adoption proceedings, and matters under the Hindu Succession Act and Indian Succession Act.",
-        "We have particular experience with matters involving senior citizens' rights under the Maintenance and Welfare of Parents and Senior Citizens Act, 2007, a growing area as families face complex questions of care and inheritance.",
-      ],
-      subServices: [
-        { name: "Maintenance & Alimony", description: "Claims for spousal or child maintenance under CrPC, HMA, or PWDVA." },
-        { name: "Domestic Violence Protection", description: "Protection orders, residence orders, and monetary relief under the PWDVA 2005." },
-        { name: "Succession & Inheritance", description: "Disputes over wills, intestate succession, and legal heir certificates." },
-        { name: "Guardianship & Custody", description: "Applications for guardianship of minors or persons of unsound mind." },
-        { name: "Adoption Proceedings", description: "Legal adoption processes under CARA guidelines and the JJ Act." },
-        { name: "Senior Citizens' Rights", description: "Maintenance claims and property protection for parents and senior citizens." },
-      ],
-    },
-    process: [
-      { step: 1, title: "Case Assessment", description: "We understand the full family situation, relationships, assets, existing legal orders, and your objective.", duration: "1–2 meetings" },
-      { step: 2, title: "Legal Notice (where applicable)", description: "In maintenance and domestic violence matters, a formal legal notice is often the first step, putting the other side on record.", duration: "1 week" },
-      { step: 3, title: "Filing the Application/Petition", description: "We prepare and file the appropriate petition before the correct court, Family Court or Magistrate's Court depending on the matter.", duration: "1–2 weeks" },
-      { step: 4, title: "Interim Relief", description: "Where urgent, we apply for interim orders, interim maintenance, protection orders, or residence orders, at the earliest hearing.", duration: "First hearing" },
-      { step: 5, title: "Hearing & Resolution", description: "Full hearing on the merits, evidence recording, and final orders.", duration: "3 months, 2 years" },
-    ],
-    documents: [
-      { category: "Identity", items: ["Aadhar Card", "PAN Card", "Birth certificate"] },
-      { category: "Relationship Proof", items: ["Marriage certificate (if applicable)", "Family tree / genealogy document", "Photographs establishing relationship"] },
-      { category: "Financial", items: ["Bank statements", "Income proof", "Property documents"] },
-      { category: "For Domestic Violence Matters", items: ["Medical reports (if injuries)", "Photographs of damage or injuries", "Witness contact details", "Any prior complaints to police"] },
-    ],
-    timeline: [
-      { phase: "Interim Protection / Maintenance Order", duration: "4–8 weeks", note: "Courts grant interim relief quickly in urgent family matters.", length: "short" },
-      { phase: "Full Family Law Matter", duration: "6 months, 2 years", note: "Depends on complexity, number of parties, and court schedule.", length: "medium" },
-      { phase: "Succession / Inheritance Dispute", duration: "1–5 years", note: "Complex property disputes involving multiple heirs can take longer.", length: "long" },
-    ],
-    commonMistakes: [
-      { title: "Delaying domestic violence complaints", harm: "Delayed complaints weaken the evidentiary record and give the other side time to create counter-narratives.", prevention: "We advise filing for protection orders immediately. Courts can grant ex-parte interim orders the same day in serious matters." },
-      { title: "Not documenting financial contributions", harm: "In maintenance cases, your financial contributions to the household and the other side's income must be proven, verbal claims are insufficient.", prevention: "We guide you on what financial evidence to preserve from the start." },
-      { title: "Accepting verbal assurances instead of court orders", harm: "Verbal promises from family members or the opposing party are legally worthless. People break them.", prevention: "Any agreement must be recorded as a consent order or settlement deed. We ensure everything is legally documented." },
-    ],
-    fees: {
-      description: "Family law fees depend on the nature of the proceeding, maintenance applications, domestic violence matters, and succession disputes each have different scopes of work.",
-      note: "We provide a clear estimate after the initial consultation. Emergency protection order applications are handled on priority with expedited fee arrangements.",
-    },
-    faqs: [
-      { question: "My husband refuses to pay maintenance. What can I do?", answer: "You can file an application under Section 125 CrPC or Section 24 HMA before the Family Court for maintenance. Courts can grant interim maintenance within the first few hearings. Non-payment after a court order can result in imprisonment." },
-      { question: "How do I get a protection order against domestic violence?", answer: "You file an application under the Protection of Women from Domestic Violence Act, 2005 before the Magistrate. Courts can grant an ex-parte protection order the same day in urgent matters, without the other side being present." },
-      { question: "Who inherits property if someone dies without a will?", answer: "Intestate succession is governed by personal law, Hindu Succession Act for Hindus, Indian Succession Act for others. The distribution among Class I and Class II heirs follows a specific statutory order." },
-      { question: "Can a father get custody of his children in India?", answer: "Yes. Courts decide custody based on the best interests of the child, not the gender of the parent. Fathers regularly secure custody or joint custody, particularly when the mother is found unfit or the child's welfare is better served." },
-      { question: "My parents are being evicted from their own home by my siblings. What can be done?", answer: "Under the Maintenance and Welfare of Parents and Senior Citizens Act, 2007, a Maintenance Tribunal can order protection, maintenance, and even reclaim property transferred by senior citizens under coercion." },
-    ],
-  },
-  {
     slug: "criminal-defense",
     name: "Criminal Defense",
     tagline: "Your rights and freedom, defended fiercely.",
@@ -153,9 +271,9 @@ export const practiceAreas: PracticeArea[] = [
       "Bail · FIR Quashing · Trial Defense · Appeals",
     ],
     overview: {
-      tldr: "From the moment an FIR is registered against you to the final appeal, Jaju & Jaju Associates provides aggressive, principled criminal defense. We protect your constitutional rights, secure bail at the earliest, and build a strong defense for trial.",
+      tldr: "From the moment an FIR is registered against you to the final appeal, J&J Associates provides aggressive, principled criminal defense. We protect your constitutional rights, secure bail at the earliest, and build a strong defense for trial.",
       paragraphs: [
-        "A criminal accusation, even a false one, can derail your life within hours. An arrest, a remand, a chargesheet, the process moves fast. At Jaju & Jaju Associates, we move faster. Our first priority is to protect your liberty: securing bail at the earliest possible stage, before the criminal justice process gains momentum against you.",
+        "A criminal accusation, even a false one, can derail your life within hours. An arrest, a remand, a chargesheet, the process moves fast. At J&J Associates, we move faster. Our first priority is to protect your liberty: securing bail at the earliest possible stage, before the criminal justice process gains momentum against you.",
         "We handle the full spectrum of criminal defense, from first information reports (FIRs) and police custody matters to chargesheet response, trial defense, and appeals before the Sessions Court and Bombay High Court. We also have significant experience in anticipatory bail applications, protecting you before an arrest occurs.",
         "We believe firmly in the constitutional presumption of innocence. You are innocent until proven guilty, and it is the state's burden to prove otherwise. We hold them to that standard, rigorously.",
       ],
@@ -206,66 +324,6 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
-    slug: "civil-litigation",
-    name: "Civil Litigation",
-    tagline: "We fight for your rightful claims.",
-    icon: "Gavel",
-    image: "/practice-areas/civil-ligitation.png",
-    heroTrustPills: [
-      "Adv. Jaju, Leads this practice",
-      "Pune City Civil Court & Bombay High Court",
-      "Contract Disputes · Recovery Suits · Injunctions",
-    ],
-    overview: {
-      tldr: "Civil litigation covers disputes between individuals, companies, and institutions that are resolved through the court system rather than criminal prosecution. Jaju & Jaju Associates represents both plaintiffs and defendants in the full range of civil matters before Pune's courts.",
-      paragraphs: [
-        "Civil disputes arise in every area of life, broken contracts, unpaid debts, property encroachments, fraud, and negligence. When negotiation fails and your rights need defending, civil litigation is the tool. At Jaju & Jaju Associates, we bring the same rigorous preparation to every civil matter, whether you are suing for recovery of ₹50,000 or defending a ₹5 crore claim.",
-        "We represent clients before the Civil Judge Junior Division, City Civil Court, Pune, Bombay High Court, and various specialised tribunals, including the National Consumer Disputes Redressal Commission (NCDRC), Debt Recovery Tribunals (DRT), and National Company Law Tribunal (NCLT).",
-        "Our civil litigation practice is built on thorough preparation. We analyze the merits of your claim candidly, give you realistic expectations, and then fight hard once we decide to proceed.",
-      ],
-      subServices: [
-        { name: "Contract Disputes", description: "Breach of contract, specific performance, and damages claims." },
-        { name: "Money Recovery Suits", description: "Recovery of money due under contracts, loans, or business dealings." },
-        { name: "Injunctions", description: "Temporary and permanent injunctions to stop a party from an action pending trial." },
-        { name: "Declaratory Suits", description: "Obtaining a court declaration of your legal rights or status." },
-        { name: "Partition Suits", description: "Dividing jointly-owned property among co-owners through court proceedings." },
-        { name: "Appeals", description: "Appeals against civil court judgments before the High Court or appropriate appellate forum." },
-      ],
-    },
-    process: [
-      { step: 1, title: "Legal Notice", description: "In most civil matters, we begin with a formal legal notice, putting the other side on record, creating a paper trail, and sometimes resolving the matter without going to court.", duration: "1 week" },
-      { step: 2, title: "Drafting & Filing the Plaint", description: "We draft a detailed plaint (suit document) setting out your facts, cause of action, and relief claimed. Precision here is critical.", duration: "1–2 weeks" },
-      { step: 3, title: "Interim Relief (if urgent)", description: "Where immediate court intervention is needed, for example, to stop ongoing damage, we apply for an urgent interim injunction.", duration: "Days to weeks" },
-      { step: 4, title: "Written Statement & Issues", description: "The defendant files a written statement. The court frames the legal issues to be decided at trial.", duration: "3–12 months" },
-      { step: 5, title: "Evidence & Arguments", description: "Both sides present documentary and oral evidence. Witnesses are cross-examined. We present your case and challenge theirs.", duration: "1–3 years" },
-      { step: 6, title: "Judgment & Execution", description: "The court delivers judgment. If you win, we enforce the decree through execution proceedings if the other side does not comply voluntarily.", duration: "2–6 months post-judgment" },
-    ],
-    documents: [
-      { category: "Core Documents", items: ["Contract or agreement (if the dispute is contract-based)", "Correspondence (emails, letters, WhatsApp messages)", "Payment records (invoices, bank statements)", "Any prior legal notices exchanged"] },
-      { category: "Identity & Parties", items: ["Aadhar / PAN of individual parties", "Certificate of incorporation (for company parties)", "Authorized signatory documents"] },
-    ],
-    timeline: [
-      { phase: "Interim Injunction", duration: "Days, 4 weeks", note: "Courts can grant ex-parte ad-interim injunctions urgently.", length: "short" },
-      { phase: "Full Civil Suit (simple)", duration: "2–4 years", note: "Uncomplicated money recovery or contract matters.", length: "medium" },
-      { phase: "Full Civil Suit (complex)", duration: "4–8 years", note: "Complex matters with multiple parties or voluminous evidence.", length: "long" },
-    ],
-    commonMistakes: [
-      { title: "Not preserving written evidence", harm: "Courts need documentary proof. WhatsApp messages, emails, and contracts that are deleted or lost cannot be recovered.", prevention: "Preserve all communications from the moment a dispute arises. We advise exactly what to save and how." },
-      { title: "Missing limitation periods", harm: "Every civil claim has a time limit under the Limitation Act, typically 3 years for contract disputes. Miss it and your claim is extinguished forever.", prevention: "Contact us the moment a dispute arises. We immediately assess and protect your limitation period." },
-      { title: "Negotiating without legal advice", harm: "Statements or offers made in pre-suit negotiations can be used against you in court as admissions.", prevention: "All negotiations should be on a 'without prejudice' basis. We conduct negotiations to protect your legal position." },
-    ],
-    fees: {
-      description: "Civil litigation fees are structured by stage, legal notice, suit filing, interim application, trial, and appeal each have separate fee components. Court fees (paid to the government) are in addition to professional fees.",
-      note: "We give a complete fee estimate including court fees after reviewing your matter. Recovery suits can sometimes be structured on a partial contingency basis, speak to us.",
-    },
-    faqs: [
-      { question: "Someone owes me money but refuses to pay. What can I do?", answer: "File a money recovery suit before the appropriate civil court (depending on the amount). The court can issue a decree for the amount owed plus interest and costs. If the judgment debtor still doesn't pay, you can execute the decree against their property or bank accounts." },
-      { question: "What is an injunction and when do I need one?", answer: "An injunction is a court order stopping someone from doing something, for example, stopping construction on your land, stopping someone from selling disputed property, or stopping a company from using your trademark. They can be granted urgently (even ex-parte) when damage is imminent." },
-      { question: "How long will my civil case take?", answer: "Honestly, civil cases in India take time. Simple recovery suits can conclude in 2–4 years; complex multi-party matters can take longer. We pursue every procedural avenue to move things faster, but courts are overburdened." },
-      { question: "Can I settle my civil dispute out of court?", answer: "Yes, and often this is the right outcome. We negotiate settlements aggressively on your behalf. Mediation (through court-annexed or private mediators) is also an effective alternative. Settlement preserves business relationships and saves time and money." },
-    ],
-  },
-  {
     slug: "property",
     name: "Property",
     tagline: "Securing your investments and heritage.",
@@ -277,7 +335,7 @@ export const practiceAreas: PracticeArea[] = [
       "Title Search · RERA · Disputes · NRI Property",
     ],
     overview: {
-      tldr: "Property transactions are among the largest financial decisions of your life. Jaju & Jaju Associates ensures your title is clear, your agreement protects you, and any disputes are resolved firmly, whether you are buying, selling, or defending a property claim.",
+      tldr: "Property transactions are among the largest financial decisions of your life. J&J Associates ensures your title is clear, your agreement protects you, and any disputes are resolved firmly, whether you are buying, selling, or defending a property claim.",
       paragraphs: [
         "Pune's real estate market has grown rapidly, and with that growth comes complexity. Title disputes, encumbrances, RERA non-compliance by builders, and fraudulent transactions are all too common. We have spent over two decades protecting clients' property rights in Pune.",
         "Our property legal services cover the entire lifecycle of a real estate transaction, from title due diligence and agreement drafting to registration, possession, and dispute resolution. We regularly handle NRI property matters involving properties managed or disputed by family members in India.",
@@ -327,124 +385,6 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
-    slug: "corporate",
-    name: "Corporate",
-    tagline: "Legal foundation for your business growth.",
-    icon: "Briefcase",
-    image: "/practice-areas/corporate.png",
-    heroTrustPills: [
-      "Adv. Jaju, Leads this practice",
-      "MCA · NCLT · RBI Compliance",
-      "Startups · SMEs · Established Businesses",
-    ],
-    overview: {
-      tldr: "From incorporation and contracts to shareholder disputes and regulatory compliance, Jaju & Jaju Associates provides the complete corporate legal support that Pune's businesses, from startups to established companies, need to operate confidently.",
-      paragraphs: [
-        "Running a business in India means navigating a complex legal landscape, corporate law, contract law, labour law, tax law, and an ever-changing regulatory environment. Most business owners focus on building their business and treat legal as an afterthought, until something goes wrong. At Jaju & Jaju Associates, we work best as a proactive legal partner, not just a crisis responder.",
-        "We advise startups on the right legal structure from day one, help businesses draft contracts that protect them, advise on regulatory compliance, and handle disputes before they become expensive litigation, whether through negotiation, arbitration, or court proceedings.",
-        "Our corporate practice is practical, built for real business decisions, not theoretical legal analysis. We translate law into clear advice you can act on.",
-      ],
-      subServices: [
-        { name: "Business Incorporation", description: "Private Limited, LLP, OPC, and Partnership formation, structure advice + MCA filings." },
-        { name: "Contract Drafting & Review", description: "Vendor agreements, service contracts, NDAs, MoUs, shareholder agreements." },
-        { name: "Regulatory Compliance", description: "Companies Act compliance, GST advisory, RBI/FEMA for foreign investment." },
-        { name: "Shareholder Disputes", description: "Disputes between promoters, minority shareholder oppression, NCLT proceedings." },
-        { name: "Business Restructuring", description: "Mergers, acquisitions, demergers, and restructuring advisory." },
-        { name: "Commercial Dispute Resolution", description: "Arbitration and litigation for commercial contract disputes." },
-      ],
-    },
-    process: [
-      { step: 1, title: "Business Legal Audit", description: "For new clients, we conduct a brief legal audit, understanding your business structure, existing contracts, compliance status, and areas of risk.", duration: "1–2 meetings" },
-      { step: 2, title: "Structure & Setup", description: "If incorporating, we advise on the correct structure (Pvt Ltd vs LLP vs OPC) and handle all MCA filings, DSC registration, and initial compliance.", duration: "2–4 weeks" },
-      { step: 3, title: "Contracts & Agreements", description: "We draft or review all key business agreements, vendor contracts, client agreements, employment contracts, NDAs.", duration: "Ongoing" },
-      { step: 4, title: "Compliance Calendar", description: "We set up and manage your annual compliance calendar, board meetings, annual returns, ROC filings, statutory registers.", duration: "Annual ongoing" },
-      { step: 5, title: "Dispute Resolution", description: "When disputes arise, we first attempt negotiation and mediation. If unsuccessful, we pursue arbitration or litigation.", duration: "As needed" },
-    ],
-    documents: [
-      { category: "Incorporation", items: ["Identity and address proof of directors/partners", "Registered office address proof", "Digital Signature Certificates (DSC)", "Memorandum & Articles of Association (drafted by us)"] },
-      { category: "Ongoing Compliance", items: ["Board meeting minutes", "Annual return (MGT-7)", "Financial statements", "Director KYC (DIR-3 KYC)"] },
-    ],
-    timeline: [
-      { phase: "Company/LLP Incorporation", duration: "2–4 weeks", note: "MCA process, including DIN, DSC, and certificate of incorporation.", length: "short" },
-      { phase: "Commercial Contract Dispute (Arbitration)", duration: "6–18 months", note: "Arbitration is faster than courts for commercial disputes.", length: "medium" },
-      { phase: "NCLT Proceedings (Shareholder Dispute)", duration: "1–3 years", note: "Company law matters before NCLT.", length: "long" },
-    ],
-    commonMistakes: [
-      { title: "Using template agreements from the internet", harm: "Generic templates are not drafted for Indian law or your specific business. A poorly drafted contract has cost more Pune businesses more money than any legal fee ever would.", prevention: "We draft contracts tailored to your business, your risks, and Indian law. It is a one-time investment that saves repeatedly." },
-      { title: "Not having a shareholder agreement from day one", harm: "Disputes between co-founders are one of the most common reasons businesses fail. Without a shareholder agreement, there is no agreed process for resolving them.", prevention: "We draft comprehensive shareholder agreements at the time of incorporation, when everyone is aligned, before disagreements arise." },
-      { title: "Ignoring compliance deadlines", harm: "Late ROC filings attract significant penalties. Repeated non-compliance can result in company strike-off or disqualification of directors.", prevention: "We manage your compliance calendar proactively and send reminders well ahead of deadlines." },
-    ],
-    fees: {
-      description: "Corporate fees are typically structured as: (1) one-time incorporation fees, (2) fixed-fee retainers for ongoing compliance, and (3) matter-specific fees for contracts, disputes, and regulatory work.",
-      note: "Many growing businesses find a monthly retainer arrangement the most cost-effective, you have legal support available whenever you need it, at a predictable monthly cost.",
-    },
-    faqs: [
-      { question: "Should I incorporate as a Private Limited Company or an LLP?", answer: "It depends on your business type, funding plans, and tax position. Pvt Ltd is better for businesses seeking external investment (VCs, angels). LLP is better for professional practices and partnerships where flexibility matters. We advise on the right structure after understanding your specific situation." },
-      { question: "What is the minimum requirement to incorporate a Private Limited Company?", answer: "You need at least 2 directors (one must be an Indian resident), 2 shareholders, a registered office address in India, and Digital Signature Certificates. We handle the entire MCA filing process." },
-      { question: "My business partner and I are in dispute. What are my options?", answer: "First, review your shareholder/partnership agreement, it should contain a dispute resolution mechanism. If not, or if the mechanism fails, you can approach the NCLT for oppression and mismanagement, or civil court for breach of contract. We advise on the fastest path to resolution." },
-    ],
-  },
-  {
-    slug: "consumer-matters",
-    name: "Consumer Matters",
-    tagline: "Holding businesses accountable to you.",
-    icon: "ShoppingBag",
-    image: "/practice-areas/consumer.png",
-    heroTrustPills: [
-      "Adv. Jaju, Leads this practice",
-      "District Forum Pune · State Commission",
-      "Products · Services · Insurance · E-Commerce",
-    ],
-    overview: {
-      tldr: "As a consumer, you have powerful legal rights under the Consumer Protection Act, 2019. Jaju & Jaju Associates helps individuals fight back against defective products, poor services, misleading advertisements, and insurance claim denials, and win.",
-      paragraphs: [
-        "The Consumer Protection Act, 2019 is one of the most powerful tools available to ordinary citizens. It allows you to sue companies, service providers, and even e-commerce platforms in a dedicated consumer forum, faster and cheaper than a civil court, with penalties for deficient service and the ability to claim compensation for physical, mental, and financial harm.",
-        "We handle consumer complaints before the District Consumer Disputes Redressal Commission, Pune (for claims up to ₹50 lakhs), the Maharashtra State Consumer Disputes Redressal Commission (up to ₹2 crores), and the National Consumer Disputes Redressal Commission (above ₹2 crores).",
-        "Common matters we handle include: defective electronic goods or vehicles, builder deficiency in construction quality, insurance claim denials, hospital negligence, telecom service failures, and e-commerce delivery/refund disputes.",
-      ],
-      subServices: [
-        { name: "Defective Products", description: "Complaints against manufacturers for defective goods, electronics, vehicles, appliances." },
-        { name: "Service Deficiency", description: "Against banks, hospitals, builders, telecoms, airlines, for poor or negligent service." },
-        { name: "Insurance Claim Denial", description: "Fighting insurance companies that have wrongfully rejected health, vehicle, or life insurance claims." },
-        { name: "Unfair Trade Practices", description: "Against companies using misleading advertisements or deceptive pricing." },
-        { name: "E-Commerce Disputes", description: "Against online platforms for non-delivery, fake products, or wrongful refusal of returns." },
-        { name: "Medical Negligence", description: "Consumer complaints (and civil suits) against hospitals and doctors for medical negligence." },
-      ],
-    },
-    process: [
-      { step: 1, title: "Documentation & Complaint Prep", description: "We gather all evidence, purchase receipts, service records, photographs, correspondence with the company, and draft a detailed consumer complaint.", duration: "1–2 weeks" },
-      { step: 2, title: "Pre-Filing Notice", description: "In many cases, a strong legal notice to the company resolves the matter without a forum complaint. We send this first.", duration: "1 week" },
-      { step: 3, title: "Filing the Consumer Complaint", description: "We file the complaint before the appropriate consumer forum, District, State, or National, with all supporting evidence.", duration: "1 week" },
-      { step: 4, title: "Hearing & Response", description: "The forum issues notice to the opposite party. We appear at hearings, submit written arguments, and present evidence.", duration: "3–12 months" },
-      { step: 5, title: "Order & Execution", description: "The forum passes an order, for replacement, refund, compensation, or penalty. We ensure the order is executed.", duration: "1–3 months after order" },
-    ],
-    documents: [
-      { category: "Purchase / Service Proof", items: ["Purchase receipt or invoice", "Warranty card (if product)", "Service agreement (if service)", "e-commerce order confirmation and delivery details"] },
-      { category: "Evidence of Deficiency", items: ["Photographs of defective product", "Medical reports (if injury caused)", "Correspondence with the company (emails, chat transcripts)"] },
-      { category: "Insurance (if applicable)", items: ["Insurance policy document", "Claim application submitted", "Rejection letter from insurance company", "Medical bills and reports"] },
-    ],
-    timeline: [
-      { phase: "Pre-Filing Legal Notice Resolution", duration: "2–6 weeks", note: "Many companies resolve the matter on receipt of a lawyer's notice.", length: "short" },
-      { phase: "District Forum Complaint", duration: "3–12 months", note: "Dedicated consumer forums are faster than civil courts.", length: "medium" },
-      { phase: "State / National Commission Appeal", duration: "6 months, 2 years", note: "Appeals against District Forum orders.", length: "long" },
-    ],
-    commonMistakes: [
-      { title: "Not preserving purchase receipts", harm: "Without proof of purchase, your complaint has no foundation. The company will simply deny the transaction.", prevention: "We advise you on what to preserve from day one. Even warranty registration emails and SMS confirmations are admissible." },
-      { title: "Waiting too long to complain", harm: "Consumer complaints must be filed within 2 years of the cause of action. Beyond that, your right is extinguished.", prevention: "Contact us as soon as you face a consumer problem, even if you are still trying to resolve it directly with the company." },
-      { title: "Not claiming full compensation", harm: "Many consumers only claim a refund. But the Consumer Protection Act allows you to claim compensation for mental agony, physical harm, and the legal costs you incurred, claim everything you are entitled to.", prevention: "We always draft complaints claiming the full compensation available under law." },
-    ],
-    fees: {
-      description: "Consumer complaints have a very low court fee (paid to the government, ₹100 to ₹5,000 depending on the claim amount). Our professional fees are structured to be accessible for individual consumers.",
-      note: "We assess the strength of your matter candidly in the first consultation. We do not take up weak matters that will waste your time and money.",
-    },
-    faqs: [
-      { question: "Can I file a consumer complaint myself without a lawyer?", answer: "Yes, but having a lawyer significantly increases your chances of success. Consumer forums are not as informal as they appear, proper evidence, legal arguments, and timely filings all matter. We handle the entire process." },
-      { question: "The insurance company rejected my claim. What can I do?", answer: "File a consumer complaint alleging deficiency in service. Insurance claim rejections are one of the most common, and most successful, consumer complaints. Courts and forums routinely order insurers to honour legitimate claims with interest and compensation." },
-      { question: "The builder delivered my flat 4 years late. Can I claim anything beyond possession?", answer: "Yes. You can claim compensation for mental agony, the rent you paid elsewhere during the delay, and interest on your investment, before the consumer forum. Many homebuyers in Pune have successfully claimed ₹5–20 lakhs in compensation beyond just possession." },
-      { question: "An e-commerce platform is refusing my refund for a defective product. What are my options?", answer: "File a consumer complaint naming both the seller and the e-commerce platform. The Consumer Protection Act, 2019 explicitly makes e-commerce platforms liable for the sellers on their platform. Legal notices to Amazon/Flipkart get very quick responses." },
-    ],
-  },
-  {
     slug: "cheque-bounce",
     name: "Cheque Bounce",
     tagline: "Swift action for your financial recovery.",
@@ -456,11 +396,11 @@ export const practiceAreas: PracticeArea[] = [
       "Legal Notice · Complaint · Recovery",
     ],
     overview: {
-      tldr: "A dishonoured cheque is not just a payment failure, it is a criminal offence under Section 138 of the Negotiable Instruments Act, 1881. Jaju & Jaju Associates helps you recover your money and hold the defaulter criminally accountable, with strict timelines.",
+      tldr: "A dishonoured cheque is not just a payment failure, it is a criminal offence under Section 138 of the Negotiable Instruments Act, 1881. J&J Associates helps you recover your money and hold the defaulter criminally accountable, with strict timelines.",
       paragraphs: [
         "If someone has issued you a cheque that has bounced, the law gives you a powerful, and time-sensitive, remedy. Section 138 of the Negotiable Instruments Act makes cheque dishonour a criminal offence punishable with imprisonment up to 2 years and/or a fine up to twice the cheque amount. More practically: the criminal pressure is often what recovers the money.",
         "The process is strictly time-bound. You must send a legal demand notice within 30 days of receiving the bank's dishonour memo, and if the issuer does not pay within 15 days of receiving the notice, you must file a criminal complaint within 30 days thereafter. Missing any of these deadlines extinguishes your legal remedy permanently.",
-        "At Jaju & Jaju Associates, we have handled hundreds of cheque bounce matters and move fast. We prepare and dispatch legal notices the same week, and file complaints before the deadline.",
+        "At J&J Associates, we have handled hundreds of cheque bounce matters and move fast. We prepare and dispatch legal notices the same week, and file complaints before the deadline.",
       ],
       subServices: [
         { name: "Section 138 NI Act Complaints", description: "Filing criminal complaints for cheque dishonour with strict timeline compliance." },
@@ -506,6 +446,66 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
+    slug: "civil-litigation",
+    name: "Civil Litigation",
+    tagline: "We fight for your rightful claims.",
+    icon: "Gavel",
+    image: "/practice-areas/civil-ligitation.png",
+    heroTrustPills: [
+      "Adv. Jaju, Leads this practice",
+      "Pune City Civil Court & Bombay High Court",
+      "Contract Disputes · Recovery Suits · Injunctions",
+    ],
+    overview: {
+      tldr: "Civil litigation covers disputes between individuals, companies, and institutions that are resolved through the court system rather than criminal prosecution. J&J Associates represents both plaintiffs and defendants in the full range of civil matters before Pune's courts.",
+      paragraphs: [
+        "Civil disputes arise in every area of life, broken contracts, unpaid debts, property encroachments, fraud, and negligence. When negotiation fails and your rights need defending, civil litigation is the tool. At J&J Associates, we bring the same rigorous preparation to every civil matter, whether you are suing for recovery of ₹50,000 or defending a ₹5 crore claim.",
+        "We represent clients before the Civil Judge Junior Division, City Civil Court, Pune, Bombay High Court, and various specialised tribunals, including the National Consumer Disputes Redressal Commission (NCDRC), Debt Recovery Tribunals (DRT), and National Company Law Tribunal (NCLT).",
+        "Our civil litigation practice is built on thorough preparation. We analyze the merits of your claim candidly, give you realistic expectations, and then fight hard once we decide to proceed.",
+      ],
+      subServices: [
+        { name: "Contract Disputes", description: "Breach of contract, specific performance, and damages claims." },
+        { name: "Money Recovery Suits", description: "Recovery of money due under contracts, loans, or business dealings." },
+        { name: "Injunctions", description: "Temporary and permanent injunctions to stop a party from an action pending trial." },
+        { name: "Declaratory Suits", description: "Obtaining a court declaration of your legal rights or status." },
+        { name: "Partition Suits", description: "Dividing jointly-owned property among co-owners through court proceedings." },
+        { name: "Appeals", description: "Appeals against civil court judgments before the High Court or appropriate appellate forum." },
+      ],
+    },
+    process: [
+      { step: 1, title: "Legal Notice", description: "In most civil matters, we begin with a formal legal notice, putting the other side on record, creating a paper trail, and sometimes resolving the matter without going to court.", duration: "1 week" },
+      { step: 2, title: "Drafting & Filing the Plaint", description: "We draft a detailed plaint (suit document) setting out your facts, cause of action, and relief claimed. Precision here is critical.", duration: "1–2 weeks" },
+      { step: 3, title: "Interim Relief (if urgent)", description: "Where immediate court intervention is needed, for example, to stop ongoing damage, we apply for an urgent interim injunction.", duration: "Days to weeks" },
+      { step: 4, title: "Written Statement & Issues", description: "The defendant files a written statement. The court frames the legal issues to be decided at trial.", duration: "3–12 months" },
+      { step: 5, title: "Evidence & Arguments", description: "Both sides present documentary and oral evidence. Witnesses are cross-examined. We present your case and challenge theirs.", duration: "1–3 years" },
+      { step: 6, title: "Judgment & Execution", description: "The court delivers judgment. If you win, we enforce the decree through execution proceedings if the other side does not comply voluntarily.", duration: "2–6 months post-judgment" },
+    ],
+    documents: [
+      { category: "Core Documents", items: ["Contract or agreement (if the dispute is contract-based)", "Correspondence (emails, letters, WhatsApp messages)", "Payment records (invoices, bank statements)", "Any prior legal notices exchanged"] },
+      { category: "Identity & Parties", items: ["Aadhar / PAN of individual parties", "Certificate of incorporation (for company parties)", "Authorized signatory documents"] },
+    ],
+    timeline: [
+      { phase: "Interim Injunction", duration: "Days, 4 weeks", note: "Courts can grant ex-parte ad-interim injunctions urgently.", length: "short" },
+      { phase: "Full Civil Suit (simple)", duration: "2–4 years", note: "Uncomplicated money recovery or contract matters.", length: "medium" },
+      { phase: "Full Civil Suit (complex)", duration: "4–8 years", note: "Complex matters with multiple parties or voluminous evidence.", length: "long" },
+    ],
+    commonMistakes: [
+      { title: "Not preserving written evidence", harm: "Courts need documentary proof. WhatsApp messages, emails, and contracts that are deleted or lost cannot be recovered.", prevention: "Preserve all communications from the moment a dispute arises. We advise exactly what to save and how." },
+      { title: "Missing limitation periods", harm: "Every civil claim has a time limit under the Limitation Act, typically 3 years for contract disputes. Miss it and your claim is extinguished forever.", prevention: "Contact us the moment a dispute arises. We immediately assess and protect your limitation period." },
+      { title: "Negotiating without legal advice", harm: "Statements or offers made in pre-suit negotiations can be used against you in court as admissions.", prevention: "All negotiations should be on a 'without prejudice' basis. We conduct negotiations to protect your legal position." },
+    ],
+    fees: {
+      description: "Civil litigation fees are structured by stage, legal notice, suit filing, interim application, trial, and appeal each have separate fee components. Court fees (paid to the government) are in addition to professional fees.",
+      note: "We give a complete fee estimate including court fees after reviewing your matter. Recovery suits can sometimes be structured on a partial contingency basis, speak to us.",
+    },
+    faqs: [
+      { question: "Someone owes me money but refuses to pay. What can I do?", answer: "File a money recovery suit before the appropriate civil court (depending on the amount). The court can issue a decree for the amount owed plus interest and costs. If the judgment debtor still doesn't pay, you can execute the decree against their property or bank accounts." },
+      { question: "What is an injunction and when do I need one?", answer: "An injunction is a court order stopping someone from doing something, for example, stopping construction on your land, stopping someone from selling disputed property, or stopping a company from using your trademark. They can be granted urgently (even ex-parte) when damage is imminent." },
+      { question: "How long will my civil case take?", answer: "Honestly, civil cases in India take time. Simple recovery suits can conclude in 2–4 years; complex multi-party matters can take longer. We pursue every procedural avenue to move things faster, but courts are overburdened." },
+      { question: "Can I settle my civil dispute out of court?", answer: "Yes, and often this is the right outcome. We negotiate settlements aggressively on your behalf. Mediation (through court-annexed or private mediators) is also an effective alternative. Settlement preserves business relationships and saves time and money." },
+    ],
+  },
+  {
     slug: "documentation",
     name: "Documentation",
     tagline: "Iron-clad agreements for peace of mind.",
@@ -517,10 +517,10 @@ export const practiceAreas: PracticeArea[] = [
       "Wills · Deeds · MoUs · NDAs · Agreements",
     ],
     overview: {
-      tldr: "A poorly drafted legal document can cost more than any court case. Jaju & Jaju Associates drafts, reviews, and ensures the registration of all your legal documents, from simple agreements to complex multi-party contracts, with precision and clarity.",
+      tldr: "A poorly drafted legal document can cost more than any court case. J&J Associates drafts, reviews, and ensures the registration of all your legal documents, from simple agreements to complex multi-party contracts, with precision and clarity.",
       paragraphs: [
         "Legal documents form the foundation of every significant decision in life and business. A will ensures your estate goes where you intend. A property agreement protects your purchase. An employment contract defines your obligations. A partnership deed sets the rules before disputes arise. When these documents are poorly drafted, or not drafted at all, the consequences emerge later, in the form of disputes, losses, and litigation that could have been entirely avoided.",
-        "At Jaju & Jaju Associates, documentation is not a mechanical task. We approach every document with a thorough understanding of your situation, your objectives, and the specific legal risks that must be addressed. We do not use generic templates, every document is crafted for your specific purpose.",
+        "At J&J Associates, documentation is not a mechanical task. We approach every document with a thorough understanding of your situation, your objectives, and the specific legal risks that must be addressed. We do not use generic templates, every document is crafted for your specific purpose.",
         "We handle the full spectrum of personal and commercial documentation, from personal wills and family settlement deeds to complex commercial agreements, joint venture documents, and regulatory filings.",
       ],
       subServices: [

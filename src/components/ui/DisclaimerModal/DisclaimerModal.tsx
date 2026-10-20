@@ -40,8 +40,8 @@ export function DisclaimerModal() {
           <p>
             The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. 
             By accessing this website (www.jajuandjaju.com), you acknowledge and confirm that you are seeking information 
-            relating to Jaju &amp; Jaju Associates of your own accord and that there has been no form of solicitation, 
-            advertisement or inducement by Jaju &amp; Jaju Associates or its members.
+            relating to J&amp;J Associates of your own accord and that there has been no form of solicitation, 
+            advertisement or inducement by J&amp;J Associates or its members.
           </p>
           
           <ul className={styles.list}>
@@ -52,10 +52,10 @@ export function DisclaimerModal() {
               No material/information provided on this website should be construed as legal advice.
             </li>
             <li>
-              Jaju &amp; Jaju Associates shall not be liable for consequences of any action taken by relying on the material/information provided on this website.
+              J&amp;J Associates shall not be liable for consequences of any action taken by relying on the material/information provided on this website.
             </li>
             <li>
-              The contents of this website are the intellectual property of Jaju &amp; Jaju Associates.
+              The contents of this website are the intellectual property of J&amp;J Associates.
             </li>
           </ul>
         </div>

@@ -1,14 +1,18 @@
 import { generatePageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/data/siteConfig";
 import styles from "./page.module.css";
 import { TeamGrid } from "@/components/about/TeamGrid/TeamGrid";
 
 export const metadata = generatePageMetadata({
-  title: "About The Firm | Jaju & Jaju Associates Pune",
-  description: "Learn about the legacy of Jaju & Jaju Associates, a premier law firm in Pune with over two decades of excellence in legal advocacy.",
+  title: "About J & J Legal Associates | Pune",
+  description: "J & J Legal Associates is a Pune-based law firm founded by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), serving individuals, families, businesses, startups, and organisations.",
   path: "/about",
 });
 
 export default function AboutPage() {
+  const quoteEmphasis = "before the other side does.";
+  const quoteEmphasisStart = siteConfig.philosophy.indexOf(quoteEmphasis);
+
   return (
     <>
       {/* ── Hero ── */}
@@ -16,54 +20,85 @@ export default function AboutPage() {
         <div className="hero-bg-circle" />
         <div className={styles.heroBackground} />
         <div className={styles.heroContent}>
-          <h1 className={styles.title}>The Firm's <span className="text-highlight">Legacy</span></h1>
+          <h1 className={styles.title}>About the <span className="text-highlight">Firm</span></h1>
           <p className={styles.tagline}>
-            For over two decades, Jaju & Jaju Associates has stood as a bastion of legal excellence in Pune, 
-            championing the rights of our clients through unwavering ethical standards and relentless advocacy.
+            J &amp; J Legal Associates is a Pune-based law firm founded by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), providing comprehensive legal services to individuals, families, businesses, startups, and organisations.
           </p>
         </div>
       </section>
 
-      {/* ── History & Philosophy ── */}
+      {/* ── About the Firm ── */}
       <section className={styles.historySection}>
         <div className={styles.historyContainer}>
-          <h2 className={styles.historyTitle}>Our Philosophy</h2>
+          <h2 className={styles.historyTitle}>About J &amp; J Legal Associates</h2>
           <p className={styles.historyParagraph}>
-            <span className={styles.dropcap}>F</span>ounded on the core principles of integrity and strategic excellence, 
-            Jaju & Jaju Associates began its journey in the district courts of Pune. What started as a boutique practice 
-            has systematically grown into a formidable full-service law firm, trusted by high-net-worth individuals, 
-            multinational corporations, and families navigating complex legal challenges.
+            Our practice encompasses Property &amp; Real Estate Law, RERA, Civil Litigation, Criminal Law, Family Law, Legal Consultation, and Commercial &amp; Business Contracts. We also advise startups and businesses on NDAs, influencer agreements, service agreements, and other legal and contractual requirements.
           </p>
           <p className={styles.historyParagraph}>
-            We do not believe in a one-size-fits-all approach to law. Every case is a unique puzzle that requires 
-            meticulous research, innovative thinking, and an aggressive posture in the courtroom when negotiations fail. 
-            Our partners bring a wealth of diverse experience across Corporate Law, Civil Litigation, Property Disputes, 
-            and Family Law, ensuring that no matter the complexity of the matter, you are backed by specialized expertise.
+            At J &amp; J Legal Associates, we focus on providing practical, strategic, and solution-oriented legal advice, with a strong emphasis on protecting our clients’ rights and interests.
           </p>
           <p className={styles.historyParagraph}>
-            Beyond the courtroom, we are dedicated to providing our clients with transparent counsel. We demystify the 
-            legal process, ensuring that you are empowered to make informed decisions at every step of your legal journey. 
-            At Jaju & Jaju, you are not just retaining a lawyer; you are securing a dedicated legal partner.
+            Our objective is to provide clear legal guidance, effective representation, and reliable legal documentation, enabling our clients to make informed decisions and navigate legal challenges with confidence.
           </p>
+        </div>
+      </section>
 
-          <div className={styles.statsGrid}>
-            <div className={styles.statItem}>
-              <span className={styles.statValue}>20+</span>
-              <span className={styles.statLabel}>Years Experience</span>
-            </div>
-            <div className={styles.statItem}>
-              <span className={styles.statValue}>1.5k</span>
-              <span className={styles.statLabel}>Cases Resolved</span>
-            </div>
-            <div className={styles.statItem}>
-              <span className={styles.statValue}>4</span>
-              <span className={styles.statLabel}>Core Practice Areas</span>
-            </div>
-            <div className={styles.statItem}>
-              <span className={styles.statValue}>100%</span>
-              <span className={styles.statLabel}>Client Commitment</span>
-            </div>
+      <section className={styles.quoteSection} aria-label="A note from our founder">
+        <blockquote className={styles.quoteCard}>
+          <p className={styles.quoteText}>
+            “{siteConfig.philosophy.slice(0, quoteEmphasisStart)}
+            <span>{quoteEmphasis}</span>
+            {siteConfig.philosophy.slice(quoteEmphasisStart + quoteEmphasis.length)}”
+          </p>
+          <footer className={styles.quoteAttribution}>
+            <span className={styles.quoteMonogram} aria-hidden="true">GJ</span>
+            <span className={styles.quoteByline}>
+              <strong>{siteConfig.advocates[0].name}</strong>
+              <small>{siteConfig.advocates[0].role}</small>
+            </span>
+          </footer>
+        </blockquote>
+      </section>
+
+      <section className={styles.firmInfoSection} aria-label="How we work and firm details">
+        <div className={styles.firmInfoContainer}>
+          <div className={styles.promiseGrid}>
+            <article className={styles.promiseCard}>
+              <h2>Preparation guided by facts</h2>
+              <p>We review your documents, assess your legal position, and explain practical options before deciding the next step.</p>
+            </article>
+            <article className={styles.promiseCard}>
+              <h2>Updates after every hearing</h2>
+              <p>We share what happened, what it means for your matter, and what to expect next.</p>
+            </article>
           </div>
+
+          <dl className={styles.firmDetails}>
+            <div className={styles.detailItem}>
+              <dt>Bar Council Enrolment</dt>
+              <dd>
+                <span>Adv. Gaurav Jaju · {siteConfig.advocates[0].enrolledYear}</span>
+                <span>Adv. Ankita Kabra (Jaju) · {siteConfig.advocates[1].enrolledYear}</span>
+                <span className={styles.detailNote}>{siteConfig.barCouncil}</span>
+              </dd>
+            </div>
+            <div className={styles.detailItem}>
+              <dt>Practice Focus</dt>
+              <dd>Property &amp; Real Estate · RERA · Civil Litigation · Criminal Law · Family Law · Corporate &amp; Commercial</dd>
+            </div>
+            <div className={styles.detailItem}>
+              <dt>Courts &amp; Regions</dt>
+              <dd>{siteConfig.advocates[0].courts.join(" · ")}</dd>
+            </div>
+            <div className={styles.detailItem}>
+              <dt>Languages</dt>
+              <dd>{siteConfig.advocates[0].languages.join(" · ")}</dd>
+            </div>
+            <div className={styles.detailItem}>
+              <dt>Consultations</dt>
+              <dd>In person at our Pune offices, by phone, or over video for clients abroad</dd>
+            </div>
+          </dl>
         </div>
       </section>
 

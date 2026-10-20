@@ -147,9 +147,11 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
               <motion.aside className={styles.panel} variants={panelVariants}>
                 <div className={styles.panelSection}>
                   <span className={styles.panelLabel}>Get in Touch</span>
-                  <a href={`tel:${siteConfig.phoneRaw}`} className={styles.panelLink}>
-                    {siteConfig.phone}
-                  </a>
+                  {siteConfig.phoneNumbers.map((phone) => (
+                    <a key={phone.raw} href={`tel:${phone.raw}`} className={styles.panelLink}>
+                      {phone.display}
+                    </a>
+                  ))}
                   <a href={`mailto:${siteConfig.email}`} className={styles.panelLink}>
                     {siteConfig.email}
                   </a>
@@ -186,7 +188,7 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
             {/* Bottom bar */}
             <motion.div className={styles.bottomBar} variants={panelVariants}>
               <p className={styles.bottomCopy}>
-                © {new Date().getFullYear()} Jaju &amp; Jaju Associates · {siteConfig.barCouncil}
+                © {new Date().getFullYear()} J&amp;J Associates · {siteConfig.barCouncil}
               </p>
               <div className={styles.bottomActions}>
                 <Link href="/contact" className={styles.ctaBtn} onClick={onClose}>

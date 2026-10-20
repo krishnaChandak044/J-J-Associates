@@ -17,10 +17,10 @@ export function PracticeAreasPreview() {
               <span className={styles.dot}></span> Practice Areas
             </span>
             <h2 className={styles.title}>
-              What do you need <span className={styles.accentI}>help</span> with?
+              What <span className={styles.accentI}>Legal Assistance</span> Do You Need?
             </h2>
             <p className={styles.sub}>
-              Focused practice areas, one measured approach, pick yours to see process, documents and timelines.
+              Choose your practice area to explore the legal process, required documents, and expected timelines.
             </p>
           </div>
           <Link href="/practice-areas" className={styles.link}>

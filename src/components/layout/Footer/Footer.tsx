@@ -29,7 +29,7 @@ export function Footer() {
               <div className={styles.logoWrapper}>
                 <Image 
                   src={logoImg} 
-                  alt="Jaju & Jaju Associates Logo" 
+                  alt="J&J Associates Logo" 
                   width={100}
                   height={100}
                   className={styles.logoImage}
@@ -103,9 +103,11 @@ export function Footer() {
                 <div className={styles.contactItem}>
                   <Phone size={18} className={styles.contactIcon} />
                   <div className={styles.contactText}>
-                    <a href={`tel:${siteConfig.phoneRaw}`} className={styles.contactLink}>
-                      {siteConfig.phone}
-                    </a>
+                    {siteConfig.phoneNumbers.map((phone) => (
+                      <a key={phone.raw} href={`tel:${phone.raw}`} className={styles.contactLink}>
+                        {phone.display}
+                      </a>
+                    ))}
                   </div>
                 </div>
 

@@ -1,14 +1,14 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Privacy Policy | Jaju & Jaju Associates" };
+export const metadata: Metadata = { title: "Privacy Policy | J&J Associates" };
 
 export default function PrivacyPolicyPage() {
   return (
     <section style={{ padding: "calc(var(--header-height) + 3rem) var(--gutter) 5rem", maxWidth: "900px", margin: "auto" }}>
       <h1 style={{ marginBottom: "2rem" }}>Privacy Policy</h1>
       <div style={{ display: "grid", gap: "1.5rem", lineHeight: 1.8 }}>
-        <p>At Jaju &amp; Jaju Associates, we are committed to protecting the privacy and confidentiality of our clients and website visitors.</p>
+        <p>At J&amp;J Associates, we are committed to protecting the privacy and confidentiality of our clients and website visitors.</p>
         
         <h2 style={{ fontSize: "1.25rem", marginTop: "1rem", marginBottom: "0.5rem" }}>Information Collection</h2>
         <p>We may collect personal information such as your name, contact details, and case-related information when you voluntarily submit it through our contact forms or reach out to us via email or phone.</p>

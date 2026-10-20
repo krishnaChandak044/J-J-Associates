@@ -3,8 +3,8 @@ import styles from "./page.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Our Approach | Jaju & Jaju Associates",
-  description: "How Jaju & Jaju Associates approaches every client matter, diagnosis before prescription, honest assessment, and thorough preparation.",
+  title: "Our Approach | J&J Associates",
+  description: "How J&J Associates approaches every client matter, diagnosis before prescription, honest assessment, and thorough preparation.",
 };
 
 export default function OurApproachPage() {

@@ -32,7 +32,34 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.group {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.groupTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+.groupTitle::after {
+  height: 1px;
+  flex: 1;
+  background: rgba(0, 33, 71, 0.16);
+  content: "";
+}
+
+.founderGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.32fr);
   gap: 2rem;
 }
 
@@ -49,7 +76,16 @@
   }
 }
 
+@media (max-width: 639px) {
+  .grid,
+  .founderGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: var(--color-surface);
@@ -58,6 +94,23 @@
   box-shadow: var(--shadow-sm);
   transition: transform var(--t-base), box-shadow var(--t-base);
   border: 1px solid var(--color-border-light);
+}
+
+.memberLabel {
+  position: absolute;
+  z-index: 1;
+  top: 0.85rem;
+  left: 0.85rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(184, 156, 114, 0.35);
+  border-radius: var(--radius-pill);
+  background: rgba(0, 18, 38, 0.9);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 .card:hover {

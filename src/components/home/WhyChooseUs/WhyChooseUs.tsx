@@ -5,20 +5,20 @@ import styles from "./WhyChooseUs.module.css";
 
 const steps = [
   {
-    title: "Consult",
-    desc: "A confidential discussion, facts, documents, and an honest read of where you stand.",
+    title: "Consultation",
+    desc: "We understand your concerns, review relevant documents, and assess your legal position.",
   },
   {
-    title: "Plan",
-    desc: "Forum, filings, realistic timelines, and a fee structure agreed before work begins.",
+    title: "Strategy & Preparation",
+    desc: "We develop a legal strategy, identify the appropriate course of action, and clarify fees and timelines.",
   },
   {
-    title: "Represent",
-    desc: "Drafting, appearances and negotiation, with an update after every hearing.",
+    title: "Legal Representation",
+    desc: "We handle documentation, negotiations, court proceedings, and regular case updates.",
   },
   {
-    title: "Resolve",
-    desc: "Judgment, settlement or decree, with paperwork completed so it's truly closed.",
+    title: "Resolution",
+    desc: "Guiding you through judgments, settlements, and final legal formalities.",
   },
 ];
 
@@ -30,13 +30,13 @@ export function WhyChooseUs() {
           <span className={styles.secIndex}>02</span>
           <div className={styles.txt}>
             <span className={styles.secEyebrow}>
-              <span className={styles.dot}></span>How It Works
+              <span className={styles.dot}></span>How We Work
             </span>
             <h2 className={styles.title}>
               From first call to <span className={styles.accentI}>resolution</span>
             </h2>
             <p className={styles.sub}>
-              No mystery, no silence between hearing dates.
+              From First Consultation to Resolution and beyond.
             </p>
           </div>
         </div>

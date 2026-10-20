@@ -32,14 +32,14 @@ export function generatePageMetadata({
       "jaju associates",
       ...keywords,
     ],
-    authors: [{ name: "Jaju & Jaju Associates" }],
+    authors: [{ name: "J&J Associates" }],
     openGraph: {
       title,
       description,
       url,
       type,
       images: [{ url: `${BASE_URL}${ogImage}`, width: 1200, height: 630, alt: title }],
-      siteName: "Jaju & Jaju Associates",
+      siteName: "J&J Associates",
       locale: "en_IN",
     },
     twitter: {
@@ -63,8 +63,8 @@ export function generatePageMetadata({
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  name: "Jaju & Jaju Associates",
-  alternateName: "Jaju and Jaju Associates",
+  name: "J&J Associates",
+  alternateName: "J&J Associates",
   url: BASE_URL,
   telephone: "+91-XXXXX-XXXXX", // Update when confirmed
   email: "info@jajuassociates.com",

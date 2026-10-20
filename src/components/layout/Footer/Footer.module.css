@@ -233,6 +233,7 @@
 }
 
 .contactLink {
+  display: block;
   color: rgba(255,255,255,0.65);
   transition: color var(--t-fast);
 }

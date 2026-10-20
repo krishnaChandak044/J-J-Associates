@@ -6,16 +6,16 @@ import { Accordion } from "@/components/ui/Accordion/Accordion";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Jaju & Jaju Associates Pune",
-  description: "Get in touch with Jaju & Jaju Associates. Schedule a consultation with our expert legal team at our Pune office.",
+  title: "Contact Us | J&J Associates Pune",
+  description: "Get in touch with J&J Associates. Schedule a consultation with our expert legal team at our Pune office.",
 };
 
 const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'LegalService',
-  name: 'Jaju & Jaju Associates',
+  name: 'J&J Associates',
   url: siteConfig.url,
-  telephone: siteConfig.phoneRaw,
+  telephone: siteConfig.phoneNumbers.map((phone) => phone.raw),
   email: siteConfig.email,
   address: siteConfig.addresses?.map(addr => ({
     '@type': 'PostalAddress',
@@ -39,7 +39,7 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'How do I book a consultation with Jaju & Jaju Associates?',
+      name: 'How do I book a consultation with J&J Associates?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Call us, WhatsApp us, or use the contact form on this page. We respond within 24 hours and can arrange a consultation on the same day or the next working day in most cases.',
@@ -128,9 +128,11 @@ export default function ContactPage() {
             {/* Direct call */}
             <div className={styles.infoBlock}>
               <span className={styles.infoBlockLabel}>Call or WhatsApp</span>
-              <a href={`tel:${siteConfig.phoneRaw}`} className={styles.phoneNum}>
-                {siteConfig.phone}
-              </a>
+              {siteConfig.phoneNumbers.map((phone) => (
+                <a key={phone.raw} href={`tel:${phone.raw}`} className={styles.phoneNum}>
+                  {phone.display}
+                </a>
+              ))}
               <a
                 href={siteConfig.whatsapp}
                 target="_blank"

@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
 export const metadata: Metadata = {
-  title: "Our Advocates | Jaju & Jaju Associates",
+  title: "Our Advocates | J&J Associates",
   description: "Gaurav Jaju and Ankita Kabra (Jaju), advocates and legal consultants in Pune specialising in family, criminal, civil, and property matters.",
 };
 

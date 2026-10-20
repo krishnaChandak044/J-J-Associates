@@ -35,7 +35,7 @@ export function CallToActionBar() {
             </h2>
 
             <p className={styles.description}>
-              Speak directly with our senior advocates to evaluate your legal options, understand court processes, and protect your interests with total discretion and candour.
+              Speak directly with our advocates to evaluate your legal options, understand court processes, and protect your interests with total discretion and candour.
             </p>
 
             <div className={styles.actions}>
@@ -57,7 +57,7 @@ export function CallToActionBar() {
             <div className={styles.trustPoints}>
               <div className={styles.trustPoint}>
                 <CheckCircle2 size={16} className={styles.checkIcon} />
-                <span>Direct Senior Advocate Review</span>
+                <span>Direct Advocate Review</span>
               </div>
               <div className={styles.trustPoint}>
                 <CheckCircle2 size={16} className={styles.checkIcon} />
