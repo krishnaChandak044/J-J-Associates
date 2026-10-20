@@ -27,7 +27,7 @@ export function InsightsPreview() {
         <div className={styles.grid}>
           {displayInsights.map((insight) => (
             <Link key={insight.slug} href={`/insights/${insight.slug}`} className={styles.card}>
-              <div className={styles.articleImage}><Image src={getInsightImage(insight.category)} alt={`${insight.category} illustration`} fill sizes="(max-width: 767px) 100vw, 33vw" /></div>
+              <div className={styles.articleImage}><Image src={getInsightImage(insight.slug)} alt={`Image for ${insight.title}`} fill sizes="(max-width: 767px) 100vw, 33vw" /></div>
               <div className={styles.cardBody}>
               <div className={styles.cardMeta}>
                 <span className={styles.category}>{insight.category}</span>

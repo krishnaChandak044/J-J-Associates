@@ -51,7 +51,7 @@ export default async function InsightPage({ params }: Props) {
       {/* Article body */}
       <article className={styles.article}>
         <div className={styles.container}>
-          <div className={styles.articleImage}><Image src={getInsightImage(insight.category)} alt={`${insight.category} illustration`} fill sizes="(max-width: 800px) 100vw, 800px" /></div>
+          <div className={styles.articleImage}><Image src={getInsightImage(insight.slug)} alt={`Image for ${insight.title}`} fill sizes="(max-width: 800px) 100vw, 800px" /></div>
           <p className={styles.lead}>{insight.excerpt}</p>
           <div className={styles.body}>
             {insight.body.map((para, i) => (
@@ -99,7 +99,7 @@ export default async function InsightPage({ params }: Props) {
             <div className={styles.relatedGrid}>
               {related.map((r) => (
                 <Link key={r.slug} href={`/insights/${r.slug}`} className={styles.relatedCard}>
-                  <div className={styles.relatedImage}><Image src={getInsightImage(r.category)} alt={`${r.category} illustration`} fill sizes="(max-width: 640px) 100vw, 400px" /></div>
+                  <div className={styles.relatedImage}><Image src={getInsightImage(r.slug)} alt={`Image for ${r.title}`} fill sizes="(max-width: 640px) 100vw, 400px" /></div>
                   <span className={styles.relatedCategory}>{r.category}</span>
                   <h3 className={styles.relatedCardTitle}>{r.title}</h3>
                   <p className={styles.relatedExcerpt}>{r.excerpt}</p>

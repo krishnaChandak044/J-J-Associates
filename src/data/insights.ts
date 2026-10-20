@@ -140,13 +140,24 @@ export function formatInsightDate(iso: string): string {
 }
 
 
-export function getInsightImage(category: string): string {
+export function getInsightImage(categoryOrSlug: string): string {
+  // Pexels free-use images, selected to match the article subjects:
+  // https://www.pexels.com/photo/a-lawyer-talking-to-clients-7876191/
+  // https://www.pexels.com/photo/judge-signing-on-the-papers-6077447/
+  // https://www.pexels.com/photo/female-lawyer-looking-at-documents-8111889/
+  const articleImages: Record<string, string> = {
+    'mutual-consent-divorce-pune': 'https://images.pexels.com/photos/7876191/pexels-photo-7876191.jpeg?auto=compress&dpr=1&h=750&w=1260',
+    'anticipatory-bail-when-to-apply': 'https://images.pexels.com/photos/6077447/pexels-photo-6077447.jpeg?auto=compress&dpr=1&h=750&w=1260',
+    '498a-defence-what-to-expect': 'https://images.pexels.com/photos/8111889/pexels-photo-8111889.jpeg?auto=compress&dpr=1&h=750&w=1260',
+  };
+  if (articleImages[categoryOrSlug]) return articleImages[categoryOrSlug];
+
   const images: Record<string, string> = {
     'Family Law': 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1000&q=85',
     'Criminal Law': 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1000&q=85',
     'Property Law': 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85',
     'Consumer Law': 'https://images.unsplash.com/photo-1589391886645-d51941baf7fb?auto=format&fit=crop&w=1000&q=85',
   };
-  return images[category] || 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85';
+  return images[categoryOrSlug] || 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85';
 }
 
