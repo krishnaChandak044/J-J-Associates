@@ -20,7 +20,7 @@ export default function CaseResultsPage() {
       <section className={styles.hero}>
         <div className={styles.container}>
           <span className={styles.label}>On the Record</span>
-          <h1 className={styles.heroTitle}>How Matters Have Resolved</h1>
+          <h1 className={styles.heroTitle}>Selected Matter Outcomes</h1>
           <p className={styles.heroSub}>
             These are real outcomes, anonymised and described without identifying the client.
             They are not promises. Every matter turns on its own facts.

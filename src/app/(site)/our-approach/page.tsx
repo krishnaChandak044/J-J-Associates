@@ -28,7 +28,7 @@ export default function OurApproachPage() {
         <div className={styles.container}>
           <blockquote className={styles.pullQuote}>
             <p>&ldquo;{siteConfig.philosophy}&rdquo;</p>
-            <cite>— Gaurav Jaju, Founding Advocate</cite>
+            <cite>— Gaurav Jaju, Co-Founder</cite>
           </blockquote>
         </div>
       </section>

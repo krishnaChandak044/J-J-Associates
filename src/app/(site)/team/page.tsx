@@ -20,7 +20,7 @@ export default function TeamPage() {
           <span className={styles.label}>The People</span>
           <h1 className={styles.heroTitle}>Our <span className="text-highlight">Advocates</span></h1>
           <p className={styles.heroSub}>
-            J&amp;J Associates is led by two advocates, Gaurav Jaju and Ankita Kabra (Jaju) —
+            J&amp;J Associates was co-founded by and is led by advocates Gaurav Jaju and Ankita Kabra (Jaju) —
             both enrolled with the Bar Council of Maharashtra &amp; Goa and practising in Pune.
           </p>
         </div>

@@ -12,6 +12,8 @@ export const metadata = generatePageMetadata({
 export default function AboutPage() {
   const quoteEmphasis = "before the other side does.";
   const quoteEmphasisStart = siteConfig.philosophy.indexOf(quoteEmphasis);
+  const publicLanguages = siteConfig.advocates[0].languages.filter((language) => language !== "Marwari");
+  const practiceFocus = ["Property & Real Estate", "RERA", "Civil Litigation", "Criminal Law", "Family Law", "Corporate & Commercial"];
 
   return (
     <>
@@ -43,7 +45,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.quoteSection} aria-label="A note from our founder">
+      <section className={styles.quoteSection} aria-label="A note from Adv. Gaurav Jaju, Co-Founder">
         <blockquote className={styles.quoteCard}>
           <p className={styles.quoteText}>
             “{siteConfig.philosophy.slice(0, quoteEmphasisStart)}
@@ -84,15 +86,21 @@ export default function AboutPage() {
             </div>
             <div className={styles.detailItem}>
               <dt>Practice Focus</dt>
-              <dd>Property &amp; Real Estate · RERA · Civil Litigation · Criminal Law · Family Law · Corporate &amp; Commercial</dd>
+              <dd className={styles.detailTags}>
+                {practiceFocus.map((area) => <span className={styles.detailTag} key={area}>{area}</span>)}
+              </dd>
             </div>
             <div className={styles.detailItem}>
               <dt>Courts &amp; Regions</dt>
-              <dd>{siteConfig.advocates[0].courts.join(" · ")}</dd>
+              <dd className={styles.detailLines}>
+                {siteConfig.advocates[0].courts.map((court) => <span key={court}>{court}</span>)}
+              </dd>
             </div>
             <div className={styles.detailItem}>
               <dt>Languages</dt>
-              <dd>{siteConfig.advocates[0].languages.join(" · ")}</dd>
+              <dd className={styles.detailTags}>
+                {publicLanguages.map((language) => <span className={styles.detailTag} key={language}>{language}</span>)}
+              </dd>
             </div>
             <div className={styles.detailItem}>
               <dt>Consultations</dt>

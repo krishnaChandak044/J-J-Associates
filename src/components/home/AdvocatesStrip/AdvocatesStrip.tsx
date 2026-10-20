@@ -16,7 +16,7 @@ export function AdvocatesStrip() {
         <div className={styles.header}>
           <div className={styles.headerContent}>
             <span className={styles.label}>The Advocates</span>
-            <h2 className={styles.title}>Who You&apos;ll Be Working With</h2>
+            <h2 className={styles.title}>Meet Your Legal Team</h2>
           </div>
         </div>
 

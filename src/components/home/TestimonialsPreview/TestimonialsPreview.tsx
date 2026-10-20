@@ -41,7 +41,7 @@ export function TestimonialsPreview() {
     <section className={styles.section}>
       <div className={styles.header}>
         <span className={styles.subtitle}>Client Testimonials</span>
-        <h2 className={styles.title}>What Our Clients Say</h2>
+        <h2 className={styles.title}>Words from Our Clients</h2>
       </div>
 
       {/* Row 1, scrolls left */}

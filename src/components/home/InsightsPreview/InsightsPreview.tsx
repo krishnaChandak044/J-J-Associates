@@ -14,7 +14,7 @@ export function InsightsPreview() {
         <div className={styles.header}>
           <div className={styles.titleBlock}>
             <span className={styles.subtitle}>Insights &amp; Updates</span>
-            <h2 className={styles.title}>Legal Knowledge Hub</h2>
+            <h2 className={styles.title}>Explore Legal Insights</h2>
             <p className={styles.description}>
               Plain-language articles on the areas of law we practise, written for clients, not lawyers.
             </p>

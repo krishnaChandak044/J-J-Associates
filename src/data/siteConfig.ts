@@ -170,7 +170,7 @@ export const siteConfig = {
       name: "Gaurav Jaju",
       slug: "gaurav-jaju",
       image: "/founder/IMG_2913.PNG",
-      role: "Advocate and Founder",
+      role: "Advocate & Co-Founder",
       enrolledYear: "2010",
       enrollmentNo: "[ENROLLMENT NO]",   // PLACEHOLDER
       barCouncil: "Bar Council of Maharashtra & Goa",
@@ -186,7 +186,7 @@ export const siteConfig = {
       name: "Ankita Kabra (Jaju)",
       slug: "ankita-jaju",
       image: "/founder/IMG_2913.PNG",
-      role: "Advocate & Legal Consultant",
+      role: "Advocate, Co-Founder & Legal Consultant",
       enrolledYear: "2012",
       enrollmentNo: "[ENROLLMENT NO]",   // PLACEHOLDER
       barCouncil: "Bar Council of Maharashtra & Goa",

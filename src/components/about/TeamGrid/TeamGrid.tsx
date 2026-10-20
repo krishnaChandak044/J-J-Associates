@@ -5,8 +5,8 @@ import styles from "./TeamGrid.module.css";
 
 export function TeamGrid() {
   const advocates = siteConfig.advocates ?? [];
-  const founder = advocates.find((member) => member.role.toLowerCase().includes("founder"));
-  const teamMembers = advocates.filter((member) => member !== founder);
+  const founders = advocates.filter((member) => member.role.toLowerCase().includes("founder"));
+  const teamMembers = advocates.filter((member) => !founders.includes(member));
 
   function renderMember(member: (typeof advocates)[number], label: string) {
     const monogram = member.name.split(" ").map((name) => name[0]).join("").slice(0, 2);
@@ -35,10 +35,12 @@ export function TeamGrid() {
           <h2 className={styles.title}>The Firm</h2>
         </div>
 
-        {founder && (
-          <section className={styles.group} aria-labelledby="founder-heading">
-            <h3 className={styles.groupTitle} id="founder-heading">Founder</h3>
-            <div className={styles.founderGrid}>{renderMember(founder, "Founder")}</div>
+        {founders.length > 0 && (
+          <section className={styles.group} aria-labelledby="founders-heading">
+            <h3 className={styles.groupTitle} id="founders-heading">Founders</h3>
+            <div className={styles.founderGrid}>
+              {founders.map((member) => renderMember(member, "Co-Founder"))}
+            </div>
           </section>
         )}
 
