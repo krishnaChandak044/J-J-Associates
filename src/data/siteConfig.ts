@@ -22,7 +22,7 @@ export const siteConfig = {
     { display: "8087501307", raw: "+918087501307" },
   ],
   whatsapp: "https://wa.me/918149901255", // ACTUAL NUMBER
-  email: "info@jajuassociates.in",   // PLACEHOLDER
+  email: "jandjassociates.in@gmail.com",
   emailAlt: "gauravjaju@jajuassociates.in", // PLACEHOLDER
 
   // ── Address ─────────────────────────────────────────────────────────────────

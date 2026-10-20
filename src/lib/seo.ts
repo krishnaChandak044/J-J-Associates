@@ -67,7 +67,7 @@ export const organizationSchema = {
   alternateName: "J&J Associates",
   url: BASE_URL,
   telephone: "+91-XXXXX-XXXXX", // Update when confirmed
-  email: "info@jajuassociates.com",
+  email: "jandjassociates.in@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "TBD",
