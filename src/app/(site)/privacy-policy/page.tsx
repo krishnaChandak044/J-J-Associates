@@ -1,7 +1,11 @@
 import Link from "next/link";
-import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Privacy Policy | J&J Associates" };
+export const metadata = generatePageMetadata({
+  title: "Privacy Policy | J&J Associates",
+  description: "Read how J&J Associates handles information submitted through this website and the ways to contact the firm about privacy questions.",
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (

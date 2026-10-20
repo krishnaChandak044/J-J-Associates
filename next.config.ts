@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [{
+      source: "/:path*",
+      has: [{ type: "host", value: "jandjassociates.in" }],
+      destination: "https://www.jandjassociates.in/:path*",
+      permanent: true,
+    }];
+  },
   images: {
     remotePatterns: [
       {

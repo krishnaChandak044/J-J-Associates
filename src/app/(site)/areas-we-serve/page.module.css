@@ -1,0 +1,156 @@
+.container {
+  width: min(calc(100% - 2 * var(--gutter)), var(--max-width));
+  margin-inline: auto;
+}
+
+.hero {
+  padding: calc(var(--header-height) + 5rem) 0 5rem;
+  background: var(--color-primary-dark);
+  color: white;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--color-accent);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1.05;
+}
+
+.intro {
+  max-width: 48rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.main {
+  padding: 1rem 0 6rem;
+  background: var(--color-bg);
+}
+
+.section {
+  padding-top: clamp(3rem, 7vw, 5rem);
+}
+
+.sectionHeading {
+  max-width: 46rem;
+  margin-bottom: 1.75rem;
+}
+
+.sectionHeading h2 {
+  margin: 0 0 0.6rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.sectionHeading p:last-child {
+  color: var(--color-text-body);
+  line-height: 1.7;
+}
+
+.officeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.officeCard {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: white;
+}
+
+.officeCard h3 {
+  margin: 0 0 0.7rem;
+  color: var(--color-primary-dark);
+  font-size: 1.15rem;
+}
+
+.officeCard p {
+  margin: 0 0 1.25rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+}
+
+.officeCard a,
+.practiceLinks a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.officeCard a:hover,
+.practiceLinks a:hover {
+  text-decoration: underline;
+}
+
+.areaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.areaItem {
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.7rem;
+  background: white;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.areaItem:target {
+  border-color: var(--color-accent);
+  background: var(--color-surface-alt);
+}
+
+.practiceLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.practiceLinks a {
+  padding: 0.7rem 0.95rem;
+  border: 1px solid var(--color-border);
+  border-radius: 99px;
+  background: white;
+}
+
+.contactLink {
+  display: inline-flex;
+  margin-top: 2rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 99px;
+  background: var(--color-primary-dark);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 850px) {
+  .areaGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .hero { padding-block: calc(var(--header-height) + 3rem) 3rem; }
+  .officeGrid { grid-template-columns: 1fr; }
+  .areaGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

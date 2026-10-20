@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo";
 import { Hero } from "@/components/home/Hero/Hero";
 import { PracticeAreasPreview } from "@/components/home/PracticeAreasPreview/PracticeAreasPreview";
 import { Stats } from "@/components/home/Stats/Stats";
@@ -11,10 +11,11 @@ import { AdvocatesStrip } from "@/components/home/AdvocatesStrip/AdvocatesStrip"
 
 import { CallToActionBar } from "@/components/ui/CallToActionBar/CallToActionBar";
 
-export const metadata: Metadata = {
-  title: "J&J Associates | Advocates & Legal Consultants Pune",
-  description: "Justice, Handled With Precision. Gaurav Jaju & Ankita Kabra (Jaju), dedicated advocates in Pune for Family, Criminal, Civil & Property matters.",
-};
+export const metadata = generatePageMetadata({
+  title: "Advocates & Legal Consultants in Pune | J&J Associates",
+  description: "J&J Associates is a Pune law firm led by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju). Learn about family, corporate, civil, criminal and property matters.",
+  path: "/",
+});
 
 export default function Home() {
   return (

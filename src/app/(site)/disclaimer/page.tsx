@@ -1,7 +1,11 @@
 import Link from "next/link";
-import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Disclaimer | J&J Associates" };
+export const metadata = generatePageMetadata({
+  title: "Website Disclaimer | J&J Associates",
+  description: "Read the J&J Associates website disclaimer about general legal information and consultations with an advocate.",
+  path: "/disclaimer",
+});
 
 export default function DisclaimerPage() {
   return (

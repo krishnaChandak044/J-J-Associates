@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
-export const metadata: Metadata = {
-  title: "Case Results, On the Record | J&J Associates",
-  description: "A factual record of how matters have resolved at J&J Associates, real outcomes across family law, criminal defence, property, and civil matters.",
-};
+export const metadata = generatePageMetadata({
+  title: "Selected Matter Outcomes | J&J Associates Pune",
+  description: "Read anonymised descriptions of selected legal matters handled by J&J Associates in Pune. Each matter depends on its own facts and circumstances.",
+  path: "/case-results",
+});
 
 // All unique categories
 const ALL_CATEGORIES = ["All", "Family Law", "Criminal Defence", "Property Law", "Civil Litigation", "Consumer & Cheque Bounce"];

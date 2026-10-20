@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header/Header";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingCTA } from "@/components/layout/FloatingCTA/FloatingCTA";
 import { SearchModal } from "@/components/ui/SearchModal/SearchModal";
+import { jsonLd, organizationSchema, SITE_URL } from "@/lib/seo";
 
 
 // ─── Font Loading ──────────────────────────────────────────────────────────
@@ -26,8 +27,9 @@ const cormorant = Cormorant_Garamond({
 // ─── Metadata ─────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  title: "J&J Associates | Advocates & Legal Consultants Pune",
-  description: "Justice, Handled With Precision. Pune's premier law firm specializing in Divorce, Civil Litigation, Property, and Corporate Law.",
+  metadataBase: new URL(SITE_URL),
+  title: "J&J Associates | Advocates & Legal Consultants in Pune",
+  description: "Pune-based legal counsel led by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju). Explore the firm's practice areas, advocates, offices and legal insights.",
 };
 
 export const viewport = {
@@ -49,6 +51,7 @@ export default function RootLayout({
       className={`${jakarta.variable} ${cormorant.variable}`}
     >
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(organizationSchema) }} />
 
         <SearchModal />
         <Header />

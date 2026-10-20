@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 import { insights, formatInsightDate, getInsightImage } from "@/data/insights";
 
-export const metadata: Metadata = {
-  title: "Legal Insights | J&J Associates Pune",
-  description: "Plain-language articles on family law, criminal law, property, and consumer matters, written by advocates at J&J Associates, Pune.",
-};
+export const metadata = generatePageMetadata({
+  title: "Legal Insights & Articles | J&J Associates Pune",
+  description: "Explore practical articles on family law, criminal law, property and consumer matters from J&J Associates in Pune.",
+  path: "/insights",
+});
 
 export default function InsightsPage() {
   return (

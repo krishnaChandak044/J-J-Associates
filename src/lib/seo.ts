@@ -1,7 +1,8 @@
 // SEO utility, generates consistent Next.js Metadata per page
 import type { Metadata } from "next";
+import { siteConfig } from "@/data/siteConfig";
 
-const BASE_URL = "https://jajuassociates.com"; // Update when domain is confirmed
+export const SITE_URL = siteConfig.url;
 
 interface GenerateMetadataParams {
   title: string;
@@ -16,29 +17,24 @@ export function generatePageMetadata({
   title,
   description,
   path,
-  ogImage = "/og-default.jpg",
+  ogImage = "/logo/j&j_logo.png",
   keywords = [],
   type = "website",
 }: GenerateMetadataParams): Metadata {
-  const url = `${BASE_URL}${path}`;
+  const url = new URL(path, SITE_URL).toString();
+  const imageUrl = new URL(ogImage, SITE_URL).toString();
 
   return {
     title,
     description,
-    keywords: [
-      "advocate pune",
-      "lawyer pune",
-      "legal services pune",
-      "jaju associates",
-      ...keywords,
-    ],
+    ...(keywords.length ? { keywords } : {}),
     authors: [{ name: "J&J Associates" }],
     openGraph: {
       title,
       description,
       url,
       type,
-      images: [{ url: `${BASE_URL}${ogImage}`, width: 1200, height: 630, alt: title }],
+      images: [{ url: imageUrl, alt: siteConfig.firmName }],
       siteName: "J&J Associates",
       locale: "en_IN",
     },
@@ -46,7 +42,7 @@ export function generatePageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [`${BASE_URL}${ogImage}`],
+      images: [imageUrl],
     },
     alternates: {
       canonical: url,
@@ -63,34 +59,33 @@ export function generatePageMetadata({
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  name: "J&J Associates",
-  alternateName: "J&J Associates",
-  url: BASE_URL,
-  telephone: "+91-XXXXX-XXXXX", // Update when confirmed
-  email: "jandjassociates.in@gmail.com",
-  address: {
+  "@id": `${SITE_URL}/#organization`,
+  name: siteConfig.firmName,
+  alternateName: "J & J Legal Associates",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo/j&j_logo.png`,
+  telephone: siteConfig.phoneNumbers.map((phone) => phone.raw),
+  email: siteConfig.email,
+  address: siteConfig.addresses.map((address) => ({
     "@type": "PostalAddress",
-    streetAddress: "TBD",
-    addressLocality: "Pune",
-    addressRegion: "Maharashtra",
-    postalCode: "TBD",
-    addressCountry: "IN",
+    streetAddress: `${address.line1}, ${address.line2}`,
+    addressLocality: address.city,
+    addressRegion: address.state,
+    postalCode: address.postalCode,
+    addressCountry: address.countryCode,
+  })),
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "10:00",
+    closes: "19:00",
   },
-  openingHours: "Mo-Sa 10:00-18:00",
   areaServed: [
     { "@type": "City", name: "Pune" },
     { "@type": "State", name: "Maharashtra" },
   ],
-  serviceType: [
-    "Divorce Law",
-    "Family Law",
-    "Criminal Defense",
-    "Civil Litigation",
-    "Property Law",
-    "Corporate Law",
-    "Consumer Protection",
-    "Cheque Bounce",
-    "Legal Documentation",
-    "Legal Consultation",
-  ],
 };
+
+export function jsonLd(value: unknown): string {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}

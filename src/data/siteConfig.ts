@@ -68,7 +68,7 @@ export const siteConfig = {
   officeHours: "Monday, Saturday, 10:00 AM, 7:00 PM",
 
   // ── Site / SEO ──────────────────────────────────────────────────────────────
-  url: "https://www.jajuassociates.in", // PLACEHOLDER
+  url: "https://www.jandjassociates.in",
   locale: "en_IN",
   foundingYear: "2010",                 // PLACEHOLDER
   established: "2010",

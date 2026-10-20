@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { ChevronLeft } from "lucide-react";
 import styles from "./page.module.css";
 import { insights, getInsightBySlug, getRelatedInsights, formatInsightDate, getInsightImage } from "@/data/insights";
+import { generatePageMetadata, jsonLd, SITE_URL } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -18,10 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const insight = getInsightBySlug(slug);
   if (!insight) return { title: "Not Found" };
-  return {
+  return generatePageMetadata({
     title: `${insight.title} | J&J Associates`,
     description: insight.excerpt,
-  };
+    path: `/insights/${insight.slug}`,
+    type: "article",
+  });
 }
 
 export default async function InsightPage({ params }: Props) {
@@ -30,9 +33,23 @@ export default async function InsightPage({ params }: Props) {
   if (!insight) notFound();
 
   const related = insight.relatedSlugs ? getRelatedInsights(insight.relatedSlugs) : [];
+  const articleUrl = `${SITE_URL}/insights/${insight.slug}`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${articleUrl}#article`,
+    headline: insight.title,
+    description: insight.excerpt,
+    datePublished: insight.date,
+    inLanguage: "en-IN",
+    mainEntityOfPage: articleUrl,
+    author: { "@type": "Organization", name: "J&J Associates", "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
 
   return (
     <div className={styles.page}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
       {/* Hero */}
       <header className={styles.hero}>
         <div className={styles.container}>

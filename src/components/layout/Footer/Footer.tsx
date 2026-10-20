@@ -146,11 +146,11 @@ export function Footer() {
         <div className={styles.areasWeServe}>
           <div className={styles.areasHeader}>
             <h4 className={styles.colTitle}>Areas We Serve</h4>
-            <span className={styles.areasAllText}>All areas</span>
+            <Link href="/areas-we-serve" className={styles.areasAllText}>All areas</Link>
           </div>
           <div className={styles.areasGrid}>
             {locations.map((loc) => (
-              <Link key={loc.slug} href={`/locations/${loc.slug}`} className={styles.areaPill}>
+              <Link key={loc.slug} href={`/areas-we-serve#${loc.slug}`} className={styles.areaPill}>
                 <span className={styles.areaDot}>•</span> {loc.name}
               </Link>
             ))}

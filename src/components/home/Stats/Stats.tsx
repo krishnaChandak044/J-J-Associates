@@ -1,77 +1,22 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import styles from "./Stats.module.css";
 
-const STATS = [
+const stats = [
   { value: "Pune", label: "Local legal counsel" },
-  { num: 4, suffix: "", label: "Core practice areas" },
-  { num: 12, suffix: "", label: "Advocates on team" },
-  { num: 5, suffix: "+", label: "High courts appeared" },
+  { value: "2", label: "Co-founders" },
+  { value: "2", label: "Pune offices" },
+  { value: "10", label: "Practice areas" },
 ];
 
-function useCountUp(target: number, duration = 1800, triggered: boolean) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!triggered) return;
-    let start = 0;
-    const startTime = performance.now();
-
-    const tick = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(eased * target);
-      setCount(current);
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  }, [triggered, target, duration]);
-
-  return count;
-}
-
-function StatItem({ num, value, suffix = "", label, triggered }: { num?: number; value?: string; suffix?: string; label: string; triggered: boolean }) {
-  const count = useCountUp(num ?? 0, 1600, triggered);
-  return (
-    <div className={styles.statc}>
-      <span className={styles.n}>
-        {value ?? `${count}${suffix}`}
-      </span>
-      <span className={styles.l}>{label}</span>
-    </div>
-  );
-}
-
 export function Stats() {
-  const ref = useRef<HTMLElement>(null);
-  const [triggered, setTriggered] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTriggered(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className={styles.stats} ref={ref}>
+    <section className={styles.stats}>
       <div className={styles.container}>
         <div className={styles.grid}>
-          {STATS.map((s) => (
-            <StatItem key={s.label} {...s} triggered={triggered} />
+          {stats.map((stat) => (
+            <div className={styles.statc} key={stat.label}>
+              <span className={styles.n}>{stat.value}</span>
+              <span className={styles.l}>{stat.label}</span>
+            </div>
           ))}
         </div>
       </div>

@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
-export const metadata: Metadata = {
-  title: "Our Advocates | J&J Associates",
-  description: "Gaurav Jaju and Ankita Kabra (Jaju), advocates and legal consultants in Pune specialising in family, criminal, civil, and property matters.",
-};
+export const metadata = generatePageMetadata({
+  title: "Our Advocates | Gaurav Jaju & Ankita Kabra (Jaju)",
+  description: "Meet J&J Associates co-founders Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), advocates and legal consultants based in Pune.",
+  path: "/team",
+});
 
 export default function TeamPage() {
   const advocates = siteConfig.advocates ?? [];

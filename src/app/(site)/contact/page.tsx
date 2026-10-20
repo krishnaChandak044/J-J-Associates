@@ -1,37 +1,15 @@
-import { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/siteConfig";
 import { ContactForm } from "@/components/contact/ContactForm/ContactForm";
 import { MapTabs } from "@/components/contact/MapTabs/MapTabs";
 import { Accordion } from "@/components/ui/Accordion/Accordion";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Contact Us | J&J Associates Pune",
-  description: "Get in touch with J&J Associates. Schedule a consultation with our expert legal team at our Pune office.",
-};
-
-const contactSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LegalService',
-  name: 'J&J Associates',
-  url: siteConfig.url,
-  telephone: siteConfig.phoneNumbers.map((phone) => phone.raw),
-  email: siteConfig.email,
-  address: siteConfig.addresses?.map(addr => ({
-    '@type': 'PostalAddress',
-    streetAddress: addr.street,
-    addressLocality: addr.city,
-    addressRegion: addr.state,
-    postalCode: addr.pin,
-    addressCountry: 'IN',
-  })),
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    opens: '10:00',
-    closes: '19:00',
-  },
-};
+export const metadata = generatePageMetadata({
+  title: "Contact J&J Associates | Pune Offices & Consultations",
+  description: "Contact J&J Associates in Kasba Peth or Shukrawar Peth, Pune. Find the office addresses, phone numbers, hours and consultation enquiry form.",
+  path: "/contact",
+});
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -67,10 +45,6 @@ const faqSchema = {
 export default function ContactPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

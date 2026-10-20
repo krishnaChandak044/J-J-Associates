@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
-export const metadata: Metadata = {
-  title: "Our Approach | J&J Associates",
-  description: "How J&J Associates approaches every client matter, diagnosis before prescription, honest assessment, and thorough preparation.",
-};
+export const metadata = generatePageMetadata({
+  title: "How We Work | J&J Associates Pune",
+  description: "Learn how J&J Associates approaches consultations, case preparation, legal representation and communication with clients in Pune.",
+  path: "/our-approach",
+});
 
 export default function OurApproachPage() {
   const { approach } = siteConfig;
