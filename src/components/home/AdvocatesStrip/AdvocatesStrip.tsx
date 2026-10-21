@@ -8,15 +8,15 @@ import styles from "./AdvocatesStrip.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
 export function AdvocatesStrip() {
-  const advocates = [...(siteConfig.advocates ?? []), ...siteConfig.teamMembers];
+  const advocates = siteConfig.advocates ?? [];
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.headerContent}>
-            <span className={styles.label}>The Advocates</span>
-            <h2 className={styles.title}>Meet Your Legal Team</h2>
+            <span className={styles.label}>The Founders</span>
+            <h2 className={styles.title}>Meet the Founders</h2>
           </div>
         </div>
 
