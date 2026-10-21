@@ -62,7 +62,7 @@ export function Header() {
             />
             <div className={styles.logoTextWrapper}>
               <span className={styles.logoTitle}>J&J Associates</span>
-              <span className={styles.logoSubtitle}>Advocates and legal consultants</span>
+              <span className={styles.logoSubtitle}>Advocates and Legal Consultants</span>
             </div>
           </Link>
 
