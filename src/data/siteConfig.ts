@@ -185,7 +185,7 @@ export const siteConfig = {
     {
       name: "Ankita Kabra (Jaju)",
       slug: "ankita-jaju",
-      image: "/founder/IMG_2913.PNG",
+      image: "/founder/Ankita.png",
       role: "Advocate, Co-Founder & Legal Consultant",
       enrolledYear: "2012",
       enrollmentNo: "[ENROLLMENT NO]",   // PLACEHOLDER

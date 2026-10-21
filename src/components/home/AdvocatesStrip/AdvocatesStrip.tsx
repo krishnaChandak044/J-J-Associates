@@ -31,15 +31,9 @@ export function AdvocatesStrip() {
               transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
             >
               <div className={styles.profileHeader}>
-                {adv.image ? (
-                  <div className={styles.imageWrap}>
-                    <Image src={adv.image} alt={adv.name} fill className={styles.image} sizes="72px" />
-                  </div>
-                ) : (
-                  <div className={styles.monogram}>
-                    {adv.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                  </div>
-                )}
+                <div className={styles.imageWrap}>
+                  <Image src={adv.image} alt={`${adv.name}, ${adv.role}`} fill className={styles.image} sizes="72px" />
+                </div>
                 <div className={styles.headerDetails}>
                   <span className={styles.role}>{adv.role}</span>
                   <h3 className={styles.name}>{adv.name}</h3>

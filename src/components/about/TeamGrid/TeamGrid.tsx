@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import styles from "./TeamGrid.module.css";
@@ -15,7 +16,11 @@ export function TeamGrid() {
       <Link key={member.slug} href={`/team/${member.slug}`} className={styles.card}>
         <span className={styles.memberLabel}>{label}</span>
         <div className={styles.imageWrapper}>
-          <div className={styles.monogramPlaceholder} aria-hidden="true">{monogram}</div>
+          {member.image ? (
+            <Image src={member.image} alt={`${member.name}, ${member.role}`} fill className={styles.memberImage} sizes="(max-width: 760px) 100vw, 50vw" />
+          ) : (
+            <div className={styles.monogramPlaceholder} aria-hidden="true">{monogram}</div>
+          )}
         </div>
         <div className={styles.content}>
           <h3 className={styles.name}>{member.name}</h3>

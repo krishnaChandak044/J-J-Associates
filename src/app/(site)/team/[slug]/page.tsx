@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Mail, Phone, GraduationCap, Award, Briefcase } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { generatePageMetadata } from "@/lib/seo";
@@ -53,10 +54,11 @@ export default async function TeamMemberPage({ params }: Props) {
         {/* ── Sidebar (Photo & Contact) ── */}
         <aside className={styles.sidebar}>
           <div className={styles.imageWrapper}>
-            {/* If we had an image it would go here, fallback to monogram block */}
-            <div className={styles.monogramPlaceholder}>
-              {monogram}
-            </div>
+            {member.image ? (
+              <Image src={member.image} alt={`${member.name}, ${member.role}`} fill className={styles.image} sizes="(max-width: 1023px) 100vw, 380px" priority />
+            ) : (
+              <div className={styles.monogramPlaceholder}>{monogram}</div>
+            )}
           </div>
 
           <div className={styles.contactCard}>

@@ -34,15 +34,9 @@ export default function TeamPage() {
             <div key={adv.slug} className={`${styles.advocateRow} ${idx % 2 !== 0 ? styles.rowReversed : ''}`}>
               {/* Monogram Card */}
               <div className={styles.monogramWrap}>
-                {adv.image ? (
-                  <div className={styles.imageWrap}>
-                    <Image src={adv.image} alt={adv.name} fill className={styles.image} />
-                  </div>
-                ) : (
-                  <div className={styles.monogram}>
-                    {adv.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                  </div>
-                )}
+                <div className={styles.imageWrap}>
+                  <Image src={adv.image} alt={`${adv.name}, ${adv.role}`} fill className={styles.image} />
+                </div>
                 <p className={styles.monogramEnrolled}>
                   Enrolled {adv.enrolledYear}<br />
                   {adv.barCouncil}
