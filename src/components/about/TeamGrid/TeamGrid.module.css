@@ -183,6 +183,15 @@
   filter: none;
 }
 
+/* Keep both founders' faces at the same visual height in the shared frame. */
+.founderGaurav {
+  object-position: center 34%;
+}
+
+.founderAnkita {
+  object-position: center top;
+}
+
 .card:hover .image {
   transform: scale(1.05);
 }

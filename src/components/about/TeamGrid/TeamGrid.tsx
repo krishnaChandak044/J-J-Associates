@@ -17,7 +17,13 @@ export function TeamGrid() {
         <span className={styles.memberLabel}>{label}</span>
         <div className={styles.imageWrapper}>
           {member.image ? (
-            <Image src={member.image} alt={`${member.name}, ${member.role}`} fill className={styles.image} sizes="(max-width: 760px) 100vw, 50vw" />
+            <Image
+              src={member.image}
+              alt={`${member.name}, ${member.role}`}
+              fill
+              className={`${styles.image} ${member.slug === "gaurav-jaju" ? styles.founderGaurav : member.slug === "ankita-jaju" ? styles.founderAnkita : ""}`}
+              sizes="(max-width: 760px) 100vw, 50vw"
+            />
           ) : (
             <div className={styles.monogramPlaceholder} aria-hidden="true">{monogram}</div>
           )}
