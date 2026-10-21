@@ -180,13 +180,11 @@
   object-fit: cover;
   object-position: center 22%;
   transition: transform var(--t-reveal);
-  /* Optional: grayscale filter to look premium until hover */
-  filter: grayscale(80%) contrast(1.1);
+  filter: none;
 }
 
 .card:hover .image {
   transform: scale(1.05);
-  filter: grayscale(0%) contrast(1);
 }
 
 .content {
