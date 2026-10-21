@@ -89,12 +89,21 @@ export function Footer() {
               <div className={styles.addressesGroup}>
                 {siteConfig.addresses?.map((address, index) => (
                   <div key={index} className={styles.contactItem} style={index > 0 ? { marginTop: '1rem' } : {}}>
-                    <MapPin size={18} className={styles.contactIcon} />
-                    <div className={styles.contactText}>
-                      {address.line1}<br />
-                      {address.line2}<br />
-                      {address.city}, {address.state} - {address.pin}
-                    </div>
+                    <a
+                      href={address.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.addressLink}
+                      aria-label={`Open directions to ${address.name} in Google Maps`}
+                    >
+                      <MapPin size={18} className={styles.contactIcon} aria-hidden="true" />
+                      <span className={styles.contactText}>
+                        {address.line1}<br />
+                        {address.line2}<br />
+                        {address.city}, {address.state} - {address.pin}
+                        <span className={styles.addressDirections}>Directions in Google Maps →</span>
+                      </span>
+                    </a>
                   </div>
                 ))}
               </div>
