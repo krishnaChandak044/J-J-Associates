@@ -1,5 +1,6 @@
 import { generatePageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/data/siteConfig";
+import Image from "next/image";
 import styles from "./page.module.css";
 import { TeamGrid } from "@/components/about/TeamGrid/TeamGrid";
 
@@ -53,7 +54,13 @@ export default function AboutPage() {
             {siteConfig.philosophy.slice(quoteEmphasisStart + quoteEmphasis.length)}”
           </p>
           <footer className={styles.quoteAttribution}>
-            <span className={styles.quoteMonogram} aria-hidden="true">GJ</span>
+            <Image
+              src={siteConfig.advocates[0].image}
+              alt={siteConfig.advocates[0].name}
+              width={56}
+              height={56}
+              className={styles.quotePortrait}
+            />
             <span className={styles.quoteByline}>
               <strong>{siteConfig.advocates[0].name}</strong>
               <small>{siteConfig.advocates[0].role}</small>
