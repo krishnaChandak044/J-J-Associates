@@ -200,6 +200,29 @@ export const siteConfig = {
     },
   ],
 
+  // ── Team Members ────────────────────────────────────────────────────────────
+  // Keep bios and practice claims off the site until the firm supplies verified details.
+  teamMembers: [
+    {
+      name: "Adv. Ravindra Nikam",
+      slug: "ravindra-nikam",
+      image: "/team/Adv. Ravindra Nikam.png",
+      role: "Advocate",
+    },
+    {
+      name: "Adv. Manasi Shripad Rao",
+      slug: "manasi-shripad-rao",
+      image: "/team/Adv. Manasi Shripad Rao.png",
+      role: "Advocate",
+    },
+    {
+      name: "Adv. Khushbu Ghangurde",
+      slug: "khushbu-ghangurde",
+      image: "/team/Adv. Khushbu Ghangurde.png",
+      role: "Advocate",
+    },
+  ],
+
   // ── Practice Areas (summary for nav/footer, full data in practiceAreas.ts) ─
   practiceAreaSlugs: [
     "family-law",

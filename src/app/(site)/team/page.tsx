@@ -79,6 +79,29 @@ export default function TeamPage() {
         </div>
       </section>
 
+      <section className={styles.teamSection} id="team-members" aria-labelledby="team-members-heading">
+        <div className={styles.container}>
+          <div className={styles.teamHeading}>
+            <span className={styles.label}>Working alongside the founders</span>
+            <h2 className={styles.teamTitle} id="team-members-heading">Our Team</h2>
+          </div>
+          <div className={styles.teamGrid}>
+            {siteConfig.teamMembers.map((member, index) => (
+              <article key={member.slug} className={styles.teamCard}>
+                <span className={styles.teamLabel}>Team Member {String(index + 1).padStart(2, "0")}</span>
+                <div className={styles.teamImage}>
+                  <Image src={member.image} alt={`${member.name}, ${member.role}`} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
+                </div>
+                <div className={styles.teamCardContent}>
+                  <h3>{member.name}</h3>
+                  <p>{member.role}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className={styles.ctaSection}>
         <div className={styles.container}>

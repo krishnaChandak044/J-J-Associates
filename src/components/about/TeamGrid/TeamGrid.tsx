@@ -7,7 +7,7 @@ import styles from "./TeamGrid.module.css";
 export function TeamGrid() {
   const advocates = siteConfig.advocates ?? [];
   const founders = advocates.filter((member) => member.role.toLowerCase().includes("founder"));
-  const teamMembers = advocates.filter((member) => !founders.includes(member));
+  const teamMembers = siteConfig.teamMembers;
 
   function renderMember(member: (typeof advocates)[number], label: string) {
     const monogram = member.name.split(" ").map((name) => name[0]).join("").slice(0, 2);
@@ -32,6 +32,21 @@ export function TeamGrid() {
     );
   }
 
+  function renderTeamMember(member: (typeof teamMembers)[number], index: number) {
+    return (
+      <article key={member.slug} className={styles.card}>
+        <span className={styles.memberLabel}>Team Member {String(index + 1).padStart(2, "0")}</span>
+        <div className={styles.imageWrapper}>
+          <Image src={member.image} alt={`${member.name}, ${member.role}`} fill className={styles.image} sizes="(max-width: 760px) 100vw, (max-width: 1023px) 50vw, 33vw" />
+        </div>
+        <div className={styles.content}>
+          <h3 className={styles.name}>{member.name}</h3>
+          <div className={styles.designation}>{member.role}</div>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <section className={styles.section} aria-label="The Firm">
       <div className={styles.container}>
@@ -51,9 +66,9 @@ export function TeamGrid() {
 
         {teamMembers.length > 0 && (
           <section className={styles.group} aria-labelledby="team-members-heading">
-            <h3 className={styles.groupTitle} id="team-members-heading">Team Members</h3>
+            <h3 className={styles.groupTitle} id="team-members-heading">Our Team</h3>
             <div className={styles.grid}>
-              {teamMembers.map((member, index) => renderMember(member, `Team Member ${String(index + 1).padStart(2, "0")}`))}
+              {teamMembers.map(renderTeamMember)}
             </div>
           </section>
         )}

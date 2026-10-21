@@ -8,7 +8,7 @@ import styles from "./AdvocatesStrip.module.css";
 import { siteConfig } from "@/data/siteConfig";
 
 export function AdvocatesStrip() {
-  const advocates = siteConfig.advocates ?? [];
+  const advocates = [...(siteConfig.advocates ?? []), ...siteConfig.teamMembers];
 
   return (
     <section className={styles.section}>
@@ -40,13 +40,15 @@ export function AdvocatesStrip() {
                 </div>
               </div>
 
-              <blockquote className={styles.quote}>&ldquo;{adv.quote}&rdquo;</blockquote>
+              {"quote" in adv && <blockquote className={styles.quote}>&ldquo;{adv.quote}&rdquo;</blockquote>}
 
-              <div className={styles.specs}>
-                {adv.specialisations.map(s => (
-                  <span key={s} className={styles.spec}>{s}</span>
-                ))}
-              </div>
+              {"specialisations" in adv && adv.specialisations.length > 0 && (
+                <div className={styles.specs}>
+                  {adv.specialisations.map(s => (
+                    <span key={s} className={styles.spec}>{s}</span>
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
