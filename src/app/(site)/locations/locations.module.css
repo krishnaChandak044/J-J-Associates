@@ -1,0 +1,264 @@
+.page {
+  background-color: var(--color-bg, #fffcf9);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--gutter, 1.5rem);
+}
+
+.hero {
+  background-color: var(--color-surface, #ffffff);
+  padding: calc(var(--header-height, 80px) + 2.5rem) 0 3.5rem;
+  border-bottom: 1px solid var(--color-border-light, #f1f5f9);
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted, #64748b);
+  margin-bottom: 2rem;
+}
+
+.breadcrumbs a {
+  color: var(--color-primary-dark, #001226);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.separator {
+  color: var(--color-border, #cbd5e1);
+  user-select: none;
+}
+
+.active {
+  color: var(--color-primary-dark, #001226);
+  font-weight: 700;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background-color: #eaf3ed;
+  color: #1b3b2b;
+  padding: 0.45rem 1.25rem;
+  border-radius: var(--radius-pill, 9999px);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(2.4rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.25rem;
+  color: var(--color-primary-dark, #001226);
+}
+
+.titleHighlight {
+  background-color: #feeed9;
+  color: #2b211e;
+  padding: 0.08em 0.35em;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.sub {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.125rem;
+  color: var(--color-text-body, #4a3c38);
+  max-width: 760px;
+  line-height: 1.7;
+}
+
+/* ── Offices Strip ── */
+.officesSection {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--color-border-light, #f1f5f9);
+}
+
+.sectionHeading {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-primary-dark, #001226);
+  margin-bottom: 1.5rem;
+}
+
+.sectionSub {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1rem;
+  color: var(--color-text-muted, #64748b);
+  margin-top: -0.75rem;
+  margin-bottom: 2rem;
+}
+
+.officeGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .officeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.officeCard {
+  background-color: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.officeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.officePin {
+  color: var(--color-accent, #b89c72);
+}
+
+.officeName {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary-dark, #001226);
+  margin: 0;
+}
+
+.officeAddress {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9375rem;
+  color: var(--color-text-body, #4a3c38);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.officeDirections {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary, #002147);
+  text-decoration: none;
+  transition: color var(--t-fast, 150ms ease);
+}
+
+.officeDirections:hover {
+  color: var(--color-accent, #b89c72);
+}
+
+/* ── Locations Grid ── */
+.gridSection {
+  padding: 3.5rem 0 5rem;
+}
+
+.locationsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .locationsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .locationsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.locationCard {
+  background-color: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border-light, #f1f5f9);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: transform var(--t-fast, 150ms ease), border-color var(--t-fast, 150ms ease), box-shadow var(--t-fast, 150ms ease);
+}
+
+.locationCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent, #b89c72);
+  box-shadow: 0 8px 24px rgba(0, 33, 71, 0.06);
+}
+
+.locCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.locName {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary-dark, #001226);
+  margin: 0;
+}
+
+.locTravel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #183624;
+  background-color: #eaf3ed;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill, 9999px);
+}
+
+.locDesc {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #64748b);
+  line-height: 1.55;
+  margin: 0 0 1.25rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.locLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-ui, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary, #002147);
+  transition: gap var(--t-fast, 150ms ease), color var(--t-fast, 150ms ease);
+}
+
+.locationCard:hover .locLink {
+  color: var(--color-accent, #b89c72);
+  gap: 0.65rem;
+}

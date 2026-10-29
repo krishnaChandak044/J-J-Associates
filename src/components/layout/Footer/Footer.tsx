@@ -159,7 +159,7 @@ export function Footer() {
           </div>
           <div className={styles.areasGrid}>
             {locations.map((loc) => (
-              <Link key={loc.slug} href={`/areas-we-serve#${loc.slug}`} className={styles.areaPill}>
+              <Link key={loc.slug} href={`/locations/${loc.slug}`} className={styles.areaPill}>
                 <span className={styles.areaDot}>•</span> {loc.name}
               </Link>
             ))}

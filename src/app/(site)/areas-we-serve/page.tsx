@@ -55,7 +55,10 @@ export default function AreasWeServePage() {
             <ul className={styles.areaGrid}>
               {locations.map((location) => (
                 <li id={location.slug} key={location.slug} className={styles.areaItem}>
-                  {location.name}
+                  <Link href={`/locations/${location.slug}`} className={styles.areaLink}>
+                    <span>{location.name}</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
                 </li>
               ))}
             </ul>
