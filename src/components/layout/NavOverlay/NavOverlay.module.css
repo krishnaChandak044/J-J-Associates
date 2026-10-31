@@ -5,36 +5,40 @@
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  overscroll-behavior-y: contain;
+  overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  background-color: var(--color-primary-dark);
 }
 
 .closeBtn {
-  position: absolute;
-  top: 1rem;
-  right: var(--gutter);
-  z-index: 10;
-  background: transparent;
-  border: none;
-  color: var(--color-surface);
+  position: fixed;
+  top: 1.25rem;
+  right: var(--gutter, 1.5rem);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: var(--color-surface, #ffffff);
   cursor: pointer;
-  padding: 8px;
-  display: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--t-fast, 150ms ease), transform var(--t-fast, 150ms ease);
 }
 
-@media (max-width: 1024px) {
-  .closeBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: scale(1.05);
 }
 
 .curtain {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-color: var(--color-primary-dark);
   will-change: clip-path;
+  pointer-events: none;
 }
 
 .content {

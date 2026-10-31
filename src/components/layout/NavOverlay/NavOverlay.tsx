@@ -108,7 +108,7 @@ export function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
           exit="exit"
         >
           <button className={styles.closeBtn} onClick={onClose} aria-label="Close menu">
-            <X size={32} />
+            <X size={24} />
           </button>
 
           <motion.div className={styles.curtain} variants={curtainVariants} />

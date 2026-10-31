@@ -14,7 +14,7 @@ export function ContactForm({ compact = false, defaultPracticeArea = "" }: { com
     const formData = new FormData(e.currentTarget);
     
     // Web3Forms Access Key
-    formData.append("access_key", "2e26fc9e-6932-4d99-8f51-629fcf702424");
+    formData.append("access_key", "a2c623ab-1eb9-4b0a-91cf-fdcdfa00f05d");
     formData.append("subject", "New Consultation Request from J&J Associates Website");
     formData.append("from_name", "J&J Associates Website");
 

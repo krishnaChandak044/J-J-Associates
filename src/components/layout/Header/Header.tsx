@@ -29,16 +29,18 @@ export function Header() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [navOpen]);
 
-  // Lock body scroll when nav is open
+  // Lock body & html scroll when nav is open
   useEffect(() => {
     if (navOpen) {
+      const prevBodyOverflow = document.body.style.overflow;
+      const prevHtmlOverflow = document.documentElement.style.overflow;
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prevBodyOverflow;
+        document.documentElement.style.overflow = prevHtmlOverflow;
+      };
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [navOpen]);
 
   

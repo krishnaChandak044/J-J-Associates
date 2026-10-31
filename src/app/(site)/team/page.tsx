@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { siteConfig } from "@/data/siteConfig";
+import { TeamProfiles } from "@/components/about/TeamProfiles/TeamProfiles";
 
 export const metadata = generatePageMetadata({
   title: "Our Advocates | Gaurav Jaju & Ankita Kabra (Jaju)",
@@ -85,20 +86,7 @@ export default function TeamPage() {
             <span className={styles.label}>Working alongside the founders</span>
             <h2 className={styles.teamTitle} id="team-members-heading">Our Team</h2>
           </div>
-          <div className={styles.teamGrid}>
-            {siteConfig.teamMembers.map((member, index) => (
-              <article key={member.slug} className={styles.teamCard}>
-                <span className={styles.teamLabel}>Team Member {String(index + 1).padStart(2, "0")}</span>
-                <div className={styles.teamImage}>
-                  <Image src={member.image} alt={`${member.name}, ${member.role}`} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" />
-                </div>
-                <div className={styles.teamCardContent}>
-                  <h3>{member.name}</h3>
-                  <p>{member.role}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <TeamProfiles />
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, Phone, GraduationCap, Award, Briefcase } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { generatePageMetadata } from "@/lib/seo";
@@ -13,15 +14,14 @@ interface Props {
 
 export function generateStaticParams() {
   const advocates: readonly any[] = siteConfig.advocates ?? [];
-  return advocates.map((adv) => ({
-    slug: adv.slug,
-  }));
+  return [...advocates, ...siteConfig.teamMembers].map((member) => ({ slug: member.slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
   const resolvedParams = await params;
   const advocates: readonly any[] = siteConfig.advocates ?? [];
-  const member = advocates.find(a => a.slug === resolvedParams.slug);
+  const member = advocates.find(a => a.slug === resolvedParams.slug)
+    ?? siteConfig.teamMembers.find((person) => person.slug === resolvedParams.slug);
 
   if (!member) {
     return { title: "Not Found" };
@@ -39,6 +39,37 @@ export default async function TeamMemberPage({ params }: Props) {
   
   const advocates: readonly any[] = siteConfig.advocates ?? [];
   const member = advocates.find(a => a.slug === resolvedParams.slug);
+  const teamMember = siteConfig.teamMembers.find((person) => person.slug === resolvedParams.slug);
+
+  if (!member && teamMember) {
+    return (
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <aside className={styles.sidebar}>
+            <div className={styles.imageWrapper}>
+              <Image src={teamMember.image} alt={teamMember.name} fill className={styles.image} sizes="(max-width: 1023px) 100vw, 380px" priority />
+            </div>
+          </aside>
+          <div className={styles.content}>
+            <div className={styles.header}>
+              <h1 className={styles.name}>{teamMember.name}</h1>
+              <div className={styles.designation}>{teamMember.role}</div>
+            </div>
+            <div className={styles.bioBlock}>
+              <h2 className={styles.bioTitle}>Profile</h2>
+              <div className={styles.bioText}>
+                <p>{teamMember.name} is part of the J&amp;J Associates team. Contact our office to ask about the team and how we can help with your matter.</p>
+              </div>
+            </div>
+            <div className={styles.profileActions}>
+              <Link href="/contact" className={styles.profileActionPrimary}>Contact the firm</Link>
+              <Link href="/team" className={styles.profileActionSecondary}>Back to our team</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   if (!member) {
     notFound();

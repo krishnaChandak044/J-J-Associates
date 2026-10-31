@@ -246,3 +246,120 @@
 .card:hover .link {
   color: var(--color-accent);
 }
+
+/* Compact advocate cards inspired by the reference firm's team section. */
+.teamCard {
+  min-height: 245px;
+  padding: 1.75rem 1.25rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.teamCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.teamPortrait {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--color-surface-alt);
+}
+
+.teamPortrait img {
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.teamName {
+  margin: 0 0 0.4rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.teamRole {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+
+.teamProfileButton {
+  width: 100%;
+  min-height: 2.5rem;
+  margin-top: auto;
+  padding: 0.6rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-alt);
+  color: var(--color-primary-dark);
+  font-family: var(--font-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--t-fast), color var(--t-fast), transform var(--t-fast);
+}
+
+.teamProfileButton:hover {
+  background: var(--color-primary-dark);
+  color: var(--color-surface);
+  transform: translateY(-1px);
+}
+
+.teamProfileButton:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.teamCard > .teamProfileButton { order: 2; }
+.teamCard > .teamPortrait,
+.teamCard > .teamName,
+.teamCard > .teamRole { order: 1; }
+.teamCard > .teamProfileDetails { order: 3; }
+
+.teamProfileButton {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+}
+.teamProfileButton::-webkit-details-marker { display: none; }
+.teamProfileButton::after {
+  content: "＋";
+  margin-left: 0.55rem;
+  font-size: 1rem;
+}
+.teamCard[open] > .teamProfileButton::after { content: "−"; }
+
+.teamProfileDetails {
+  width: 100%;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-border-light);
+  color: var(--color-text-body);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  text-align: center;
+}
+.teamProfileDetails p { margin: 0 0 0.75rem; }
+.teamProfileDetails a {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+.teamProfileDetails a:hover { text-decoration: underline; }
