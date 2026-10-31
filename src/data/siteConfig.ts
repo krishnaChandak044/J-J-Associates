@@ -21,9 +21,8 @@ export const siteConfig = {
     { display: "8055125521", raw: "+918055125521" },
     { display: "8087501307", raw: "+918087501307" },
   ],
-  whatsapp: "https://wa.me/918149901255", // ACTUAL NUMBER
-  email: "jandjassociates.in@gmail.com",
-  emailAlt: "gauravjaju@jajuassociates.in", // PLACEHOLDER
+  whatsapp: "https://wa.me/918087501307",
+  email: "info.jandjassociate@gmail.com",
 
   // ── Address ─────────────────────────────────────────────────────────────────
   addresses: [
@@ -81,7 +80,7 @@ export const siteConfig = {
   },
   socialLinks: {
     linkedin: undefined,
-    whatsapp: "https://wa.me/919876543210", // PLACEHOLDER
+    whatsapp: "https://wa.me/918087501307",
     googleMaps: undefined,
   },
 
