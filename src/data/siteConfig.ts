@@ -21,7 +21,7 @@ export const siteConfig = {
     { display: "8055125521", raw: "+918055125521" },
     { display: "8087501307", raw: "+918087501307" },
   ],
-  whatsapp: "https://wa.me/918087501307",
+  whatsapp: "https://wa.me/918055125521",
   email: "info.jandjassociate@gmail.com",
 
   // ── Address ─────────────────────────────────────────────────────────────────
@@ -80,7 +80,7 @@ export const siteConfig = {
   },
   socialLinks: {
     linkedin: undefined,
-    whatsapp: "https://wa.me/918087501307",
+    whatsapp: "https://wa.me/918055125521",
     googleMaps: undefined,
   },
 

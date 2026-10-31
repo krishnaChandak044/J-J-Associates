@@ -118,7 +118,7 @@ export function CallToActionBar() {
               </div>
 
               <a 
-                href={siteConfig.whatsapp || `https://wa.me/918087501307`}
+                href={siteConfig.whatsapp || `https://wa.me/918055125521`}
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className={styles.whatsappBtn}
