@@ -592,3 +592,89 @@
     box-shadow: 0 14px 34px rgba(0, 18, 38, 0.12);
   }
 }
+
+@media (max-width: 640px) {
+  .section {
+    padding: 2.25rem var(--gutter) calc(7rem + env(safe-area-inset-bottom));
+  }
+
+  .advocateRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .monogramWrap {
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .imageWrap {
+    width: min(100%, 250px);
+    height: 350px;
+  }
+
+  .monogramEnrolled {
+    margin: 0;
+    text-align: center;
+  }
+
+  .advocateContent {
+    min-width: 0;
+  }
+
+  .advocateName {
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .advocateRole {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .advocateQuote {
+    margin-bottom: 1.25rem;
+    padding-left: 0.85rem;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .advocateBio {
+    margin-bottom: 1.4rem;
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .specBlock,
+  .langBlock {
+    margin-bottom: 1rem;
+  }
+
+  .specList {
+    justify-content: flex-start;
+    gap: 0.45rem;
+  }
+
+  .specTag {
+    padding-inline: 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  .langText {
+    line-height: 1.6;
+  }
+
+  .teamSection {
+    padding-bottom: calc(7rem + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 380px) {
+  .advocateRow { padding: 1rem; }
+  .imageWrap { width: min(100%, 220px); height: 320px; }
+}

@@ -9,7 +9,7 @@ import styles from "./TeamProfiles.module.css";
 
 type TeamMember = (typeof siteConfig.teamMembers)[number];
 
-export function TeamProfiles({ members = siteConfig.teamMembers }: { members?: TeamMember[] }) {
+export function TeamProfiles({ members = siteConfig.teamMembers }: { members?: readonly TeamMember[] }) {
   const [selected, setSelected] = useState<TeamMember | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
