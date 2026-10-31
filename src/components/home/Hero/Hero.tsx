@@ -34,10 +34,10 @@ export function Hero() {
               <CalendarCheck size={18} />
               Book a Consultation
             </Link>
-            <Link href="#practice" className="btn btn-soft">
+            <a href="#practice" className="btn btn-soft">
               <Scale size={18} />
               Explore Practice Areas
-            </Link>
+            </a>
           </div>
 
           <div className={styles.quickStats}>

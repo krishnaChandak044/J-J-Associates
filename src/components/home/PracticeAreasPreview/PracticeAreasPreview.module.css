@@ -1,6 +1,7 @@
 .section {
   padding: var(--space-xl) 0;
   background-color: var(--color-surface);
+  scroll-margin-top: calc(var(--header-height, 80px) + 1rem);
 }
 
 .container {
