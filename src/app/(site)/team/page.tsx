@@ -36,7 +36,12 @@ export default function TeamPage() {
               {/* Monogram Card */}
               <div className={styles.monogramWrap}>
                 <div className={styles.imageWrap}>
-                  <Image src={adv.image} alt={`${adv.name}, ${adv.role}`} fill className={styles.image} />
+                  <Image
+                    src={adv.image}
+                    alt={`${adv.name}, ${adv.role}`}
+                    fill
+                    className={`${styles.image} ${adv.slug === "gaurav-jaju" ? styles.gauravImage : ""}`}
+                  />
                 </div>
                 <p className={styles.monogramEnrolled}>
                   Enrolled {adv.enrolledYear}<br />
