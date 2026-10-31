@@ -27,13 +27,15 @@ export function Footer() {
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
               <div className={styles.logoWrapper}>
-                <Image 
-                  src={logoImg} 
-                  alt="J&J Associates Logo" 
-                  width={100}
-                  height={100}
-                  className={styles.logoImage}
-                />
+                <span className={styles.logoBadge}>
+                  <Image
+                    src={logoImg}
+                    alt="J&J Associates Logo"
+                    width={100}
+                    height={100}
+                    className={styles.logoImage}
+                  />
+                </span>
                 <span className={styles.logoTitle}>J&J Associates</span>
               </div>
             </Link>

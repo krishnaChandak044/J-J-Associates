@@ -3,6 +3,7 @@ import { siteConfig } from "@/data/siteConfig";
 import { ContactForm } from "@/components/contact/ContactForm/ContactForm";
 import { MapTabs } from "@/components/contact/MapTabs/MapTabs";
 import { Accordion } from "@/components/ui/Accordion/Accordion";
+import { ArrowUpRight, Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import styles from "./page.module.css";
 
 export const metadata = generatePageMetadata({
@@ -43,6 +44,9 @@ const faqSchema = {
 };
 
 export default function ContactPage() {
+  const officeDays = siteConfig.hours.days.replace(", ", "–");
+  const officeTime = siteConfig.hours.time.replace(", ", "–");
+
   return (
     <>
       <script
@@ -73,14 +77,16 @@ export default function ContactPage() {
           
           {/* ── Left: form ── */}
           <div className={styles.formCol}>
-            <h2 className={styles.colTitle}>Book a Consultation</h2>
-            <p className={styles.colSub}>
-              Three fields and a sentence — that's all we need to call you back prepared.
-            </p>
-            <div id="enquiry" style={{ scrollMarginTop: "100px" }}><ContactForm /></div>
+            <div className={styles.formCard}>
+              <span className={styles.cardEyebrow}>Start a conversation</span>
+              <h2 className={styles.colTitle}>Book a Consultation</h2>
+              <p className={styles.colSub}>
+                Share a few details and our team will get back to you with a clear next step.
+              </p>
+              <div id="enquiry" style={{ scrollMarginTop: "100px" }}><ContactForm /></div>
+            </div>
             
-            {/* ── FAQ moved to left column to fill void space ── */}
-            <div className={styles.faqInner} style={{ marginTop: '4rem' }}>
+            <div className={styles.faqInner}>
               <div className={styles.faqHeader}>
                 <span className={styles.faqLabel}>Before You Call</span>
                 <h2 className={styles.faqTitle}>Common Questions</h2>
@@ -97,81 +103,71 @@ export default function ContactPage() {
 
           {/* ── Right: direct contact + info ── */}
           <div className={styles.infoCol}>
-            <h3 className={styles.infoColHeading}>Reach us directly</h3>
-            
-            {/* Direct call */}
-            <div className={styles.infoBlock}>
-              <span className={styles.infoBlockLabel}>Call or WhatsApp</span>
-              {siteConfig.phoneNumbers.map((phone) => (
-                <a key={phone.raw} href={`tel:${phone.raw}`} className={styles.phoneNum}>
-                  {phone.display}
-                </a>
-              ))}
-              <a
-                href={siteConfig.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.waBtn}
-              >
-                Open WhatsApp →
-              </a>
+            <div className={styles.infoHeader}>
+              <span className={styles.cardEyebrow}>Get in touch</span>
+              <h3 className={styles.infoColHeading}>Reach us directly</h3>
+              <p className={styles.infoIntro}>Choose the easiest way to speak with our Pune team.</p>
             </div>
 
-            {/* Email */}
             <div className={styles.infoBlock}>
-              <span className={styles.infoBlockLabel}>Email</span>
-              <a href={`mailto:${siteConfig.email}`} className={styles.emailLink}>
-                {siteConfig.email}
-              </a>
-            </div>
-
-            {/* Hours */}
-            <div className={styles.infoBlock}>
-              <span className={styles.infoBlockLabel}>Office Hours</span>
-              <p className={styles.infoText}>
-                {siteConfig.hours.days}
-                <br />
-                {siteConfig.hours.time}
-              </p>
-              <p className={styles.infoNote}>{siteConfig.hours.note}</p>
-            </div>
-
-            {/* Address */}
-            <div className={styles.infoBlock}>
-              <span className={styles.infoBlockLabel}>Office Addresses</span>
-              {siteConfig.addresses?.map((address, index) => (
-                <div key={index} style={index > 0 ? { marginTop: '1.5rem' } : {}}>
-                  {address.name && <strong style={{display: 'block', marginBottom: '0.25rem', fontFamily: 'var(--font-ui)', color: 'var(--color-primary-dark)'}}>{address.name}</strong>}
-                  <address className={styles.address}>
-                    {address.line1}
-                    <br />
-                    {address.line2}
-                    <br />
-                    {address.city}, {address.state}, {address.pin}
-                  </address>
-                  <a
-                    href={address.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.mapLink}
-                  >
-                    View on Google Maps →
+              <span className={styles.infoIcon}><Phone size={20} aria-hidden="true" /></span>
+              <div className={styles.infoContent}>
+                <span className={styles.infoBlockLabel}>Call the office</span>
+                {siteConfig.phoneNumbers.map((phone) => (
+                  <a key={phone.raw} href={`tel:${phone.raw}`} className={styles.phoneNum}>
+                    +91 {phone.display.slice(0, 5)} {phone.display.slice(5)}
                   </a>
-                </div>
-              ))}
+                ))}
+                <p className={styles.infoNote}>{officeDays} · {officeTime}</p>
+              </div>
+              <a href={`tel:${siteConfig.phoneRaw}`} className={styles.actionLink}>Call <ArrowUpRight size={17} aria-hidden="true" /></a>
             </div>
 
-            {/* Consultation options */}
-            <div className={styles.consultBox}>
-              <span className={styles.consultLabel}>Consultation Modes</span>
-              <ul className={styles.consultList}>
-                {['In-person (Pune office)', 'Phone call', 'Video call (Google Meet / Zoom)'].map((mode) => (
-                  <li key={mode} className={styles.consultItem}>
-                    <span className={styles.consultDot} aria-hidden="true" />
-                    {mode}
-                  </li>
+            <div className={styles.infoBlock}>
+              <span className={styles.infoIcon}><MessageCircle size={20} aria-hidden="true" /></span>
+              <div className={styles.infoContent}>
+                <span className={styles.infoBlockLabel}>WhatsApp</span>
+                <p className={styles.infoText}>For documents and quick enquiries</p>
+              </div>
+              <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" className={styles.actionLink}>Chat <ArrowUpRight size={17} aria-hidden="true" /></a>
+            </div>
+
+            <div className={styles.infoBlock}>
+              <span className={styles.infoIcon}><Mail size={20} aria-hidden="true" /></span>
+              <div className={styles.infoContent}>
+                <span className={styles.infoBlockLabel}>Email</span>
+                <a href={`mailto:${siteConfig.email}`} className={styles.emailLink}>{siteConfig.email}</a>
+                <p className={styles.infoNote}>For detailed enquiries and attachments</p>
+              </div>
+              <a href={`mailto:${siteConfig.email}`} className={styles.actionLink}>Email <ArrowUpRight size={17} aria-hidden="true" /></a>
+            </div>
+
+            <div className={styles.infoBlock}>
+              <span className={styles.infoIcon}><Clock3 size={20} aria-hidden="true" /></span>
+              <div className={styles.infoContent}>
+                <span className={styles.infoBlockLabel}>Office hours</span>
+                <p className={styles.infoText}>{officeDays}<br />{officeTime}</p>
+                <p className={styles.infoNote}>{siteConfig.hours.note}</p>
+              </div>
+            </div>
+
+            <div className={`${styles.infoBlock} ${styles.officeBlock}`}>
+              <span className={styles.infoIcon}><MapPin size={20} aria-hidden="true" /></span>
+              <div className={styles.infoContent}>
+                <span className={styles.infoBlockLabel}>Visit our offices</span>
+                {siteConfig.addresses?.map((address) => (
+                  <div className={styles.officeAddress} key={address.name}>
+                    {address.name && <strong>{address.name.replace(/^Office \d+ \(/, "").replace(/\)$/, "")}</strong>}
+                    <address className={styles.address}>{address.line1}, {address.line2}, {address.city} {address.pin}</address>
+                    <a href={address.mapUrl} target="_blank" rel="noopener noreferrer" className={styles.mapLink}>Directions <ArrowUpRight size={15} aria-hidden="true" /></a>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            </div>
+
+            <div className={styles.consultBox}>
+              <span className={styles.consultLabel}>Consultations available</span>
+              <p>In person · Phone · Video</p>
             </div>
           </div>
         </div>
@@ -179,7 +175,7 @@ export default function ContactPage() {
 
 
       {/* ── Map embeds ── */}
-      {siteConfig.addresses && <MapTabs addresses={siteConfig.addresses as any} />}
+      {siteConfig.addresses && <MapTabs addresses={siteConfig.addresses} />}
     </>
   );
 }

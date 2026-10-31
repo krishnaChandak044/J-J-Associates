@@ -32,6 +32,11 @@
   min-width: 0;
 }
 
+.mattersCol {
+  grid-column: 2;
+  min-width: 0;
+}
+
 .firmCol {
   grid-column: 2;
   min-width: 0;
@@ -46,6 +51,25 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.philosophy {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.65;
+  margin: 1.25rem 0 1rem;
+  border-left: 2px solid var(--color-accent);
+  padding-left: 0.875rem;
+}
+
+.barCouncil {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.66);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 600px) and (max-width: 1023px) {
@@ -64,37 +88,17 @@
 
   .brand,
   .practiceCol,
-  .firmCol,
-  .contactCol {
+  .firmCol {
     grid-column: auto;
   }
+
+  .contactCol { grid-column: auto; }
 
   .contactDetails {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
-}
-
-/* ── Philosophy quote in brand column ── */
-.philosophy {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.65;
-  margin-top: 1.25rem;
-  margin-bottom: 1rem;
-  border-left: 2px solid var(--color-accent);
-  padding-left: 0.875rem;
-}
-
-.barCouncil {
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.35);
-  letter-spacing: 0.05em;
-  margin-bottom: 1.5rem;
 }
 
 .logo {
@@ -109,15 +113,21 @@
   gap: 1rem;
 }
 
-.logoImage {
-  height: 96px;
+.logoBadge {
   width: 96px;
+  height: 96px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.logoImage {
+  height: 64px;
+  width: 64px;
   object-fit: contain;
   display: block;
-  border-radius: 50%;
-  background-color: #ffffff;
-  padding: 18px;
-  overflow: hidden;
 }
 
 .logoTitle {
@@ -173,7 +183,7 @@
 .link {
   font-family: var(--font-ui);
   font-size: clamp(0.8125rem, 2.4vw, 0.9rem);
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.78);
   transition: color var(--t-fast);
   display: block;
   word-break: break-word;
@@ -197,7 +207,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.66);
   margin-bottom: 0.75rem;
 }
 
@@ -210,7 +220,7 @@
 .courtItem {
   font-family: var(--font-ui);
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.74);
 }
 
 /* ── Contact Info ── */
@@ -218,7 +228,7 @@
   display: flex;
   gap: 0.875rem;
   margin-bottom: 1rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.76);
 }
 
 .addressLink {
@@ -265,7 +275,7 @@
 
 .contactLink {
   display: block;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.82);
   transition: color var(--t-fast);
 }
 
@@ -340,7 +350,7 @@
   gap: 0.25rem;
   font-family: var(--font-ui);
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.8);
   background-color: rgba(255, 255, 255, 0.05);
   padding: 0.35rem 0.35rem;
   border-radius: var(--radius-sm);
@@ -389,7 +399,7 @@
 .copyright {
   font-family: var(--font-ui);
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
 }
 
 .legalLinks {
@@ -400,7 +410,7 @@
 .legalLink {
   font-family: var(--font-ui);
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
   transition: color var(--t-fast);
 }
 
@@ -425,4 +435,30 @@
 .disclaimer strong { display: block; color: white; margin-bottom: .5rem; font-size: 1rem; }
 .whatsappBtn { background: var(--color-accent); color: var(--color-primary-dark); border-radius: 999px; }
 .contactText { min-width: 0; overflow-wrap: anywhere; }
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.9fr 1.15fr 1.3fr 1.85fr;
+    column-gap: clamp(2rem, 3vw, 3.25rem);
+    align-items: start;
+  }
+
+  .logoBadge { width: 104px; height: 104px; }
+  .logoImage { width: 72px; height: 72px; }
+  .logoTitle { font-family: var(--font-heading); }
+  .logoTitle { font-size: 1.45rem; }
+  .colTitle { font-size: 0.95rem; }
+  .link { font-size: 1rem; line-height: 1.5; }
+  .courtsTitle { font-size: 0.8rem; }
+  .courtItem { font-size: 0.9rem; }
+  .contactText { font-size: 1rem; line-height: 1.6; }
+  .addressDirections { font-size: 0.85rem; }
+  .whatsappBtn { font-size: 1rem; padding: 0.75rem 1.5rem; }
+  .areaPill { font-size: 0.875rem; padding: 0.6rem 0.85rem; }
+  .areasAllText { font-size: 0.9rem; }
+  .copyright,
+  .legalLink { font-size: 0.9rem; }
+}
+
+.addressDirections { text-align: right; }
 

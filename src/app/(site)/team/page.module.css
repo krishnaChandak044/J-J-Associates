@@ -597,6 +597,14 @@
   }
 }
 
+/* Bring Gaurav forward in the mobile founder portrait so the photo reads as a portrait, not scenery. */
+@media (max-width: 640px) {
+  .gauravImage {
+    object-position: center top;
+    transform: scale(1.2);
+  }
+}
+
 @media (max-width: 640px) {
   .section {
     padding: 2.25rem var(--gutter) calc(7rem + env(safe-area-inset-bottom));

@@ -4,6 +4,7 @@ import { Phone, Navigation, Clock, Users, Scale, ExternalLink, ArrowRight } from
 import { getLocationBySlug, locations, normalizeLocationSlug } from "@/data/locations";
 import { siteConfig } from "@/data/siteConfig";
 import { generatePageMetadata } from "@/lib/seo";
+import { googleMapsPlaceEmbedUrl } from "@/lib/maps";
 import { Accordion } from "@/components/ui/Accordion/Accordion";
 import styles from "./page.module.css";
 
@@ -49,9 +50,9 @@ export default async function LocationPage({
     location.name + ", Pune"
   )}&destination=${encodeURIComponent(office.full)}`;
 
-  const mapEmbedUrl = `https://maps.google.com/maps?saddr=${encodeURIComponent(
-    location.name + ", Pune"
-  )}&daddr=${encodeURIComponent(office.full)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+  // Keep the inline map centered on the firm's office. The directions link
+  // above routes from the selected neighborhood to this office.
+  const mapEmbedUrl = googleMapsPlaceEmbedUrl(office.mapUrl);
 
   const otherLocations = locations.filter((l) => l.slug !== location.slug);
 
@@ -141,7 +142,7 @@ export default async function LocationPage({
           {/* Route Map */}
           <div className={styles.mapContainer}>
             <iframe
-              title={`Directions from ${location.name} to J&J Associates, Kasba Peth, Pune`}
+              title={`Map of ${location.name}, Pune, near J&J Associates`}
               src={mapEmbedUrl}
               className={styles.mapIframe}
               loading="lazy"

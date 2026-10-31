@@ -855,3 +855,13 @@
   .feesNoteBox { padding: 1rem; }
 }
 
+@media (max-width: 420px) {
+  .title { font-size: clamp(2rem, 9vw, 2.5rem); }
+  .titleHighlight {
+    white-space: normal;
+    margin-left: 0;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+}
+

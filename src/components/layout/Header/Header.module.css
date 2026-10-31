@@ -403,3 +403,13 @@
     gap: .5rem;
   }
 }
+
+@media (max-width: 380px) {
+  .inner { padding-inline: 0.75rem; }
+  .logo { gap: 0.35rem; }
+  .logoImage { height: 44px; }
+  .logoTextWrapper { min-width: 0; }
+  .logoTitle { font-size: 1rem; line-height: 1.05; white-space: normal; }
+  .logoSubtitle { font-size: 0.625rem; }
+  .hamburger { width: 40px; height: 40px; }
+}

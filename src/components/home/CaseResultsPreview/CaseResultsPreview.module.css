@@ -89,7 +89,7 @@
 
 .description {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   color: var(--color-text-muted);
   line-height: 1.6;
 }
@@ -196,7 +196,7 @@
 
 .situation {
   font-family: var(--font-body);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--color-text-body);
   line-height: 1.7;
   font-style: italic;

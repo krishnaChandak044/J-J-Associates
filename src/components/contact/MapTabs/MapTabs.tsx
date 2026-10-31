@@ -1,12 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { googleMapsEmbedUrl, googleMapsPlaceEmbedUrl } from "@/lib/maps";
 import styles from "./MapTabs.module.css";
 
 interface MapTabsProps {
   addresses: {
     name?: string;
-    mapEmbed?: string;
+    full: string;
+    mapUrl?: string;
+  }[] | readonly {
+    name?: string;
+    full: string;
+    mapUrl?: string;
   }[];
 }
 
@@ -36,7 +42,9 @@ export function MapTabs({ addresses }: MapTabsProps) {
         {/* We key by index so React forces a full re-render of the iframe, preventing caching issues */}
         <iframe
           key={activeIndex}
-          src={addresses[activeIndex].mapEmbed}
+          src={addresses[activeIndex].mapUrl
+            ? googleMapsPlaceEmbedUrl(addresses[activeIndex].mapUrl)
+            : googleMapsEmbedUrl(addresses[activeIndex].full, 15)}
           width="100%"
           height="100%"
           style={{ border: 0 }}

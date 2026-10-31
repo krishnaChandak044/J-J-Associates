@@ -48,7 +48,7 @@
 
 .description {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.0625rem;
   color: var(--color-text-muted);
   line-height: 1.6;
 }

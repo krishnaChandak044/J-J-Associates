@@ -249,3 +249,16 @@
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }
+
+@media (max-width: 640px) {
+  .section { padding: calc(var(--header-height, 80px) + 1.5rem) var(--gutter) 5rem; }
+  .container { gap: 2rem; }
+  .imageWrapper { max-width: 26rem; aspect-ratio: 4 / 3; margin: 0 auto 1.25rem; }
+  .contactCard, .dataSection { padding: 1.25rem; }
+  .header { margin-bottom: 2rem; padding-bottom: 1.5rem; }
+  .name { font-size: clamp(2.25rem, 10vw, 3.25rem); overflow-wrap: anywhere; }
+  .designation { font-size: 0.9rem; }
+  .bioText { font-size: 1rem; line-height: 1.75; }
+  .profileActions { display: grid; grid-template-columns: 1fr; }
+  .profileActionPrimary, .profileActionSecondary { width: 100%; }
+}

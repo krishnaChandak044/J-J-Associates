@@ -8,6 +8,7 @@ import { TestimonialsPreview } from "@/components/home/TestimonialsPreview/Testi
 import { InsightsPreview } from "@/components/home/InsightsPreview/InsightsPreview";
 import { CourtsStrip } from "@/components/home/CourtsStrip/CourtsStrip";
 import { AdvocatesStrip } from "@/components/home/AdvocatesStrip/AdvocatesStrip";
+import { AreasServedPreview } from "@/components/home/AreasServedPreview/AreasServedPreview";
 
 import { CallToActionBar } from "@/components/ui/CallToActionBar/CallToActionBar";
 
@@ -27,6 +28,7 @@ export default function Home() {
       <CaseResultsPreview />
       <AdvocatesStrip />
       <CourtsStrip />
+      <AreasServedPreview />
       <TestimonialsPreview />
       <InsightsPreview />
       <CallToActionBar />

@@ -29,18 +29,17 @@ export const siteConfig = {
   addresses: [
     {
       name: "Office 1 (Kasba Peth)",
-      line1: "Office no. 12, Ground floor, B wing",
-      line2: "Alok Nagri Society, Near pawle chowk, Kasba peth",
+      line1: "Ground Floor, Office No. 12, B - Wing",
+      line2: "Alok Nagari Society, near pawle chowk, Kasba Peth",
       city: "Pune",
       state: "Maharashtra",
       postalCode: "411011",
       country: "India",
       countryCode: "IN",
-      full: "Office no. 12, Ground floor, B wing, Alok Nagri Society, Near pawle chowk, Kasba peth, Pune, 411011",
+      full: "Ground Floor, Alok Nagari, Office No. 12, B - Wing, Society, near pawle chowk, Kasba Peth, Pune, Maharashtra 411011",
       street: "Kasba Peth",
       pin: "411011",
-      mapUrl: "https://maps.google.com/?q=Alok+Nagri+Society,+Near+pawle+chowk,+Kasba+peth,+Pune+411011",
-      mapEmbed: "https://maps.google.com/maps?q=Alok+Nagri+Society,+Near+pawle+chowk,+Kasba+peth,+Pune+411011&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      mapUrl: "https://www.google.com/maps/place/J+%26+J+Associates/@18.5181387,73.8582352,15.59z/data=!4m6!3m5!1s0x3bc2c1d7e38477d3:0x12b5f3f48702325d!8m2!3d18.5224455!4d73.8575446!16s%2Fg%2F11nw0zn2m5?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
     },
     {
       name: "Office 2 (Shukrawar Peth)",
@@ -55,7 +54,6 @@ export const siteConfig = {
       street: "Shukrawar Peth",
       pin: "411002",
       mapUrl: "https://maps.google.com/?q=Ankita+chambers,+351+Shukrawar+Peth,+opp+Gadikhana,+Shivaji+road,+Pune+411002",
-      mapEmbed: "https://maps.google.com/maps?q=Ankita+chambers,+351+Shukrawar+Peth,+opp+Gadikhana,+Shivaji+road,+Pune+411002&t=&z=15&ie=UTF8&iwloc=&output=embed"
     }
   ],
 

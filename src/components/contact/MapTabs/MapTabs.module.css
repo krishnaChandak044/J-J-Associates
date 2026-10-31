@@ -1,12 +1,18 @@
 .container {
-  border-top: 1px solid var(--color-border-light);
+  width: min(calc(100% - (2 * var(--gutter))), var(--max-width));
+  margin: 0 auto clamp(3rem, 6vw, 5rem);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
+  background: var(--color-surface);
+  box-shadow: 0 1rem 3rem rgba(0, 18, 38, 0.055);
 }
 
 .tabsWrapper {
   background-color: var(--color-surface-alt);
-  padding: 1.5rem var(--gutter);
+  padding: 1rem 1.25rem;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid var(--color-border-light);
@@ -47,11 +53,14 @@
 
 .mapWrapper {
   width: 100%;
-  height: 480px;
+  height: clamp(300px, 38vw, 440px);
 }
 
 @media (max-width: 640px) {
+  .tabsWrapper { padding: 0.75rem; }
+  .tabs { width: 100%; }
+  .tab { flex: 1 1 9rem; padding-inline: 0.75rem; }
   .mapWrapper {
-    height: 320px;
+    height: clamp(280px, 78vw, 360px);
   }
 }

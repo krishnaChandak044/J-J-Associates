@@ -13,7 +13,6 @@ const TESTIMONIALS = [
 
 // Duplicate for seamless loop
 const ROW1 = [...TESTIMONIALS, ...TESTIMONIALS];
-const ROW2 = [...TESTIMONIALS.slice(3), ...TESTIMONIALS.slice(3)];
 
 function Card({ text, clientType, stars, source }: { text: string; clientType: string; stars: number; source: string }) {
   return (
@@ -44,17 +43,10 @@ export function TestimonialsPreview() {
         <h2 className={styles.title}>Words from Our Clients</h2>
       </div>
 
-      {/* Row 1, scrolls left */}
+      {/* Single review row, scrolling left */}
       <div className={styles.track}>
         <div className={`${styles.marqueeRow} ${styles.scrollLeft}`}>
           {ROW1.map((t, i) => <Card key={`r1-${i}`} {...t} />)}
-        </div>
-      </div>
-
-      {/* Row 2, scrolls right (offset) */}
-      <div className={styles.track}>
-        <div className={`${styles.marqueeRow} ${styles.scrollRight}`}>
-          {ROW2.map((t, i) => <Card key={`r2-${i}`} {...t} />)}
         </div>
       </div>
     </section>

@@ -94,7 +94,7 @@
 }
 
 .sub {
-  font-size: var(--text-h4);
+  font-size: calc(var(--text-h4) + 1px);
   color: var(--color-text-body);
   max-width: 600px;
 }
@@ -167,7 +167,7 @@
 }
 
 .flowc p {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--color-text-body);
   line-height: 1.6;
 }

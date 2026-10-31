@@ -33,7 +33,7 @@ export function WhyChooseUs() {
               <span className={styles.dot}></span>How We Work
             </span>
             <h2 className={styles.title}>
-              From first call to <span className={styles.accentI}>resolution</span>
+              From your first conversation to <span className={styles.accentI}>resolution</span>
             </h2>
             <p className={styles.sub}>
               From First Consultation to Resolution and beyond.
