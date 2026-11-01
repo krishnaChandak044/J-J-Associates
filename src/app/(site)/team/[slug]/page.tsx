@@ -86,7 +86,14 @@ export default async function TeamMemberPage({ params }: Props) {
         <aside className={styles.sidebar}>
           <div className={styles.imageWrapper}>
             {member.image ? (
-              <Image src={member.image} alt={`${member.name}, ${member.role}`} fill className={styles.image} sizes="(max-width: 1023px) 100vw, 380px" priority />
+              <Image
+                src={member.image}
+                alt={`${member.name}, ${member.role}`}
+                fill
+                className={`${styles.image} ${member.slug === "gaurav-jaju" ? styles.gauravImage : ""}`}
+                sizes="(max-width: 1023px) 100vw, 380px"
+                priority
+              />
             ) : (
               <div className={styles.monogramPlaceholder}>{monogram}</div>
             )}

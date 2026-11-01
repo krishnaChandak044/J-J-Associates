@@ -52,6 +52,8 @@
   object-position: top center;
 }
 
+.gauravImage { object-position: center 22%; }
+
 .contactCard {
   background-color: var(--color-bg);
   padding: 2rem;
@@ -253,7 +255,8 @@
 @media (max-width: 640px) {
   .section { padding: calc(var(--header-height, 80px) + 1.5rem) var(--gutter) 5rem; }
   .container { gap: 2rem; }
-  .imageWrapper { max-width: 26rem; aspect-ratio: 4 / 3; margin: 0 auto 1.25rem; }
+  .imageWrapper { max-width: 26rem; aspect-ratio: 1; margin: 0 auto 1.25rem; }
+  .gauravImage { object-position: center 22%; }
   .contactCard, .dataSection { padding: 1.25rem; }
   .header { margin-bottom: 2rem; padding-bottom: 1.5rem; }
   .name { font-size: clamp(2.25rem, 10vw, 3.25rem); overflow-wrap: anywhere; }
