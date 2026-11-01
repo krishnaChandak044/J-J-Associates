@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { practiceAreas } from "@/data/practiceAreas";
 import { insights } from "@/data/insights";
+import { locations } from "@/data/locations";
 import { siteConfig } from "@/data/siteConfig";
 
 const staticPaths = [
@@ -10,6 +11,7 @@ const staticPaths = [
   "/our-approach",
   "/practice-areas",
   "/areas-we-serve",
+  "/locations",
   "/insights",
   "/contact",
   "/case-results",
@@ -25,6 +27,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...siteConfig.advocates.map((advocate) => ({
       url: new URL(`/team/${advocate.slug}`, siteConfig.url).toString(),
+    })),
+    ...locations.map((location) => ({
+      url: new URL(`/locations/${location.slug}`, siteConfig.url).toString(),
     })),
     ...insights.map((article) => ({
       url: new URL(`/insights/${article.slug}`, siteConfig.url).toString(),

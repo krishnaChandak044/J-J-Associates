@@ -43,6 +43,35 @@ const faqSchema = {
   ],
 };
 
+const businessLocationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "@id": `${siteConfig.url}/#kasba-peth-office`,
+  name: siteConfig.firmName,
+  url: `${siteConfig.url}/contact`,
+  image: `${siteConfig.url}/logo/j&j_logo.png`,
+  telephone: siteConfig.phoneNumbers[0].raw,
+  email: siteConfig.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Ground Floor, Alok Nagari, Office No. 12, B - Wing, Society, near pawle chowk, Kasba Peth",
+    addressLocality: "Pune",
+    addressRegion: "Maharashtra",
+    postalCode: "411011",
+    addressCountry: "IN",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 18.5224455,
+    longitude: 73.8575446,
+  },
+  hasMap: siteConfig.addresses[0].mapUrl,
+  areaServed: [
+    { "@type": "City", name: "Pune" },
+    { "@type": "AdministrativeArea", name: "Maharashtra" },
+  ],
+};
+
 export default function ContactPage() {
   const officeDays = siteConfig.hours.days.replace(", ", "–");
   const officeTime = siteConfig.hours.time.replace(", ", "–");
@@ -52,6 +81,10 @@ export default function ContactPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessLocationSchema).replace(/</g, "\\u003c") }}
       />
 
       {/* ── Hero ── */}

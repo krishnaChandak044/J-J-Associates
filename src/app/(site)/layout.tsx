@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "J&J Associates | Advocates & Legal Consultants in Pune",
   description: "Pune-based legal counsel led by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju). Explore the firm's practice areas, advocates, offices and legal insights.",
+  verification: {
+    google: "0rRW5rK0DrAEE4qHpI8Un99yOq280PBpM3GTwoqKZMA",
+  },
 };
 
 export const viewport = {
