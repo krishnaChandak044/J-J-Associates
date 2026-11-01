@@ -168,10 +168,10 @@ export const siteConfig = {
       slug: "gaurav-jaju",
       image: "/founder/IMG_2913.PNG",
       role: "Advocate & Co-Founder",
-      enrolledYear: "2010",
-      enrollmentNo: "[ENROLLMENT NO]",   // PLACEHOLDER
+      enrolledYear: "2020",
+      enrollmentNo: "MAH/3320/2020",
       barCouncil: "Bar Council of Maharashtra & Goa",
-      lawSchool: "[Law School Name]",    // PLACEHOLDER
+      lawSchool: "B.Com., D.T.L., D.C.L., LL.B.",
       specialisations: ["Family Law", "Criminal Defense", "Domestic Violence"],
       languages: ["English", "Hindi", "Marathi", "Marwari"],
       courts: ["Pune", "Nashik", "Mumbai", "All over Maharashtra"],
@@ -184,10 +184,10 @@ export const siteConfig = {
       slug: "ankita-jaju",
       image: "/founder/Ankita.png",
       role: "Advocate, Co-Founder & Legal Consultant",
-      enrolledYear: "2012",
-      enrollmentNo: "[ENROLLMENT NO]",   // PLACEHOLDER
+      enrolledYear: "2022",
+      enrollmentNo: "MAH/8751/2022",
       barCouncil: "Bar Council of Maharashtra & Goa",
-      lawSchool: "[Law School Name]",    // PLACEHOLDER
+      lawSchool: "B.Com., LL.B., LL.M.",
       specialisations: ["Property Disputes", "Civil Litigation", "Corporate Law"],
       languages: ["English", "Hindi", "Marathi", "Marwari"],
       courts: ["Pune", "Nashik", "Mumbai", "All over Maharashtra"],

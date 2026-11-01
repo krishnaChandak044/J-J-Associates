@@ -152,7 +152,7 @@ export default async function TeamMemberPage({ params }: Props) {
               </h3>
               <ul className={styles.dataList}>
                 <li className={styles.dataItem}>{member.barCouncil} ({member.enrolledYear})</li>
-                <li className={styles.dataItem}>Enrollment No: {member.enrollmentNo}</li>
+                <li className={styles.dataItem}>Enrolment No.: {member.enrollmentNo}</li>
               </ul>
             </div>
           )}
