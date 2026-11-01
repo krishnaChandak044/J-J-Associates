@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 import { TeamGrid } from "@/components/about/TeamGrid/TeamGrid";
 
 export const metadata = generatePageMetadata({
-  title: "About J & J Legal Associates | Pune",
-  description: "J & J Legal Associates is a Pune-based law firm founded by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), serving individuals, families, businesses, startups, and organisations.",
+  title: "About J&J Associates | Pune Law Firm",
+  description: "Meet the advocates and learn about J&J Associates, a Pune law firm led by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju).",
   path: "/about",
 });
 

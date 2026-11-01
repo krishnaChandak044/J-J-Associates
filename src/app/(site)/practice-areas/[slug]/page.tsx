@@ -5,7 +5,7 @@ import Link from "next/link";
 import * as LucideIcons from "lucide-react";
 import { practiceAreas } from "@/data/practiceAreas";
 import { siteConfig } from "@/data/siteConfig";
-import { generatePageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, generatePageMetadata, jsonLd } from "@/lib/seo";
 import styles from "./page.module.css";
 import { ProcessFlow } from "@/components/ui/ProcessFlow/ProcessFlow";
 import { PracticeAreaNav } from "@/components/practice-areas/PracticeAreaNav/PracticeAreaNav";
@@ -34,9 +34,26 @@ export async function generateMetadata({ params }: Props) {
     return { title: "Not Found" };
   }
 
+  const pageTitles: Record<string, string> = {
+    corporate: "Corporate & Business Lawyers in Pune",
+    "consumer-matters": "Consumer Dispute Lawyers in Pune",
+    "family-law": "Family Lawyers in Pune",
+    divorce: "Divorce Lawyers in Pune",
+    "criminal-defense": "Criminal Defence Lawyers in Pune",
+    property: "Property Lawyers in Pune",
+    "cheque-bounce": "Cheque Bounce Lawyers in Pune",
+    "civil-litigation": "Civil Litigation Lawyers in Pune",
+    documentation: "Legal Documentation Lawyers in Pune",
+    consultations: "Legal Consultation in Pune",
+  };
+  const keyServices = area.overview.subServices
+    .slice(0, 3)
+    .map((service) => service.name.toLowerCase())
+    .join(", ");
+
   return generatePageMetadata({
-    title: `${area.name} Lawyers in Pune | J&J Associates`,
-    description: area.tagline,
+    title: `${pageTitles[area.slug] ?? `${area.name} Lawyers in Pune`} | J&J Associates`,
+    description: `${area.name} legal services in Pune, including ${keyServices}. Contact J&J Associates to discuss your matter.`,
     path: `/practice-areas/${area.slug}`,
   });
 }
@@ -128,6 +145,16 @@ export default async function PracticeAreaPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Practice Areas", path: "/practice-areas" },
+            { name: area.name, path: `/practice-areas/${area.slug}` },
+          ])),
+        }}
+      />
       {/* ── Header ── */}
       <section className={styles.hero}>
         {/* Soft organic ambient shapes inspired by reference layout */}

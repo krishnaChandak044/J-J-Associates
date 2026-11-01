@@ -13,8 +13,8 @@ import { AreasServedPreview } from "@/components/home/AreasServedPreview/AreasSe
 import { CallToActionBar } from "@/components/ui/CallToActionBar/CallToActionBar";
 
 export const metadata = generatePageMetadata({
-  title: "Advocates & Legal Consultants in Pune | J&J Associates",
-  description: "J&J Associates is a Pune law firm led by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju). Learn about family, corporate, civil, criminal and property matters.",
+  title: "Lawyers in Pune | J&J Associates Advocates & Legal Consultants",
+  description: "J&J Associates is a Pune law firm led by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), advising on family law, divorce, criminal defence, property, civil disputes and business matters.",
   path: "/",
 });
 

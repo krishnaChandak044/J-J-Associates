@@ -3,21 +3,45 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Search, Scale, User, FileText, ArrowRight } from "lucide-react";
+import { practiceAreas } from "@/data/practiceAreas";
+import { insights } from "@/data/insights";
+import { locations } from "@/data/locations";
+import { siteConfig } from "@/data/siteConfig";
 import styles from "./SearchModal.module.css";
 
-// Static mock search database for instantaneous frontend search
+// Build search results from the site's route data so suggestions always point
+// to pages that actually exist.
 const searchDatabase = [
-  { id: 1, title: "Corporate Law", type: "Practice Area", url: "/practice-areas/corporate-law", icon: Scale },
-  { id: 2, title: "Family Law", type: "Practice Area", url: "/practice-areas/family-law", icon: Scale },
-  { id: 3, title: "Real Estate & Property", type: "Practice Area", url: "/practice-areas/real-estate", icon: Scale },
-  { id: 4, title: "Criminal Defense", type: "Practice Area", url: "/practice-areas/criminal-defense", icon: Scale },
-  { id: 5, title: "Adv. Gaurav Jaju", type: "Team Member", url: "/team/gaurav-jaju", icon: User },
-  { id: 6, title: "Adv. Ankita Jaju", type: "Team Member", url: "/team/ankita-jaju", icon: User },
-  { id: 7, title: "Adv. Vikram Deshmukh", type: "Team Member", url: "/team/vikram-deshmukh", icon: User },
-  { id: 8, title: "Understanding the New Amendments to the Hindu Succession Act", type: "Insight", url: "/insights/hindu-succession-act-amendments", icon: FileText },
-  { id: 9, title: "Corporate Governance: Preventing White-Collar Crime", type: "Insight", url: "/insights/corporate-governance-white-collar", icon: FileText },
-  { id: 10, title: "About The Firm", type: "Page", url: "/about", icon: FileText },
-  { id: 11, title: "Contact Us", type: "Page", url: "/contact", icon: FileText },
+  ...practiceAreas.map((area) => ({
+    id: `practice-${area.slug}`,
+    title: `${area.name} Law in Pune`,
+    type: "Practice Area",
+    url: `/practice-areas/${area.slug}`,
+    icon: Scale,
+  })),
+  ...siteConfig.advocates.map((advocate) => ({
+    id: `team-${advocate.slug}`,
+    title: `Adv. ${advocate.name}`,
+    type: "Advocate",
+    url: `/team/${advocate.slug}`,
+    icon: User,
+  })),
+  ...insights.map((insight) => ({
+    id: `insight-${insight.slug}`,
+    title: insight.title,
+    type: "Legal Insight",
+    url: `/insights/${insight.slug}`,
+    icon: FileText,
+  })),
+  ...locations.map((location) => ({
+    id: `location-${location.slug}`,
+    title: `Lawyers in ${location.name}, Pune`,
+    type: "Location",
+    url: `/locations/${location.slug}`,
+    icon: Scale,
+  })),
+  { id: "page-about", title: "About the Firm", type: "Page", url: "/about", icon: FileText },
+  { id: "page-contact", title: "Contact J&J Associates", type: "Page", url: "/contact", icon: FileText },
 ];
 
 export function SearchModal() {

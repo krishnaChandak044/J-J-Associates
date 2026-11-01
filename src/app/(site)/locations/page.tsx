@@ -6,8 +6,8 @@ import { generatePageMetadata } from "@/lib/seo";
 import styles from "./locations.module.css";
 
 export const metadata = generatePageMetadata({
-  title: "Areas We Serve in Pune | J&J Associates",
-  description: "Explore legal representation by J&J Associates across all Pune neighborhoods. Adv. Gaurav Jaju & Adv. Ankita Kabra (Jaju) represent clients before District Courts, Family Courts, and civil forums across Pune and Maharashtra.",
+  title: "Pune Areas We Serve | J&J Associates Advocates",
+  description: "Find J&J Associates office details and information for clients across Pune. Consultations are available at Kasba Peth, Shukrawar Peth, by phone or by video.",
   path: "/locations",
 });
 
@@ -27,7 +27,7 @@ export default function LocationsHubPage() {
             Lawyers Serving <span className={styles.titleHighlight}>Pune</span> Neighborhoods
           </h1>
           <p className={styles.sub}>
-            With central litigation offices at Kasba Peth and Shukrawar Peth, Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju) represent clients from every major residential and commercial hub across Pune. Select your area below for travel times, court jurisdictions, and localized legal insights.
+            Our offices are in Kasba Peth and Shukrawar Peth. Clients from across Pune can arrange an in-person, phone, or video consultation. Select an area below for local information and directions to our offices.
           </p>
         </div>
       </header>
@@ -63,7 +63,7 @@ export default function LocationsHubPage() {
         <div className={styles.container}>
           <h2 className={styles.sectionHeading}>All Neighborhoods</h2>
           <p className={styles.sectionSub}>
-            Click on any locality for detailed travel directions, court jurisdiction, and tailored legal FAQs:
+            Choose a locality for area-specific information, nearby office directions, and consultation options:
           </p>
 
           <div className={styles.locationsGrid}>

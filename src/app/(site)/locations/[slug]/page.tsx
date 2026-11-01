@@ -1,20 +1,15 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { Phone, Navigation, Clock, Users, Scale, ExternalLink, ArrowRight } from "lucide-react";
-import { getLocationBySlug, locations, normalizeLocationSlug } from "@/data/locations";
+import { getLocationBySlug, locations } from "@/data/locations";
 import { siteConfig } from "@/data/siteConfig";
-import { generatePageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, generatePageMetadata, jsonLd } from "@/lib/seo";
 import { googleMapsPlaceEmbedUrl } from "@/lib/maps";
 import { Accordion } from "@/components/ui/Accordion/Accordion";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
-  const params: { slug: string }[] = [];
-  for (const loc of locations) {
-    params.push({ slug: loc.slug });
-    params.push({ slug: `lawyers-in-${loc.slug}-pune` });
-  }
-  return params;
+  return locations.map((location) => ({ slug: location.slug }));
 }
 
 export async function generateMetadata({
@@ -28,7 +23,7 @@ export async function generateMetadata({
 
   return generatePageMetadata({
     title: `Lawyers in ${location.name}, Pune | J&J Associates`,
-    description: `${location.name} legal counsel: Adv. Gaurav Jaju & Adv. Ankita Kabra (Jaju). Family, criminal, property, and civil matters. Travel time ${location.travelTime} to our Kasba Peth office. Video and in-person consultations.`,
+    description: `Legal consultations for clients in ${location.name}, Pune. See directions to our Kasba Peth office and learn about in-person, phone, and video appointments.`,
     path: `/locations/${location.slug}`,
   });
 }
@@ -45,6 +40,10 @@ export default async function LocationPage({
     notFound();
   }
 
+  if (slug !== location.slug) {
+    permanentRedirect(`/locations/${location.slug}`);
+  }
+
   const office = siteConfig.addresses[0]; // Kasba Peth main litigation office
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(
     location.name + ", Pune"
@@ -58,6 +57,16 @@ export default async function LocationPage({
 
   return (
     <article className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Locations", path: "/locations" },
+            { name: location.name, path: `/locations/${location.slug}` },
+          ])),
+        }}
+      />
       {/* ── Breadcrumb & Hero ── */}
       <header className={styles.hero}>
         <div className={styles.container}>

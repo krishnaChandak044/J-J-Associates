@@ -6,8 +6,8 @@ import { siteConfig } from "@/data/siteConfig";
 import { TeamProfiles } from "@/components/about/TeamProfiles/TeamProfiles";
 
 export const metadata = generatePageMetadata({
-  title: "Our Advocates | Gaurav Jaju & Ankita Kabra (Jaju)",
-  description: "Meet J&J Associates co-founders Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), Advocates and Legal Consultants based in Pune.",
+  title: "Advocates in Pune | Gaurav Jaju & Ankita Kabra (Jaju)",
+  description: "Meet Pune advocates Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), co-founders of J&J Associates. View their profiles, qualifications and focus areas.",
   path: "/team",
 });
 

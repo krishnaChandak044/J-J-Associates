@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
       has: [{ type: "host", value: "jandjassociates.in" }],
       destination: "https://www.jandjassociates.in/:path*",
       permanent: true,
+    }, {
+      source: "/areas-we-serve",
+      destination: "/locations",
+      permanent: true,
     }];
   },
   images: {

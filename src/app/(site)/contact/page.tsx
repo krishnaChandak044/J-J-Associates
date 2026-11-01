@@ -1,4 +1,4 @@
-import { generatePageMetadata } from "@/lib/seo";
+import { generatePageMetadata, jsonLd, officeSchemas } from "@/lib/seo";
 import { siteConfig } from "@/data/siteConfig";
 import { ContactForm } from "@/components/contact/ContactForm/ContactForm";
 import { MapTabs } from "@/components/contact/MapTabs/MapTabs";
@@ -12,65 +12,26 @@ export const metadata = generatePageMetadata({
   path: "/contact",
 });
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+const contactFaqs = [
     {
-      '@type': 'Question',
       name: 'How do I book a consultation with J&J Associates?',
       acceptedAnswer: {
-        '@type': 'Answer',
         text: 'Call us, WhatsApp us, or use the contact form on this page. We respond within 24 hours and can arrange a consultation on the same day or the next working day in most cases.',
       },
     },
     {
-      '@type': 'Question',
       name: 'Do you offer online or video consultations?',
       acceptedAnswer: {
-        '@type': 'Answer',
         text: 'Yes. We offer in-person consultations at our Pune office and video call or phone consultations for clients outside Pune or those who prefer remote meetings.',
       },
     },
     {
-      '@type': 'Question',
       name: 'Is the first consultation free?',
       acceptedAnswer: {
-        '@type': 'Answer',
         text: 'The first consultation involves a nominal fee, which covers the time spent reviewing your matter honestly and giving you a clear picture of your legal position.',
       },
     },
-  ],
-};
-
-const businessLocationSchema = {
-  "@context": "https://schema.org",
-  "@type": "LegalService",
-  "@id": `${siteConfig.url}/#kasba-peth-office`,
-  name: siteConfig.firmName,
-  url: `${siteConfig.url}/contact`,
-  image: `${siteConfig.url}/logo/j&j_logo.png`,
-  telephone: siteConfig.phoneNumbers[0].raw,
-  email: siteConfig.email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Ground Floor, Alok Nagari, Office No. 12, B - Wing, Society, near pawle chowk, Kasba Peth",
-    addressLocality: "Pune",
-    addressRegion: "Maharashtra",
-    postalCode: "411011",
-    addressCountry: "IN",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 18.5224455,
-    longitude: 73.8575446,
-  },
-  hasMap: siteConfig.addresses[0].mapUrl,
-  areaServed: [
-    { "@type": "City", name: "Pune" },
-    { "@type": "AdministrativeArea", name: "Maharashtra" },
-  ],
-};
+];
 
 export default function ContactPage() {
   const officeDays = siteConfig.hours.days.replace(", ", "–");
@@ -80,11 +41,9 @@ export default function ContactPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessLocationSchema).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{
+          __html: jsonLd({ "@context": "https://schema.org", "@graph": officeSchemas }),
+        }}
       />
 
       {/* ── Hero ── */}
@@ -125,7 +84,7 @@ export default function ContactPage() {
                 <h2 className={styles.faqTitle}>Common Questions</h2>
               </div>
               <Accordion 
-                items={faqSchema.mainEntity.map(item => ({
+                items={contactFaqs.map(item => ({
                   question: item.name,
                   answer: item.acceptedAnswer.text
                 }))}

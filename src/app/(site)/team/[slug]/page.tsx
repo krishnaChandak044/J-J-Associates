@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, GraduationCap, Award, Briefcase } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
-import { generatePageMetadata } from "@/lib/seo";
+import { generatePageMetadata, jsonLd, personSchema } from "@/lib/seo";
 import styles from "./page.module.css";
 
 interface Props {
@@ -28,9 +28,10 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return generatePageMetadata({
-    title: `${member.name} - ${member.role} | J&J Associates`,
-    description: member.quote || member.bio?.substring(0, 150) || `Profile of ${member.name}`,
+    title: `${member.name}, Advocate in Pune | J&J Associates`,
+    description: member.bio || `${member.name} is an advocate at J&J Associates in Pune. View profile and contact the firm.`,
     path: `/team/${member.slug}`,
+    authors: [{ name: member.name, url: `${siteConfig.url}/team/${member.slug}` }],
   });
 }
 
@@ -80,6 +81,10 @@ export default async function TeamMemberPage({ params }: Props) {
 
   return (
     <section className={styles.section}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(personSchema(member)) }}
+      />
       <div className={styles.container}>
         
         {/* ── Sidebar (Photo & Contact) ── */}

@@ -10,7 +10,6 @@ const staticPaths = [
   "/team",
   "/our-approach",
   "/practice-areas",
-  "/areas-we-serve",
   "/locations",
   "/insights",
   "/contact",

@@ -7,8 +7,8 @@ import styles from "./page.module.css";
 import { CallToActionBar } from "@/components/ui/CallToActionBar/CallToActionBar";
 
 export const metadata = generatePageMetadata({
-  title: "Practice Areas | J&J Associates",
-  description: "J&J Associates handles Family Law, Criminal Defense, Civil Litigation, Property Law, and Corporate Law in Pune. Explore our expertise.",
+  title: "Legal Services & Practice Areas in Pune | J&J Associates",
+  description: "Explore J&J Associates' legal services in Pune, including family law, divorce, criminal defence, property disputes, civil litigation, consumer matters and corporate law.",
   path: "/practice-areas",
 });
 
