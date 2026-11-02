@@ -272,6 +272,20 @@
   overflow-wrap: anywhere;
 }
 
+.addressLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.addressLink:hover .address,
+.addressLink:focus-visible .address {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 /* ── Consultation options ── */
 .consultBox {
   margin-top: 1rem;

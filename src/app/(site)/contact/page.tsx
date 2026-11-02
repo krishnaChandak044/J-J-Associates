@@ -150,7 +150,9 @@ export default function ContactPage() {
                 {siteConfig.addresses?.map((address) => (
                   <div className={styles.officeAddress} key={address.name}>
                     {address.name && <strong>{address.name.replace(/^Office \d+ \(/, "").replace(/\)$/, "")}</strong>}
-                    <address className={styles.address}>{address.line1}, {address.line2}, {address.city} {address.pin}</address>
+                    <a href={address.mapUrl} target="_blank" rel="noopener noreferrer" className={styles.addressLink} aria-label={`Open directions to ${address.name} in Google Maps`}>
+                      <address className={styles.address}>{address.line1}, {address.line2}, {address.city} {address.pin}</address>
+                    </a>
                     <a href={address.mapUrl} target="_blank" rel="noopener noreferrer" className={styles.mapLink}>Directions <ArrowUpRight size={15} aria-hidden="true" /></a>
                   </div>
                 ))}
