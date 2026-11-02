@@ -12,15 +12,15 @@ export function FloatingCTA() {
 
   return (
     <>
-      <EnquiryAssistant 
-        isOpen={isAssistantOpen} 
-        onClose={() => setIsAssistantOpen(false)} 
+      <EnquiryAssistant
+        isOpen={isAssistantOpen}
+        onClose={() => setIsAssistantOpen(false)}
       />
 
-      <button 
+      <button
         type="button"
         onClick={() => setIsAssistantOpen((prev) => !prev)}
-        className={`${styles.floatingCTA} ${isAssistantOpen ? styles.active : ""}`} 
+        className={`${styles.floatingCTA} ${isAssistantOpen ? styles.active : ""}`}
         aria-label={isAssistantOpen ? "Close enquiry assistant" : "Enquire about your legal matter"}
         aria-expanded={isAssistantOpen}
         data-enquiry-trigger="true"

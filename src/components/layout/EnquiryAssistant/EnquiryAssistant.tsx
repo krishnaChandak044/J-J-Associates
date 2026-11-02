@@ -8,7 +8,6 @@ import {
   ChevronRight, 
   ArrowLeft, 
   Send, 
-  AlertCircle, 
   Calendar, 
   MessageSquare, 
   FileText, 
@@ -23,7 +22,7 @@ interface EnquiryAssistantProps {
   onClose: () => void;
 }
 
-type Step = "disclaimer" | "topics" | "detail";
+type Step = "topics" | "detail";
 
 interface MatterTopic {
   id: string;
@@ -231,7 +230,7 @@ const MATTER_TOPICS: MatterTopic[] = [
 ];
 
 export function EnquiryAssistant({ isOpen, onClose }: EnquiryAssistantProps) {
-  const [step, setStep] = useState<Step>("disclaimer");
+  const [step, setStep] = useState<Step>("topics");
   const [selectedTopic, setSelectedTopic] = useState<MatterTopic | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const modalRef = useRef<HTMLDivElement>(null);
@@ -269,7 +268,7 @@ export function EnquiryAssistant({ isOpen, onClose }: EnquiryAssistantProps) {
 
   if (!isOpen) return null;
 
-  // Search logic for Step 2
+  // Search logic for topic selection
   const filteredTopics = MATTER_TOPICS.filter((topic) => {
     if (!searchQuery.trim()) return true;
     const q = searchQuery.toLowerCase().trim();
@@ -305,14 +304,11 @@ export function EnquiryAssistant({ isOpen, onClose }: EnquiryAssistantProps) {
       {/* ── Top Header ─────────────────────────────────────────────── */}
       <header className={styles.header}>
         <div className={styles.headerTitleWrap}>
-          {step !== "disclaimer" && (
+          {step === "detail" && (
             <button 
               type="button"
               className={styles.backBtn}
-              onClick={() => {
-                if (step === "detail") setStep("topics");
-                else setStep("disclaimer");
-              }}
+              onClick={() => setStep("topics")}
               aria-label="Back"
             >
               <ArrowLeft size={16} />
@@ -345,48 +341,7 @@ export function EnquiryAssistant({ isOpen, onClose }: EnquiryAssistantProps) {
         </div>
       </header>
 
-      {/* ── Screen 1: Disclaimer ("Before you start, four things") ─── */}
-      {step === "disclaimer" && (
-        <div className={styles.bodyDisclaimer}>
-          <div className={styles.alertIcon}>
-            <AlertCircle size={28} strokeWidth={2} />
-          </div>
-
-          <h4 className={styles.disclaimerHeading}>Before you start, four things</h4>
-
-          <ul className={styles.disclaimerList}>
-            <li>This is an automated assistant, not an advocate.</li>
-            <li>It cannot give legal advice, quote fees, or tell you what the law says.</li>
-            <li>
-              <strong>
-                This chat is not confidential and not privileged — please don't type the details of your matter, names, or any ID numbers.
-              </strong>
-            </li>
-            <li>No advocate–client relationship is created by using it.</li>
-          </ul>
-
-          <p className={styles.disclaimerNote}>
-            It can tell you which court in Pune hears your kind of matter, which page here covers it, and what documents to bring to a first meeting. See our{" "}
-            <Link href="/privacy-policy" onClick={onClose} className={styles.linkText}>privacy policy</Link> and{" "}
-            <Link href="/disclaimer" onClick={onClose} className={styles.linkText}>disclaimer</Link>.
-          </p>
-
-          <button 
-            type="button" 
-            className={styles.primaryBtn}
-            onClick={() => setStep("topics")}
-          >
-            I understand — continue
-          </button>
-
-          <a href={`tel:${siteConfig.phoneRaw}`} className={styles.phoneFallback}>
-            <Phone size={14} />
-            <span>Or just call {siteConfig.phone}</span>
-          </a>
-        </div>
-      )}
-
-      {/* ── Screen 2: Topic Selection & Quick Router ───────────────── */}
+      {/* ── Topic Selection & Quick Router ─────────────────────────── */}
       {step === "topics" && (
         <div className={styles.bodyTopics}>
           <div className={styles.topicsIntro}>
