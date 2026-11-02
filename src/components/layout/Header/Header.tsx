@@ -53,7 +53,17 @@ export function Header() {
       >
         <div className={styles.inner}>
           {/* Logo */}
-          <Link href="/" className={styles.logo} aria-label="J&J Associates, Go to homepage">
+          <Link
+            href="/"
+            className={styles.logo}
+            aria-label="J&J Associates, Go to homepage"
+            onClick={(event) => {
+              if (pathname === "/") {
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
             <Image 
               src={logoImg} 
               alt="J&J Associates Logo" 
