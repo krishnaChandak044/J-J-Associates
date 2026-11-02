@@ -60,7 +60,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.875rem, 6.2vw, 3.25rem);
   font-weight: 800;
-  line-height: var(--lh-tight);
+  line-height: 1.26;
   color: var(--color-text-heading);
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
@@ -75,7 +75,7 @@
   border-radius: 8px;
   white-space: nowrap;
   display: inline-block;
-  line-height: 1.2;
+  line-height: inherit;
   font-style: normal;
 }
 
