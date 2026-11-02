@@ -93,9 +93,9 @@
 
 .highlight {
   color: var(--color-accent, #B89C72);
-  font-style: italic;
-  font-family: var(--font-display, var(--font-heading));
-  font-weight: 500;
+  font-style: normal;
+  font-family: inherit;
+  font-weight: 800;
 }
 
 .description {

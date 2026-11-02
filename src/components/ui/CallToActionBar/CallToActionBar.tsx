@@ -31,7 +31,7 @@ export function CallToActionBar() {
             </div>
 
             <h2 id="cta-heading" className={styles.title}>
-              Discuss your matter <span className={styles.highlight}>in confidence.</span>
+              Your First Step Towards <span className={styles.highlight}>Legal Clarity</span>
             </h2>
 
             <p className={styles.description}>
