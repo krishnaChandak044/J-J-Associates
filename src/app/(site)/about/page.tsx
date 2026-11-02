@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className={styles.heroContent}>
           <h1 className={styles.title}>About the <span className="text-highlight">Firm</span></h1>
           <p className={styles.tagline}>
-            J &amp; J Legal Associates is a Pune-based law firm founded by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), providing comprehensive legal services to individuals, families, businesses, startups, and organisations.
+            J &amp; J Associates is a Pune-based law firm founded by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju), providing comprehensive legal services to individuals, families, businesses, startups, and organisations.
           </p>
         </div>
       </section>
@@ -33,12 +33,12 @@ export default function AboutPage() {
       {/* ── About the Firm ── */}
       <section className={styles.historySection}>
         <div className={styles.historyContainer}>
-          <h2 className={styles.historyTitle}>About J &amp; J Legal Associates</h2>
+          <h2 className={styles.historyTitle}>About J &amp; J Associates</h2>
           <p className={styles.historyParagraph}>
             Our practice encompasses Property &amp; Real Estate Law, RERA, Civil Litigation, Criminal Law, Family Law, Legal Consultation, and Commercial &amp; Business Contracts. We also advise startups and businesses on NDAs, influencer agreements, service agreements, and other legal and contractual requirements.
           </p>
           <p className={styles.historyParagraph}>
-            At J &amp; J Legal Associates, we focus on providing practical, strategic, and solution-oriented legal advice, with a strong emphasis on protecting our clients’ rights and interests.
+            At J &amp; J Associates, we focus on providing practical, strategic, and solution-oriented legal advice, with a strong emphasis on protecting our clients’ rights and interests.
           </p>
           <p className={styles.historyParagraph}>
             Our objective is to provide clear legal guidance, effective representation, and reliable legal documentation, enabling our clients to make informed decisions and navigate legal challenges with confidence.
