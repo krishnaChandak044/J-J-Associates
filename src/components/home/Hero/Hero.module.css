@@ -215,10 +215,16 @@
 
 @media (max-width: 420px) {
   .hero { padding-top: calc(var(--header-height, 80px) + 1.25rem); }
-  .title { font-size: clamp(1.75rem, 8.4vw, 2.2rem); }
+  .title {
+    font-size: clamp(1.75rem, 8.4vw, 2.2rem);
+    line-height: 1.28;
+    text-wrap: pretty;
+  }
   .highlightText {
     display: inline;
     white-space: normal;
+    line-height: inherit;
+    padding-block: 0.04em;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }
