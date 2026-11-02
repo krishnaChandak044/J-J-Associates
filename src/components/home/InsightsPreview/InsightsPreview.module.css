@@ -94,7 +94,7 @@
 }
 
 .card:nth-child(1) { background-color: #f3eff9; } /* Soft Lavender */
-.card:nth-child(2) { background-color: #ebf6f1; } /* Soft Mint */
+.card:nth-child(2) { background-color: #e7eef6; } /* Soft Blue */
 .card:nth-child(3) { background-color: #f9f3e4; } /* Soft Tan */
 
 .card:hover {

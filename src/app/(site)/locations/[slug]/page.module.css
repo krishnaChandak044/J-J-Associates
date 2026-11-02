@@ -53,12 +53,12 @@
   font-family: var(--font-ui, sans-serif);
   font-size: 0.8125rem;
   font-weight: 600;
-  background-color: #eaf3ed;
-  color: #1b3b2b;
+  background-color: #e7eef6;
+  color: #002147;
   padding: 0.45rem 1.25rem;
   border-radius: var(--radius-pill, 9999px);
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 2px rgba(27, 59, 43, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 33, 71, 0.06);
 }
 
 .heroTitle {
@@ -104,18 +104,18 @@
   font-size: 0.9375rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #183624;
+  background-color: #002147;
   padding: 0.875rem 1.65rem;
   border-radius: var(--radius-pill, 9999px);
   text-decoration: none;
   transition: transform var(--t-fast, 150ms ease), opacity var(--t-fast, 150ms ease), box-shadow var(--t-fast, 150ms ease);
-  box-shadow: 0 4px 12px rgba(24, 54, 36, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 33, 71, 0.2);
 }
 
 .callBtn:hover {
   opacity: 0.94;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(24, 54, 36, 0.28);
+  box-shadow: 0 6px 16px rgba(0, 33, 71, 0.28);
 }
 
 .dirBtn {
@@ -125,8 +125,8 @@
   font-family: var(--font-ui, sans-serif);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #183624;
-  background-color: #eaf3ed;
+  color: #002147;
+  background-color: #e7eef6;
   padding: 0.875rem 1.65rem;
   border-radius: var(--radius-pill, 9999px);
   text-decoration: none;
@@ -134,7 +134,7 @@
 }
 
 .dirBtn:hover {
-  background-color: #dcece1;
+  background-color: #d7e4f2;
   transform: translateY(-2px);
 }
 
@@ -179,7 +179,7 @@
 }
 
 .cardIcon {
-  color: #183624;
+  color: #002147;
 }
 
 .cardHighlight {
@@ -290,8 +290,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background-color: #eaf3ed;
-  color: #1b3b2b;
+  background-color: #e7eef6;
+  color: #002147;
   font-family: var(--font-ui, sans-serif);
   font-size: 0.75rem;
   font-weight: 700;
@@ -302,7 +302,7 @@
 }
 
 .pillDot {
-  color: #183624;
+  color: #002147;
   font-size: 0.65rem;
 }
 

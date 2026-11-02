@@ -35,7 +35,7 @@
   transition: transform var(--t-fast), box-shadow var(--t-fast);
 }
 
-.statc:nth-child(1) { background-color: #f1f6ed; } /* Soft Green */
+.statc:nth-child(1) { background-color: #e7eef6; } /* Soft Blue */
 .statc:nth-child(2) { background-color: #fdf6e7; } /* Soft Yellow */
 .statc:nth-child(3) { background-color: #eef4f9; } /* Soft Blue */
 .statc:nth-child(4) { background-color: #fdf1ea; } /* Soft Peach */

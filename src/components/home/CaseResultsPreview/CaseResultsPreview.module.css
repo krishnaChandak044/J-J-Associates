@@ -158,7 +158,7 @@
   flex-grow: 1;
 }
 
-.card:nth-child(1) { background-color: #f1f6ed; }
+.card:nth-child(1) { background-color: #e7eef6; }
 .card:nth-child(2) { background-color: #fdf6e7; }
 .card:nth-child(3) { background-color: #eef4f9; }
 

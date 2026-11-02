@@ -108,7 +108,7 @@
 
 .navLink:hover,
 .navItemWrapper:hover .navLink {
-  background-color: #eaf3ed;
+  background-color: #e7eef6;
   color: var(--color-primary-dark);
 }
 
@@ -187,7 +187,7 @@
 
 .dropdownLink:hover,
 .dropdownLinkActive {
-  background-color: #eaf3ed;
+  background-color: #e7eef6;
   color: var(--color-primary-dark);
 }
 

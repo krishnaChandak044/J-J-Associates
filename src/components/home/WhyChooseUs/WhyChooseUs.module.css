@@ -132,7 +132,7 @@
   height: 100%;
 }
 
-.flowc:nth-child(1) { background-color: #f1f6ed; } /* Soft Green */
+.flowc:nth-child(1) { background-color: #e7eef6; } /* Soft Blue */
 .flowc:nth-child(2) { background-color: #fdf6e7; } /* Soft Yellow */
 .flowc:nth-child(3) { background-color: #eef4f9; } /* Soft Blue */
 .flowc:nth-child(4) { background-color: #fdf1ea; } /* Soft Peach */
