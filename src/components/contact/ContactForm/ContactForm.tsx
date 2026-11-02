@@ -73,8 +73,8 @@ export function ContactForm({ compact = false, defaultPracticeArea = "" }: { com
 
       <div className={styles.fieldGroup}>
         <div className={`${styles.field} ${compact ? styles.fieldFull : ""}`}>
-          <label htmlFor="email" className={styles.label}>Email Address (optional)</label>
-          <input type="email" id="email" name="email" autoComplete="email" className={styles.input} placeholder="you@example.com" />
+          <label htmlFor="email" className={styles.label}>Email Address <span className={styles.optionalLabel}>Optional — leave blank if you prefer</span></label>
+          <input type="text" id="email" name="email" inputMode="email" autoCapitalize="none" autoComplete="email" className={styles.input} placeholder="you@example.com" />
         </div>
         {!compact && <div className={styles.field}>
           <label htmlFor="phone" className={styles.label}>Phone Number *</label>
