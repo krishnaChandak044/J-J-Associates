@@ -78,7 +78,7 @@ export function AreasServedPreview() {
 
           <div className={styles.panelFooter}>
             <p>Our offices are in Kasba Peth and Shukrawar Peth. Consultations can also happen remotely.</p>
-            <Link href="/areas-we-serve" className={styles.allAreas}>
+            <Link href="/locations" className={styles.allAreas}>
               <MapPin size={19} strokeWidth={1.9} aria-hidden="true" />
               Explore all areas
               <span aria-hidden="true">→</span>

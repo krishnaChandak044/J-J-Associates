@@ -73,22 +73,36 @@ export const organizationSchema = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: siteConfig.firmName,
+  alternateName: "J & J Associates",
+  description:
+    "Pune-based advocates and legal consultants providing counsel on family, criminal, civil, property, consumer, and commercial matters.",
   url: SITE_URL,
   logo: `${SITE_URL}/logo/j&j_logo.png`,
   email: siteConfig.email,
-  contactPoint: siteConfig.phoneNumbers.map((phone) => ({
+  telephone: siteConfig.phoneNumbers[0].raw,
+  contactPoint: {
     "@type": "ContactPoint",
-    telephone: phone.raw,
+    telephone: siteConfig.phoneNumbers[0].raw,
     email: siteConfig.email,
     contactType: "client enquiries",
-    areaServed: "IN",
+    areaServed: { "@type": "City", name: "Pune" },
     availableLanguage: ["English", "Hindi", "Marathi"],
-  })),
+  },
   knowsAbout: practiceAreas.map((area) => area.name),
   areaServed: [
     { "@type": "City", name: "Pune" },
     { "@type": "State", name: "Maharashtra" },
   ],
+};
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: siteConfig.firmName,
+  inLanguage: "en-IN",
+  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 export const officeSchemas = siteConfig.addresses.map((address, index) => ({
@@ -117,6 +131,7 @@ export const officeSchemas = siteConfig.addresses.map((address, index) => ({
       }
     : {}),
   hasMap: address.mapUrl,
+  areaServed: { "@type": "City", name: "Pune" },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],

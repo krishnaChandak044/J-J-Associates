@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header/Header";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { FloatingCTA } from "@/components/layout/FloatingCTA/FloatingCTA";
 import { SearchModal } from "@/components/ui/SearchModal/SearchModal";
-import { jsonLd, organizationSchema, SITE_URL } from "@/lib/seo";
+import { jsonLd, organizationSchema, SITE_URL, websiteSchema } from "@/lib/seo";
 
 
 // ─── Font Loading ──────────────────────────────────────────────────────────
@@ -55,6 +55,7 @@ export default function RootLayout({
     >
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(organizationSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(websiteSchema) }} />
 
         <SearchModal />
         <Header />
