@@ -141,16 +141,22 @@ export function formatInsightDate(iso: string): string {
 
 
 export function getInsightImage(categoryOrSlug: string): string {
+  const articleImages: Record<string, string> = {
+    'property-title-verification-pune': '/insights/pune-property-building.png',
+    'consumer-forum-complaint-pune': '/insights/consumer-protection-law.png',
+  };
+  if (articleImages[categoryOrSlug]) return articleImages[categoryOrSlug];
+
   // Pexels free-use images, selected to match the article subjects:
   // https://www.pexels.com/photo/a-lawyer-talking-to-clients-7876191/
   // https://www.pexels.com/photo/judge-signing-on-the-papers-6077447/
   // https://www.pexels.com/photo/female-lawyer-looking-at-documents-8111889/
-  const articleImages: Record<string, string> = {
+  const legacyArticleImages: Record<string, string> = {
     'mutual-consent-divorce-pune': 'https://images.pexels.com/photos/7876191/pexels-photo-7876191.jpeg?auto=compress&dpr=1&h=750&w=1260',
     'anticipatory-bail-when-to-apply': 'https://images.pexels.com/photos/6077447/pexels-photo-6077447.jpeg?auto=compress&dpr=1&h=750&w=1260',
     '498a-defence-what-to-expect': 'https://images.pexels.com/photos/8111889/pexels-photo-8111889.jpeg?auto=compress&dpr=1&h=750&w=1260',
   };
-  if (articleImages[categoryOrSlug]) return articleImages[categoryOrSlug];
+  if (legacyArticleImages[categoryOrSlug]) return legacyArticleImages[categoryOrSlug];
 
   const images: Record<string, string> = {
     'Family Law': 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1000&q=85',
