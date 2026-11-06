@@ -31,8 +31,9 @@ export const metadata: Metadata = {
   title: "J&J Associates | Advocates & Legal Consultants in Pune",
   description: "Pune-based legal counsel led by Adv. Gaurav Jaju and Adv. Ankita Kabra (Jaju). Explore the firm's practice areas, advocates, offices and legal insights.",
   icons: {
-    icon: "/logo/j&j_logo.png",
-    apple: "/logo/j&j_logo.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   verification: {
     google: "0rRW5rK0DrAEE4qHpI8Un99yOq280PBpM3GTwoqKZMA",
